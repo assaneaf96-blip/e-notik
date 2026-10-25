@@ -5,20 +5,29 @@ import {
   ArrowRight,
   Check,
   ChevronDown,
+  Eye,
   Heart,
   Menu,
   Minus,
   Plus,
   Search,
+  ShieldCheck,
   ShoppingBag,
   Sparkles,
   Trash2,
   Truck,
   UserRound,
   X,
+  Zap,
 } from 'lucide-react'
 
-interface Product {
+export interface ProductColor {
+  name: string
+  hex: string
+  image: string
+}
+
+export interface Product {
   id: number
   name: string
   reference: string
@@ -28,22 +37,192 @@ interface Product {
   priceNum: number
   image: string
   tag: string
+  description?: string
+  specs?: string
+  storages?: string[]
+  colors?: ProductColor[]
+  gallery?: string[]
 }
 
-interface CartItem {
+export interface CartItem {
+  itemKey: string
   product: Product
   quantity: number
+  selectedColor?: string
+  selectedColorImage?: string
+  selectedStorage?: string
 }
 
 const products: Product[] = [
-  { id: 1, name: 'iPhone 17 Pro', reference: 'ENOTIK-IPH17P-001', category: 'Smartphones', oldPrice: 'CHF 1’399.–', price: 'CHF 1’249.–', priceNum: 1249, image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=900&q=85', tag: 'Nouveau' },
-  { id: 2, name: 'Sony WH-1000XM6', reference: 'ENOTIK-SNYXM6-002', category: 'Audio & TV', oldPrice: 'CHF 449.–', price: 'CHF 399.–', priceNum: 399, image: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=900&q=85', tag: 'Bestseller' },
-  { id: 3, name: 'MacBook Air M4', reference: 'ENOTIK-MBA-M4-003', category: 'Informatique', oldPrice: 'CHF 1’199.–', price: 'CHF 1’099.–', priceNum: 1099, image: 'https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=900&q=85', tag: 'Nouveau' },
-  { id: 4, name: 'Dyson Airwrap', reference: 'ENOTIK-DYS-AW-004', category: 'Électroménager', oldPrice: 'CHF 529.–', price: 'CHF 449.–', priceNum: 449, image: 'https://images.unsplash.com/photo-1522338140262-f46f5913618a?auto=format&fit=crop&w=900&q=85', tag: '−15%' },
+  {
+    id: 1,
+    name: 'iPhone 18 Pro Max',
+    reference: 'ENOTIK-IPH18PM-001',
+    category: 'Smartphones',
+    oldPrice: 'CHF 1’649.–',
+    price: 'CHF 1’499.–',
+    priceNum: 1499,
+    image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1000&q=85',
+    tag: 'Nouveauté 2026',
+    description: 'Le fleuron absolu de la gamme Apple. Châssis en titane aérospatial poli miroir, nouvelle puce A20 Pro gravée en 2 nm, téléobjectif tétraprisme 10x et écran Super Retina XDR 6.9" 120Hz avec Dynamic Island avancée.',
+    specs: 'Écran 6.9" ProMotion 120Hz · Puce A20 Pro 2nm · 48 Mpx Triple Caméra 10x · USB-C Thunderbolt 4 · Châssis Titane Grade 5',
+    storages: ['256 Go', '512 Go', '1 To', '2 To'],
+    colors: [
+      { name: 'Titane Naturel', hex: '#B8B3AB', image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1000&q=85' },
+      { name: 'Titane Noir Sidéral', hex: '#1E1F22', image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=1000&q=85' },
+      { name: 'Titane Blanc Pur', hex: '#F2F1ED', image: 'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=1000&q=85' },
+      { name: 'Titane Bleu Alpin', hex: '#38495A', image: 'https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&w=1000&q=85' },
+      { name: 'Édition Suisse Rouge', hex: '#DA291C', image: 'https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&w=1000&q=85' },
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1000&q=85',
+      'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=1000&q=85',
+      'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=1000&q=85',
+      'https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&w=1000&q=85',
+      'https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&w=1000&q=85',
+    ],
+  },
+  {
+    id: 2,
+    name: 'iPhone 18 Pro',
+    reference: 'ENOTIK-IPH18P-002',
+    category: 'Smartphones',
+    oldPrice: 'CHF 1’479.–',
+    price: 'CHF 1’349.–',
+    priceNum: 1349,
+    image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=1000&q=85',
+    tag: 'Bestseller Suisse',
+    description: 'Une puissance technologique monumentale dans un format équilibré de 6.3 pouces. Capteur 48 MP nouvelle génération, puce A20 Pro et autonomie record.',
+    specs: 'Écran 6.3" ProMotion 120Hz · Puce A20 Pro · Châssis Titane brossé · ProRes 4K 120fps · Autonomie 27h',
+    storages: ['128 Go', '256 Go', '512 Go', '1 To'],
+    colors: [
+      { name: 'Titane Noir Sidéral', hex: '#1E1F22', image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=1000&q=85' },
+      { name: 'Titane Naturel', hex: '#B8B3AB', image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1000&q=85' },
+      { name: 'Titane Blanc Pur', hex: '#F2F1ED', image: 'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=1000&q=85' },
+      { name: 'Titane Or Désert', hex: '#D5C4B1', image: 'https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=1000&q=85' },
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=1000&q=85',
+      'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1000&q=85',
+      'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=1000&q=85',
+      'https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=1000&q=85',
+    ],
+  },
+  {
+    id: 3,
+    name: 'iPhone 18',
+    reference: 'ENOTIK-IPH18-003',
+    category: 'Smartphones',
+    oldPrice: 'CHF 1’099.–',
+    price: 'CHF 999.–',
+    priceNum: 999,
+    image: 'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=1000&q=85',
+    tag: 'Nouveau',
+    description: 'Une palette de couleurs raffinée avec un dos en verre teinté et un contour en aluminium aérospatial brossé. Puce A20 ultra-rapide avec bouton Action.',
+    specs: 'Écran 6.1" OLED Super Retina XDR · Puce A20 Bionic · Double capteur Fusion 48 MP · Dynamic Island',
+    storages: ['128 Go', '256 Go', '512 Go'],
+    colors: [
+      { name: 'Bleu Brume', hex: '#7C96AB', image: 'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=1000&q=85' },
+      { name: 'Vert Sauge', hex: '#8FA38D', image: 'https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?auto=format&fit=crop&w=1000&q=85' },
+      { name: 'Rose Poudré', hex: '#E2B6BF', image: 'https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=1000&q=85' },
+      { name: 'Blanc Stellaire', hex: '#F7F7F7', image: 'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=1000&q=85' },
+      { name: 'Noir Minuit', hex: '#1F2022', image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=85' },
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=1000&q=85',
+      'https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?auto=format&fit=crop&w=1000&q=85',
+      'https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=1000&q=85',
+      'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=1000&q=85',
+      'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=85',
+    ],
+  },
+  {
+    id: 4,
+    name: 'iPhone 18 Plus',
+    reference: 'ENOTIK-IPH18PLS-004',
+    category: 'Smartphones',
+    oldPrice: 'CHF 1’229.–',
+    price: 'CHF 1’099.–',
+    priceNum: 1099,
+    image: 'https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?auto=format&fit=crop&w=1000&q=85',
+    tag: 'Autonomie 32h',
+    description: 'Immense dalle 6.7" Super Retina et autonomie record de 32 heures. Conçu pour les utilisateurs nomades exigeants avec Apple Intelligence.',
+    specs: 'Écran 6.7" Super Retina XDR · Puce A20 Bionic · Autonomie jusqu’à 32h · Étanchéité IP68 · Poids plume aluminium',
+    storages: ['128 Go', '256 Go', '512 Go'],
+    colors: [
+      { name: 'Vert Sauge', hex: '#8FA38D', image: 'https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?auto=format&fit=crop&w=1000&q=85' },
+      { name: 'Bleu Brume', hex: '#7C96AB', image: 'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=1000&q=85' },
+      { name: 'Noir Minuit', hex: '#1F2022', image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=85' },
+      { name: 'Blanc Stellaire', hex: '#F7F7F7', image: 'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=1000&q=85' },
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?auto=format&fit=crop&w=1000&q=85',
+      'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=1000&q=85',
+      'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=85',
+      'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=1000&q=85',
+    ],
+  },
+  {
+    id: 5,
+    name: 'Sony WH-1000XM6',
+    reference: 'ENOTIK-SNYXM6-005',
+    category: 'Audio & TV',
+    oldPrice: 'CHF 449.–',
+    price: 'CHF 399.–',
+    priceNum: 399,
+    image: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=900&q=85',
+    tag: 'Bestseller',
+    description: 'Référence mondiale en réduction de bruit active avec processeur IA.',
+    specs: 'Autonomie 35h · Bluetooth 5.4 · Hi-Res Audio LDAC · Confort supérieur',
+    colors: [
+      { name: 'Noir Carbone', hex: '#1A1A1A', image: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=900&q=85' },
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=900&q=85',
+    ],
+  },
+  {
+    id: 6,
+    name: 'MacBook Air M4',
+    reference: 'ENOTIK-MBA-M4-006',
+    category: 'Informatique',
+    oldPrice: 'CHF 1’199.–',
+    price: 'CHF 1’099.–',
+    priceNum: 1099,
+    image: 'https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=900&q=85',
+    tag: 'Nouveau',
+    description: 'Puce M4 ultra-performante dans un boîtier tout aluminium de 1.2 kg.',
+    specs: '16 Go RAM · SSD 512 Go · Écran Retina 13.6" · Clavier suisse QWERTZ',
+    colors: [
+      { name: 'Minuit Sidéral', hex: '#1F2430', image: 'https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=900&q=85' },
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=900&q=85',
+    ],
+  },
+  {
+    id: 7,
+    name: 'Dyson Airwrap Multi-Styler',
+    reference: 'ENOTIK-DYS-AW-007',
+    category: 'Électroménager',
+    oldPrice: 'CHF 529.–',
+    price: 'CHF 449.–',
+    priceNum: 449,
+    image: 'https://images.unsplash.com/photo-1522338140262-f46f5913618a?auto=format&fit=crop&w=900&q=85',
+    tag: '−15%',
+    description: 'Coiffage professionnel sans chaleur extrême grâce à l’effet Coanda.',
+    specs: 'Moteur V9 110 000 tr/min · Contrôle thermique intelligent',
+    colors: [
+      { name: 'Cuivre & Nickel', hex: '#B87333', image: 'https://images.unsplash.com/photo-1522338140262-f46f5913618a?auto=format&fit=crop&w=900&q=85' },
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1522338140262-f46f5913618a?auto=format&fit=crop&w=900&q=85',
+    ],
+  },
 ]
 
 const categories = [
-  { label: 'Smartphones', sub: 'Apple, Samsung, Google', image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1100&q=85' },
+  { label: 'Smartphones', sub: 'iPhone 18 Pro, Plus, Apple', image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1100&q=85' },
   { label: 'Audio & TV', sub: 'Écouter. Regarder. Vibrer.', image: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=1100&q=85' },
   { label: 'Informatique', sub: 'Le travail, en mieux.', image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1100&q=85' },
   { label: 'Électroménager', sub: 'Le beau, au quotidien.', image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1100&q=85' },
@@ -56,6 +235,15 @@ export default function Page() {
   const [userEmail, setUserEmail] = useState<string | null>(null)
   const [loginInput, setLoginInput] = useState('')
   const [checkoutSuccess, setCheckoutSuccess] = useState(false)
+
+  // Color selection state per product id
+  const [selectedProductColors, setSelectedProductColors] = useState<Record<number, ProductColor>>({})
+
+  // Quick View / Full Gallery Modal State
+  const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null)
+  const [quickViewSelectedColor, setQuickViewSelectedColor] = useState<ProductColor | null>(null)
+  const [quickViewSelectedImage, setQuickViewSelectedImage] = useState<string>('')
+  const [quickViewSelectedStorage, setQuickViewSelectedStorage] = useState<string>('256 Go')
 
   const [menuOpen, setMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
@@ -84,26 +272,48 @@ export default function Page() {
     setToastMessage(msg)
     setTimeout(() => {
       setToastMessage(null)
-    }, 3000)
+    }, 3200)
   }
 
-  function addToCart(product: Product) {
+  function openQuickView(product: Product) {
+    const activeColor = selectedProductColors[product.id] || product.colors?.[0] || null
+    setQuickViewProduct(product)
+    setQuickViewSelectedColor(activeColor)
+    setQuickViewSelectedImage(activeColor?.image || product.image)
+    setQuickViewSelectedStorage(product.storages?.[0] || '256 Go')
+  }
+
+  function addToCart(product: Product, overrideColor?: ProductColor, overrideStorage?: string) {
+    const colorToUse = overrideColor || selectedProductColors[product.id] || product.colors?.[0]
+    const storageToUse = overrideStorage || product.storages?.[0] || '256 Go'
+    const key = `${product.id}-${colorToUse?.name || 'default'}-${storageToUse}`
+
     setCartItems((prev) => {
-      const existing = prev.find((item) => item.product.id === product.id)
+      const existing = prev.find((item) => item.itemKey === key)
       if (existing) {
-        return prev.map((item) => (item.product.id === product.id ? { ...item, quantity: item.quantity + 1 } : item))
+        return prev.map((item) => (item.itemKey === key ? { ...item, quantity: item.quantity + 1 } : item))
       }
-      return [...prev, { product, quantity: 1 }]
+      return [
+        ...prev,
+        {
+          itemKey: key,
+          product,
+          quantity: 1,
+          selectedColor: colorToUse?.name,
+          selectedColorImage: colorToUse?.image,
+          selectedStorage: storageToUse,
+        },
+      ]
     })
     setCheckoutSuccess(false)
-    showToast(`« ${product.name} » ajouté au panier`)
+    showToast(`« ${product.name} (${colorToUse?.name || ''}) » ajouté au panier`)
   }
 
-  function updateQuantity(productId: number, delta: number) {
+  function updateQuantity(itemKey: string, delta: number) {
     setCartItems((prev) => {
       return prev
         .map((item) => {
-          if (item.product.id === productId) {
+          if (item.itemKey === itemKey) {
             const nextQty = item.quantity + delta
             return nextQty > 0 ? { ...item, quantity: nextQty } : null
           }
@@ -113,8 +323,8 @@ export default function Page() {
     })
   }
 
-  function removeFromCart(productId: number) {
-    setCartItems((prev) => prev.filter((item) => item.product.id !== productId))
+  function removeFromCart(itemKey: string) {
+    setCartItems((prev) => prev.filter((item) => item.itemKey !== itemKey))
   }
 
   function handleCheckout() {
@@ -393,41 +603,100 @@ export default function Page() {
           </div>
 
           {/* Product Grid */}
-          <div className="grid grid-cols-2 gap-x-4 gap-y-10 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-12 lg:grid-cols-4">
             {filtered.map((product) => {
               const isLiked = liked.includes(product.id)
+              const activeColor = selectedProductColors[product.id] || product.colors?.[0]
+              const displayImage = activeColor?.image || product.image
+
               return (
-                <article key={product.id} className="group">
-                  <div className="relative mb-4 aspect-[0.82] overflow-hidden rounded-[3px] bg-[#222]">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="size-full object-cover transition duration-700 group-hover:scale-105"
-                    />
-                    <span className="absolute left-3 top-3 rounded-[2px] bg-[#DA291C] px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-white shadow">
-                      {product.tag}
-                    </span>
-                    <button
-                      aria-label={`Ajouter ${product.name} aux favoris`}
-                      onClick={() => setLiked((prev) => (prev.includes(product.id) ? prev.filter((i) => i !== product.id) : [...prev, product.id]))}
-                      className={`absolute right-3 top-3 rounded-full p-2 transition hover:scale-110 shadow ${
-                        isLiked ? 'bg-[#DA291C] text-white' : 'bg-white/90 text-[#151515] hover:bg-white'
-                      }`}
-                      title={isLiked ? 'Retirer des favoris' : 'Ajouter aux favoris'}
+                <article key={product.id} className="group flex flex-col justify-between">
+                  <div>
+                    <div className="relative mb-3 aspect-[0.82] overflow-hidden rounded-[4px] bg-[#1c1c1e] shadow-md border border-white/5">
+                      <img
+                        src={displayImage}
+                        alt={product.name}
+                        onClick={() => openQuickView(product)}
+                        className="size-full object-cover transition duration-700 group-hover:scale-105 cursor-pointer"
+                      />
+
+                      {/* Tag */}
+                      <span className="absolute left-3 top-3 rounded-[2px] bg-[#DA291C] px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-white shadow-sm">
+                        {product.tag}
+                      </span>
+
+                      {/* Like button */}
+                      <button
+                        aria-label={`Ajouter ${product.name} aux favoris`}
+                        onClick={() => setLiked((prev) => (prev.includes(product.id) ? prev.filter((i) => i !== product.id) : [...prev, product.id]))}
+                        className={`absolute right-3 top-3 rounded-full p-2 transition hover:scale-110 shadow ${
+                          isLiked ? 'bg-[#DA291C] text-white' : 'bg-white/90 text-[#151515] hover:bg-white'
+                        }`}
+                        title={isLiked ? 'Retirer des favoris' : 'Ajouter aux favoris'}
+                      >
+                        {isLiked ? <Check size={14} /> : <Heart size={14} strokeWidth={1.8} />}
+                      </button>
+
+                      {/* Quick View Button */}
+                      <button
+                        onClick={() => openQuickView(product)}
+                        className="absolute left-3 bottom-14 flex items-center gap-1.5 rounded-[2px] bg-black/80 backdrop-blur-md px-2.5 py-1 text-[10px] font-bold text-white transition hover:bg-[#DA291C] opacity-0 group-hover:opacity-100 shadow-md"
+                        title="Ouvrir la galerie et les spécifications"
+                      >
+                        <Eye size={12} strokeWidth={2.2} />
+                        <span>Galerie & Couleurs</span>
+                      </button>
+
+                      {/* Direct Add to Cart Button */}
+                      <button
+                        onClick={() => addToCart(product, activeColor)}
+                        className="absolute bottom-3 left-3 right-3 translate-y-14 rounded-[2px] bg-[#DA291C] py-3 text-[11px] uppercase tracking-[0.14em] text-white font-bold transition duration-300 hover:bg-[#b91c1c] group-hover:translate-y-0 shadow-lg flex items-center justify-center gap-1.5"
+                      >
+                        <ShoppingBag size={13} />
+                        <span>Ajouter au panier</span>
+                      </button>
+                    </div>
+
+                    <p className="mb-1 text-[10px] uppercase tracking-[0.14em] text-white/50">{product.category}</p>
+                    <h3
+                      onClick={() => openQuickView(product)}
+                      className="text-sm font-bold text-white hover:text-[#DA291C] transition cursor-pointer"
                     >
-                      {isLiked ? <Check size={15} /> : <Heart size={15} strokeWidth={1.8} />}
-                    </button>
-                    <button
-                      onClick={() => addToCart(product)}
-                      className="absolute bottom-3 left-3 right-3 translate-y-14 rounded-[2px] bg-[#DA291C] py-3 text-[11px] uppercase tracking-[0.14em] text-white font-bold transition duration-300 hover:bg-[#b91c1c] group-hover:translate-y-0 shadow-lg"
-                    >
-                      Ajouter au panier
-                    </button>
+                      {product.name}
+                    </h3>
+
+                    {/* Color Swatches */}
+                    {product.colors && product.colors.length > 0 && (
+                      <div className="mt-2.5 flex items-center gap-1.5 flex-wrap">
+                        {product.colors.map((c) => {
+                          const isSelected = activeColor?.name === c.name
+                          return (
+                            <button
+                              key={c.name}
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                setSelectedProductColors((prev) => ({ ...prev, [product.id]: c }))
+                              }}
+                              title={c.name}
+                              className={`size-4 rounded-full border transition-all ${
+                                isSelected
+                                  ? 'ring-2 ring-[#DA291C] ring-offset-1 ring-offset-[#151515] scale-110 border-white'
+                                  : 'border-white/20 hover:scale-110 opacity-70 hover:opacity-100'
+                              }`}
+                              style={{ backgroundColor: c.hex }}
+                            />
+                          )
+                        })}
+                        <span className="text-[10px] text-white/50 ml-1 truncate">
+                          {activeColor ? activeColor.name : ''}
+                        </span>
+                      </div>
+                    )}
+
+                    <p className="mt-1 text-[10px] text-white/45">Réf. {product.reference}</p>
                   </div>
-                  <p className="mb-1 text-[10px] uppercase tracking-[0.14em] text-white/50">{product.category}</p>
-                  <h3 className="text-sm font-semibold">{product.name}</h3>
-                  <p className="mt-1 text-[10px] text-white/45">Réf. {product.reference}</p>
-                  <div className="mt-2 flex items-baseline gap-2">
+
+                  <div className="mt-3 flex items-baseline gap-2">
                     <span className="text-xs text-white/45 line-through">{product.oldPrice}</span>
                     <span className="text-sm font-bold text-white">{product.price}</span>
                   </div>
@@ -620,34 +889,50 @@ export default function Page() {
                 </div>
               ) : (
                 <div className="space-y-4">
-                  {cartItems.map(({ product, quantity }) => (
-                    <div key={product.id} className="flex gap-4 border-b border-[#151515]/10 pb-4">
-                      <img src={product.image} alt={product.name} className="size-20 rounded bg-[#e4e2dc] object-cover" />
-                      <div className="flex flex-1 flex-col justify-between">
-                        <div className="flex justify-between">
-                          <div>
-                            <h4 className="text-sm font-semibold">{product.name}</h4>
-                            <p className="text-[10px] text-[#151515]/50">{product.reference}</p>
-                          </div>
-                          <button onClick={() => removeFromCart(product.id)} className="text-[#151515]/40 hover:text-[#DA291C]" aria-label="Supprimer">
-                            <Trash2 size={16} />
-                          </button>
-                        </div>
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center border border-[#151515]/20 rounded bg-white">
-                            <button onClick={() => updateQuantity(product.id, -1)} className="px-2 py-1 text-xs hover:bg-[#151515]/5">
-                              <Minus size={12} />
+                  {cartItems.map((item) => {
+                    const { product, quantity, itemKey, selectedColor, selectedColorImage, selectedStorage } = item
+                    return (
+                      <div key={itemKey} className="flex gap-4 border-b border-[#151515]/10 pb-4">
+                        <img
+                          src={selectedColorImage || product.image}
+                          alt={product.name}
+                          className="size-20 rounded bg-[#1c1c1e] object-cover border border-[#151515]/10"
+                        />
+                        <div className="flex flex-1 flex-col justify-between">
+                          <div className="flex justify-between items-start">
+                            <div>
+                              <h4 className="text-sm font-bold text-[#151515]">{product.name}</h4>
+                              {(selectedColor || selectedStorage) && (
+                                <p className="text-[11px] font-semibold text-[#DA291C]">
+                                  {[selectedColor, selectedStorage].filter(Boolean).join(' · ')}
+                                </p>
+                              )}
+                              <p className="text-[10px] text-[#151515]/50">{product.reference}</p>
+                            </div>
+                            <button
+                              onClick={() => removeFromCart(itemKey)}
+                              className="text-[#151515]/40 hover:text-[#DA291C] p-1 transition"
+                              aria-label="Supprimer"
+                            >
+                              <Trash2 size={16} />
                             </button>
-                            <span className="px-2 text-xs font-semibold">{quantity}</span>
-                            <button onClick={() => updateQuantity(product.id, 1)} className="px-2 py-1 text-xs hover:bg-[#151515]/5">
-                              <Plus size={12} />
-                            </button>
                           </div>
-                          <span className="text-sm font-bold text-[#DA291C]">CHF {(product.priceNum * quantity).toLocaleString('fr-CH')}.–</span>
+                          <div className="flex items-center justify-between mt-2">
+                            <div className="flex items-center border border-[#151515]/20 rounded bg-white">
+                              <button onClick={() => updateQuantity(itemKey, -1)} className="px-2 py-1 text-xs hover:bg-[#151515]/5">
+                                <Minus size={12} />
+                              </button>
+                              <span className="px-2 text-xs font-bold">{quantity}</span>
+                              <button onClick={() => updateQuantity(itemKey, 1)} className="px-2 py-1 text-xs hover:bg-[#151515]/5">
+                                <Plus size={12} />
+                              </button>
+                            </div>
+                            <span className="text-sm font-bold text-[#DA291C]">CHF {(product.priceNum * quantity).toLocaleString('fr-CH')}.–</span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    )
+                  })}
                 </div>
               )}
             </div>
@@ -656,7 +941,7 @@ export default function Page() {
             {cartItems.length > 0 && !checkoutSuccess && (
               <div className="border-t border-[#151515]/15 pt-4">
                 <div className="mb-2 flex justify-between text-xs text-[#151515]/70">
-                  <span className="flex items-center gap-1">🇨🇭 Livraison en Suisse</span>
+                  <span className="flex items-center gap-1 font-medium">🇨🇭 Livraison en Suisse</span>
                   <span className="font-semibold text-emerald-800">Offerte (dès CHF 80)</span>
                 </div>
                 <div className="mb-4 flex justify-between text-base font-bold">
@@ -746,6 +1031,224 @@ export default function Page() {
                 </button>
               </form>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* Quick View & Full Gallery Modal */}
+      {quickViewProduct && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+          {/* Backdrop */}
+          <div onClick={() => setQuickViewProduct(null)} className="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity" />
+
+          {/* Modal Container */}
+          <div className="relative z-10 w-full max-w-4xl rounded-lg bg-white shadow-2xl border border-[#DA291C]/30 overflow-hidden my-auto max-h-[92vh] flex flex-col">
+            {/* Modal Header */}
+            <div className="flex items-center justify-between border-b border-neutral-200 px-6 py-4 bg-neutral-50">
+              <div className="flex items-center gap-2.5">
+                <span className="flex size-6 items-center justify-center rounded-[3px] bg-[#DA291C] text-xs font-bold text-white shadow-sm">✚</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-[#DA291C]">
+                  🇨🇭 Galerie & Spécifications Officielles Suisse
+                </span>
+              </div>
+              <button
+                onClick={() => setQuickViewProduct(null)}
+                className="rounded-full p-1.5 text-neutral-500 hover:bg-neutral-200 hover:text-black transition"
+                aria-label="Fermer"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Modal Content Grid */}
+            <div className="overflow-y-auto p-6 grid gap-8 lg:grid-cols-2">
+              {/* Left: Gallery & Zoom */}
+              <div className="flex flex-col gap-4">
+                <div className="relative aspect-[0.95] overflow-hidden rounded-lg bg-neutral-900 border border-neutral-200 shadow-inner group">
+                  <img
+                    src={quickViewSelectedImage}
+                    alt={quickViewProduct.name}
+                    className="size-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  {quickViewSelectedColor && (
+                    <span className="absolute bottom-3 left-3 rounded-full bg-black/75 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-white">
+                      Finition : {quickViewSelectedColor.name}
+                    </span>
+                  )}
+                  <span className="absolute top-3 right-3 rounded bg-[#DA291C] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow">
+                    {quickViewProduct.tag}
+                  </span>
+                </div>
+
+                {/* Thumbnails Gallery */}
+                {quickViewProduct.gallery && quickViewProduct.gallery.length > 0 && (
+                  <div>
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-neutral-500 mb-2">
+                      Galerie d&apos;images haute résolution ({quickViewProduct.gallery.length} vues) :
+                    </p>
+                    <div className="grid grid-cols-5 gap-2">
+                      {quickViewProduct.gallery.map((imgUrl, idx) => {
+                        const isActive = quickViewSelectedImage === imgUrl
+                        return (
+                          <button
+                            key={idx}
+                            onClick={() => setQuickViewSelectedImage(imgUrl)}
+                            className={`relative aspect-square overflow-hidden rounded border-2 transition ${
+                              isActive
+                                ? 'border-[#DA291C] ring-2 ring-[#DA291C]/30 scale-105 shadow-md'
+                                : 'border-neutral-200 hover:border-neutral-400 opacity-80 hover:opacity-100'
+                            }`}
+                          >
+                            <img src={imgUrl} alt={`Vue ${idx + 1}`} className="size-full object-cover" />
+                          </button>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Right: Info, Colors, Storage, Price & Add */}
+              <div className="flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="rounded-full bg-neutral-100 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-neutral-600">
+                      {quickViewProduct.category}
+                    </span>
+                    <span className="text-[11px] text-neutral-400">Réf. {quickViewProduct.reference}</span>
+                  </div>
+
+                  <h3 className="font-serif text-3xl font-bold text-[#151515] leading-tight">
+                    {quickViewProduct.name}
+                  </h3>
+
+                  {/* Price section */}
+                  <div className="mt-3 flex items-baseline gap-3">
+                    <span className="text-2xl font-black text-[#DA291C]">
+                      {quickViewProduct.price}
+                    </span>
+                    <span className="text-sm text-neutral-400 line-through">
+                      {quickViewProduct.oldPrice}
+                    </span>
+                    <span className="rounded bg-emerald-100 px-2 py-0.5 text-[11px] font-bold text-emerald-800">
+                      TVA Suisse 8.1% incluse
+                    </span>
+                  </div>
+
+                  <p className="mt-4 text-xs leading-relaxed text-neutral-600 border-t border-neutral-100 pt-4">
+                    {quickViewProduct.description}
+                  </p>
+
+                  {/* Color Selector */}
+                  {quickViewProduct.colors && quickViewProduct.colors.length > 0 && (
+                    <div className="mt-6">
+                      <div className="flex items-center justify-between mb-2">
+                        <label className="text-[11px] font-bold uppercase tracking-wider text-neutral-700">
+                          Couleur sélectionnée : <span className="text-[#DA291C]">{quickViewSelectedColor?.name}</span>
+                        </label>
+                        <span className="text-[10px] text-neutral-400">{quickViewProduct.colors.length} finitions</span>
+                      </div>
+                      <div className="flex items-center gap-2.5 flex-wrap">
+                        {quickViewProduct.colors.map((c) => {
+                          const isSelected = quickViewSelectedColor?.name === c.name
+                          return (
+                            <button
+                              key={c.name}
+                              onClick={() => {
+                                setQuickViewSelectedColor(c)
+                                setQuickViewSelectedImage(c.image)
+                                setSelectedProductColors((prev) => ({ ...prev, [quickViewProduct.id]: c }))
+                              }}
+                              className={`flex items-center gap-2 rounded-full border px-3 py-1.5 transition ${
+                                isSelected
+                                  ? 'border-[#DA291C] bg-[#FEF2F2] ring-2 ring-[#DA291C]/30 shadow-sm'
+                                  : 'border-neutral-200 hover:border-neutral-400 bg-white'
+                              }`}
+                            >
+                              <span
+                                className="size-3.5 rounded-full border border-black/20 shadow-inner"
+                                style={{ backgroundColor: c.hex }}
+                              />
+                              <span className={`text-xs ${isSelected ? 'font-bold text-[#DA291C]' : 'text-neutral-700'}`}>
+                                {c.name}
+                              </span>
+                            </button>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Storage Selector */}
+                  {quickViewProduct.storages && quickViewProduct.storages.length > 0 && (
+                    <div className="mt-5">
+                      <label className="block text-[11px] font-bold uppercase tracking-wider text-neutral-700 mb-2">
+                        Capacité de stockage : <span className="text-[#DA291C]">{quickViewSelectedStorage}</span>
+                      </label>
+                      <div className="grid grid-cols-4 gap-2">
+                        {quickViewProduct.storages.map((storage) => {
+                          const isSelected = quickViewSelectedStorage === storage
+                          return (
+                            <button
+                              key={storage}
+                              onClick={() => setQuickViewSelectedStorage(storage)}
+                              className={`rounded py-2 text-xs text-center font-bold transition border ${
+                                isSelected
+                                  ? 'border-[#DA291C] bg-[#DA291C] text-white shadow-sm'
+                                  : 'border-neutral-200 text-neutral-700 hover:border-neutral-400 bg-white'
+                              }`}
+                            >
+                              {storage}
+                            </button>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Technical Specs Summary */}
+                  {quickViewProduct.specs && (
+                    <div className="mt-5 rounded border border-neutral-200 p-3 bg-neutral-50/50">
+                      <p className="text-[10px] font-bold uppercase tracking-wider text-neutral-500 mb-1">Fiche technique</p>
+                      <p className="text-xs text-neutral-700 font-medium">{quickViewProduct.specs}</p>
+                    </div>
+                  )}
+
+                  {/* Swiss Quality Checklist */}
+                  <div className="mt-5 rounded-md bg-neutral-50 p-3.5 border border-neutral-200 space-y-2 text-[11px] text-neutral-600">
+                    <div className="flex items-center gap-2 text-emerald-800 font-semibold">
+                      <Check size={14} strokeWidth={2.5} />
+                      <span>En stock à Lausanne · Expédition 24h avec La Poste Suisse</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <ShieldCheck size={14} className="text-[#DA291C]" />
+                      <span>Garantie 2 ans en Suisse (Apple & E-NOTIK)</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Truck size={14} className="text-[#DA291C]" />
+                      <span>Livraison offerte & paiement sécurisé par TWINT</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Action Button */}
+                <div className="mt-6 border-t border-neutral-200 pt-4">
+                  <button
+                    onClick={() => {
+                      addToCart(quickViewProduct, quickViewSelectedColor || undefined, quickViewSelectedStorage)
+                      setQuickViewProduct(null)
+                      setCartOpen(true)
+                    }}
+                    className="w-full rounded bg-[#DA291C] py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-white transition hover:bg-[#b91c1c] shadow-lg flex items-center justify-center gap-2"
+                  >
+                    <ShoppingBag size={16} />
+                    <span>
+                      Ajouter au panier · {quickViewSelectedColor?.name || ''} · {quickViewSelectedStorage}
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}
