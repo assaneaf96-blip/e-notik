@@ -51,6 +51,8 @@ export interface CartItem {
   selectedColor?: string
   selectedColorImage?: string
   selectedStorage?: string
+  unitPriceNum?: number
+  unitPrice?: string
 }
 
 const products: Product[] = [
@@ -492,6 +494,55 @@ const categories = [
   { label: 'Électroménager', sub: 'Le beau, au quotidien.', image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1100&q=85' },
 ]
 
+export function getProductBaseStorage(p: Product): string {
+  if (p.specs && (p.specs.includes('512 Go') || p.specs.includes('512\u00a0Go'))) return '512 Go'
+  if (p.specs && (p.specs.includes('128 Go') || p.specs.includes('128\u00a0Go'))) return '128 Go'
+  if (p.storages && p.storages.length > 0) {
+    if (p.storages.includes('256 Go')) return '256 Go'
+    return p.storages[0]
+  }
+  return '256 Go'
+}
+
+const STORAGE_OFFSETS: Record<string, { discounted: number; original: number }> = {
+  '128 Go': { discounted: 0, original: 0 },
+  '256 Go': { discounted: 84, original: 120 },
+  '512 Go': { discounted: 252, original: 360 },
+  '1 To': { discounted: 420, original: 600 },
+  '2 To': { discounted: 756, original: 1080 },
+}
+
+export function getStoragePricing(p: Product, storage?: string) {
+  if (!p.storages || p.storages.length === 0 || !storage) {
+    return {
+      priceNum: p.priceNum,
+      price: p.price,
+      oldPrice: p.oldPrice || '',
+      diff: 0,
+    }
+  }
+
+  const base = getProductBaseStorage(p)
+  const baseOff = STORAGE_OFFSETS[base] || STORAGE_OFFSETS['256 Go']
+  const selOff = STORAGE_OFFSETS[storage] || baseOff
+
+  const diffDiscounted = selOff.discounted - baseOff.discounted
+  const diffOriginal = selOff.original - baseOff.original
+
+  const priceNum = Math.max(99, p.priceNum + diffDiscounted)
+  const oldPriceNumBase = p.oldPrice
+    ? parseInt(p.oldPrice.replace(/[^0-9]/g, ''), 10)
+    : Math.round(p.priceNum * 1.4)
+  const oldPriceNum = Math.max(priceNum + 50, oldPriceNumBase + diffOriginal)
+
+  return {
+    priceNum,
+    price: `CHF ${priceNum.toLocaleString('fr-CH')}.–`,
+    oldPrice: `CHF ${oldPriceNum.toLocaleString('fr-CH')}.–`,
+    diff: diffDiscounted,
+  }
+}
+
 export default function Page() {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
   const [cartOpen, setCartOpen] = useState(false)
@@ -522,7 +573,10 @@ export default function Page() {
   const [toastMessage, setToastMessage] = useState<string | null>(null)
 
   const totalCartCount = useMemo(() => cartItems.reduce((acc, item) => acc + item.quantity, 0), [cartItems])
-  const cartSubtotal = useMemo(() => cartItems.reduce((acc, item) => acc + item.product.priceNum * item.quantity, 0), [cartItems])
+  const cartSubtotal = useMemo(
+    () => cartItems.reduce((acc, item) => acc + (item.unitPriceNum ?? item.product.priceNum) * item.quantity, 0),
+    [cartItems]
+  )
 
   const filtered = useMemo(() => {
     return products.filter((p) => {
@@ -541,15 +595,17 @@ export default function Page() {
 
   function openQuickView(product: Product) {
     const activeColor = selectedProductColors[product.id] || product.colors?.[0] || null
+    const initialStorage = product.storages?.[0] || getProductBaseStorage(product)
     setQuickViewProduct(product)
     setQuickViewSelectedColor(activeColor)
     setQuickViewSelectedImage(activeColor?.image || product.image)
-    setQuickViewSelectedStorage(product.storages?.[0] || '256 Go')
+    setQuickViewSelectedStorage(initialStorage)
   }
 
   function addToCart(product: Product, overrideColor?: ProductColor, overrideStorage?: string) {
     const colorToUse = overrideColor || selectedProductColors[product.id] || product.colors?.[0]
-    const storageToUse = overrideStorage || product.storages?.[0] || '256 Go'
+    const storageToUse = overrideStorage || product.storages?.[0] || getProductBaseStorage(product)
+    const pricing = getStoragePricing(product, storageToUse)
     const key = `${product.id}-${colorToUse?.name || 'default'}-${storageToUse}`
 
     setCartItems((prev) => {
@@ -566,11 +622,14 @@ export default function Page() {
           selectedColor: colorToUse?.name,
           selectedColorImage: colorToUse?.image,
           selectedStorage: storageToUse,
+          unitPriceNum: pricing.priceNum,
+          unitPrice: pricing.price,
         },
       ]
     })
     setCheckoutSuccess(false)
-    showToast(`« ${product.name} (${colorToUse?.name || ''}) » ajouté au panier`)
+    const variantDesc = [colorToUse?.name, storageToUse].filter(Boolean).join(' · ')
+    showToast(`« ${product.name}${variantDesc ? ` (${variantDesc})` : ''} » ajouté au panier`)
   }
 
   function updateQuantity(itemKey: string, delta: number) {
@@ -964,7 +1023,7 @@ export default function Page() {
                     <span className="text-xs text-white/45 line-through">{product.oldPrice}</span>
                     <span className="text-sm font-bold text-white">{product.price}</span>
                     <span className="rounded bg-[#DA291C] px-1.5 py-0.5 text-[9px] font-black text-white shadow-sm">
-                      −40%
+                      {product.tag.includes('−') ? product.tag.split(' ')[0] : product.tag}
                     </span>
                   </div>
                 </article>
@@ -1194,7 +1253,9 @@ export default function Page() {
                                 <Plus size={12} />
                               </button>
                             </div>
-                            <span className="text-sm font-bold text-[#DA291C]">CHF {(product.priceNum * quantity).toLocaleString('fr-CH')}.–</span>
+                            <span className="text-sm font-bold text-[#DA291C]">
+                              CHF {(((item.unitPriceNum ?? product.priceNum)) * quantity).toLocaleString('fr-CH')}.–
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -1389,24 +1450,33 @@ export default function Page() {
                     {quickViewProduct.name}
                   </h3>
 
-                  {/* Price section */}
-                  <div className="mt-3 flex items-baseline gap-3 flex-wrap">
-                    <span className="text-2xl font-black text-[#DA291C]">
-                      {quickViewProduct.price}
-                    </span>
-                    <span className="text-sm text-neutral-400 line-through">
-                      {quickViewProduct.oldPrice}
-                    </span>
-                    <span className="rounded bg-[#DA291C] px-2 py-0.5 text-xs font-bold text-white shadow-sm">
-                      −40% Promo E-NOTIK
-                    </span>
-                    <span className="rounded bg-emerald-100 px-2 py-0.5 text-[11px] font-bold text-emerald-800">
-                      TVA 8.1% incluse
-                    </span>
-                  </div>
-                  <p className="mt-1 text-[11px] text-emerald-700 font-semibold">
-                    ✓ Meilleur tarif de Suisse garanti (vs Digitec, MediaMarkt, Interdiscount, Fnac, Swisscom)
-                  </p>
+                  {/* Price section with reactive storage pricing */}
+                  {(() => {
+                    const currentPricing = getStoragePricing(quickViewProduct, quickViewSelectedStorage)
+                    return (
+                      <>
+                        <div className="mt-3 flex items-baseline gap-3 flex-wrap">
+                          <span className="text-3xl font-black text-[#DA291C] transition-all">
+                            {currentPricing.price}
+                          </span>
+                          {currentPricing.oldPrice && (
+                            <span className="text-sm text-neutral-400 line-through transition-all">
+                              {currentPricing.oldPrice}
+                            </span>
+                          )}
+                          <span className="rounded bg-[#DA291C] px-2 py-0.5 text-xs font-bold text-white shadow-sm">
+                            {quickViewProduct.tag || '−30% Digitec'}
+                          </span>
+                          <span className="rounded bg-emerald-100 px-2 py-0.5 text-[11px] font-bold text-emerald-800">
+                            TVA 8.1% incluse
+                          </span>
+                        </div>
+                        <p className="mt-1 text-[11px] text-emerald-700 font-semibold">
+                          ✓ Tarif officiel Suisse garanti avec réduction immédiate de −30%
+                        </p>
+                      </>
+                    )
+                  })()}
 
                   <p className="mt-4 text-xs leading-relaxed text-neutral-600 border-t border-neutral-100 pt-4">
                     {quickViewProduct.description}
@@ -1417,7 +1487,7 @@ export default function Page() {
                     <div className="mt-6">
                       <div className="flex items-center justify-between mb-2">
                         <label className="text-[11px] font-bold uppercase tracking-wider text-neutral-700">
-                          Couleur sélectionnée : <span className="text-[#DA291C]">{quickViewSelectedColor?.name}</span>
+                          Couleur sélectionnée : <span className="text-[#DA291C] font-bold">{quickViewSelectedColor?.name}</span>
                         </label>
                         <span className="text-[10px] text-neutral-400">{quickViewProduct.colors.length} finitions</span>
                       </div>
@@ -1432,7 +1502,7 @@ export default function Page() {
                                 setQuickViewSelectedImage(c.image)
                                 setSelectedProductColors((prev) => ({ ...prev, [quickViewProduct.id]: c }))
                               }}
-                              className={`flex items-center gap-2 rounded-full border px-3 py-1.5 transition ${
+                              className={`flex items-center gap-2 rounded-full border px-3 py-1.5 transition cursor-pointer ${
                                 isSelected
                                   ? 'border-[#DA291C] bg-[#FEF2F2] ring-2 ring-[#DA291C]/30 shadow-sm'
                                   : 'border-neutral-200 hover:border-neutral-400 bg-white'
@@ -1452,26 +1522,35 @@ export default function Page() {
                     </div>
                   )}
 
-                  {/* Storage Selector */}
+                  {/* Storage Selector with Dynamic Price per Option */}
                   {quickViewProduct.storages && quickViewProduct.storages.length > 0 && (
                     <div className="mt-5">
-                      <label className="block text-[11px] font-bold uppercase tracking-wider text-neutral-700 mb-2">
-                        Capacité de stockage : <span className="text-[#DA291C]">{quickViewSelectedStorage}</span>
-                      </label>
+                      <div className="flex items-center justify-between mb-2">
+                        <label className="text-[11px] font-bold uppercase tracking-wider text-neutral-700">
+                          Capacité de stockage : <span className="text-[#DA291C] font-black">{quickViewSelectedStorage}</span>
+                        </label>
+                        <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                          {getStoragePricing(quickViewProduct, quickViewSelectedStorage).price}
+                        </span>
+                      </div>
                       <div className="grid grid-cols-4 gap-2">
                         {quickViewProduct.storages.map((storage) => {
                           const isSelected = quickViewSelectedStorage === storage
+                          const optPricing = getStoragePricing(quickViewProduct, storage)
                           return (
                             <button
                               key={storage}
                               onClick={() => setQuickViewSelectedStorage(storage)}
-                              className={`rounded py-2 text-xs text-center font-bold transition border ${
+                              className={`rounded py-2.5 px-1.5 text-center transition border flex flex-col items-center justify-center gap-0.5 cursor-pointer ${
                                 isSelected
-                                  ? 'border-[#DA291C] bg-[#DA291C] text-white shadow-sm'
-                                  : 'border-neutral-200 text-neutral-700 hover:border-neutral-400 bg-white'
+                                  ? 'border-[#DA291C] bg-[#DA291C] text-white shadow-md ring-2 ring-[#DA291C]/30 scale-[1.02]'
+                                  : 'border-neutral-200 text-neutral-700 hover:border-[#DA291C]/60 bg-white hover:bg-neutral-50'
                               }`}
                             >
-                              {storage}
+                              <span className="text-xs font-bold">{storage}</span>
+                              <span className={`text-[10px] font-semibold ${isSelected ? 'text-white/95' : 'text-neutral-500'}`}>
+                                {optPricing.price}
+                              </span>
                             </button>
                           )
                         })}
@@ -1512,11 +1591,11 @@ export default function Page() {
                       setQuickViewProduct(null)
                       setCartOpen(true)
                     }}
-                    className="w-full rounded bg-[#DA291C] py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-white transition hover:bg-[#b91c1c] shadow-lg flex items-center justify-center gap-2"
+                    className="w-full rounded bg-[#DA291C] py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-white transition hover:bg-[#b91c1c] shadow-lg flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <ShoppingBag size={16} />
                     <span>
-                      Ajouter au panier · {quickViewSelectedColor?.name || ''} · {quickViewSelectedStorage}
+                      Ajouter au panier · {[quickViewSelectedColor?.name, quickViewSelectedStorage].filter(Boolean).join(' · ')} ({getStoragePricing(quickViewProduct, quickViewSelectedStorage).price})
                     </span>
                   </button>
                 </div>
