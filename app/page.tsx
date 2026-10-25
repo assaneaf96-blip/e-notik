@@ -62,24 +62,26 @@ const products: Product[] = [
     oldPrice: 'CHF 1’649.–',
     price: 'CHF 1’499.–',
     priceNum: 1499,
-    image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1000&q=85',
+    image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-max-naturaltitanium-select?wid=940&hei=1112&fmt=png-alpha',
     tag: 'Nouveauté 2026',
     description: 'Le fleuron absolu de la gamme Apple. Châssis en titane aérospatial poli miroir, nouvelle puce A20 Pro gravée en 2 nm, téléobjectif tétraprisme 10x et écran Super Retina XDR 6.9" 120Hz avec Dynamic Island avancée.',
     specs: 'Écran 6.9" ProMotion 120Hz · Puce A20 Pro 2nm · 48 Mpx Triple Caméra 10x · USB-C Thunderbolt 4 · Châssis Titane Grade 5',
     storages: ['256 Go', '512 Go', '1 To', '2 To'],
     colors: [
-      { name: 'Titane Naturel', hex: '#B8B3AB', image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1000&q=85' },
-      { name: 'Titane Noir Sidéral', hex: '#1E1F22', image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=1000&q=85' },
-      { name: 'Titane Blanc Pur', hex: '#F2F1ED', image: 'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=1000&q=85' },
-      { name: 'Titane Bleu Alpin', hex: '#38495A', image: 'https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&w=1000&q=85' },
-      { name: 'Édition Suisse Rouge', hex: '#DA291C', image: 'https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&w=1000&q=85' },
+      { name: 'Titane Naturel', hex: '#9C948B', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-max-naturaltitanium-select?wid=940&hei=1112&fmt=png-alpha' },
+      { name: 'Titane Noir Sidéral', hex: '#2E2E30', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-max-blacktitanium-select?wid=940&hei=1112&fmt=png-alpha' },
+      { name: 'Titane Blanc Pur', hex: '#E3E4E6', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-max-whitetitanium-select?wid=940&hei=1112&fmt=png-alpha' },
+      { name: 'Titane Or Désert', hex: '#C5B2A0', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-max-deserttitanium-select?wid=940&hei=1112&fmt=png-alpha' },
+      { name: 'Titane Bleu Alpin', hex: '#3B4E63', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-bluetitanium-select?wid=940&hei=1112&fmt=png-alpha' },
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&w=1000&q=85',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-max-naturaltitanium-select?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-max-blacktitanium-select?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-max-whitetitanium-select?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-max-deserttitanium-select?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-bluetitanium-select?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-model-unselect-gallery-1-202409?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-model-unselect-gallery-2-202409?wid=940&hei=1112&fmt=png-alpha',
     ],
   },
   {
@@ -90,22 +92,24 @@ const products: Product[] = [
     oldPrice: 'CHF 1’479.–',
     price: 'CHF 1’349.–',
     priceNum: 1349,
-    image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=1000&q=85',
+    image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-blacktitanium-select?wid=940&hei=1112&fmt=png-alpha',
     tag: 'Bestseller Suisse',
     description: 'Une puissance technologique monumentale dans un format équilibré de 6.3 pouces. Capteur 48 MP nouvelle génération, puce A20 Pro et autonomie record.',
     specs: 'Écran 6.3" ProMotion 120Hz · Puce A20 Pro · Châssis Titane brossé · ProRes 4K 120fps · Autonomie 27h',
     storages: ['128 Go', '256 Go', '512 Go', '1 To'],
     colors: [
-      { name: 'Titane Noir Sidéral', hex: '#1E1F22', image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=1000&q=85' },
-      { name: 'Titane Naturel', hex: '#B8B3AB', image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1000&q=85' },
-      { name: 'Titane Blanc Pur', hex: '#F2F1ED', image: 'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=1000&q=85' },
-      { name: 'Titane Or Désert', hex: '#D5C4B1', image: 'https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=1000&q=85' },
+      { name: 'Titane Noir Sidéral', hex: '#2E2E30', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-blacktitanium-select?wid=940&hei=1112&fmt=png-alpha' },
+      { name: 'Titane Naturel', hex: '#9C948B', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-naturaltitanium-select?wid=940&hei=1112&fmt=png-alpha' },
+      { name: 'Titane Blanc Pur', hex: '#E3E4E6', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-whitetitanium-select?wid=940&hei=1112&fmt=png-alpha' },
+      { name: 'Titane Or Désert', hex: '#C5B2A0', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-deserttitanium-select?wid=940&hei=1112&fmt=png-alpha' },
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=1000&q=85',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-blacktitanium-select?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-naturaltitanium-select?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-whitetitanium-select?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-deserttitanium-select?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-gallery-1?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-gallery-2?wid=940&hei=1112&fmt=png-alpha',
     ],
   },
   {
@@ -116,24 +120,26 @@ const products: Product[] = [
     oldPrice: 'CHF 1’099.–',
     price: 'CHF 999.–',
     priceNum: 999,
-    image: 'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=1000&q=85',
+    image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha',
     tag: 'Nouveau',
     description: 'Une palette de couleurs raffinée avec un dos en verre teinté et un contour en aluminium aérospatial brossé. Puce A20 ultra-rapide avec bouton Action.',
     specs: 'Écran 6.1" OLED Super Retina XDR · Puce A20 Bionic · Double capteur Fusion 48 MP · Dynamic Island',
     storages: ['128 Go', '256 Go', '512 Go'],
     colors: [
-      { name: 'Bleu Brume', hex: '#7C96AB', image: 'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=1000&q=85' },
-      { name: 'Vert Sauge', hex: '#8FA38D', image: 'https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?auto=format&fit=crop&w=1000&q=85' },
-      { name: 'Rose Poudré', hex: '#E2B6BF', image: 'https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=1000&q=85' },
-      { name: 'Blanc Stellaire', hex: '#F7F7F7', image: 'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=1000&q=85' },
-      { name: 'Noir Minuit', hex: '#1F2022', image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=85' },
+      { name: 'Bleu Outremer', hex: '#4F6B94', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha' },
+      { name: 'Vert Sarcelle', hex: '#6C9A8B', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha' },
+      { name: 'Rose Poudré', hex: '#E19AA8', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha' },
+      { name: 'Blanc Stellaire', hex: '#ECEAE7', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-white?wid=940&hei=1112&fmt=png-alpha' },
+      { name: 'Noir Minuit', hex: '#2E3033', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha' },
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=85',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-white?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-model-unselect-gallery-1-202409?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-model-unselect-gallery-2-202409?wid=940&hei=1112&fmt=png-alpha',
     ],
   },
   {
@@ -144,22 +150,26 @@ const products: Product[] = [
     oldPrice: 'CHF 1’229.–',
     price: 'CHF 1’099.–',
     priceNum: 1099,
-    image: 'https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?auto=format&fit=crop&w=1000&q=85',
+    image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-teal-select-202409?wid=940&hei=1112&fmt=png-alpha',
     tag: 'Autonomie 32h',
     description: 'Immense dalle 6.7" Super Retina et autonomie record de 32 heures. Conçu pour les utilisateurs nomades exigeants avec Apple Intelligence.',
     specs: 'Écran 6.7" Super Retina XDR · Puce A20 Bionic · Autonomie jusqu’à 32h · Étanchéité IP68 · Poids plume aluminium',
     storages: ['128 Go', '256 Go', '512 Go'],
     colors: [
-      { name: 'Vert Sauge', hex: '#8FA38D', image: 'https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?auto=format&fit=crop&w=1000&q=85' },
-      { name: 'Bleu Brume', hex: '#7C96AB', image: 'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=1000&q=85' },
-      { name: 'Noir Minuit', hex: '#1F2022', image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=85' },
-      { name: 'Blanc Stellaire', hex: '#F7F7F7', image: 'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=1000&q=85' },
+      { name: 'Vert Sarcelle', hex: '#6C9A8B', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-teal-select-202409?wid=940&hei=1112&fmt=png-alpha' },
+      { name: 'Bleu Outremer', hex: '#4F6B94', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-ultramarine-select-202409?wid=940&hei=1112&fmt=png-alpha' },
+      { name: 'Rose Poudré', hex: '#E19AA8', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pink-select-202409?wid=940&hei=1112&fmt=png-alpha' },
+      { name: 'Blanc Stellaire', hex: '#ECEAE7', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-white-select-202409?wid=940&hei=1112&fmt=png-alpha' },
+      { name: 'Noir Minuit', hex: '#2E3033', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-black-select-202409?wid=940&hei=1112&fmt=png-alpha' },
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=1000&q=85',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-teal-select-202409?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-ultramarine-select-202409?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pink-select-202409?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-white-select-202409?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-black-select-202409?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-model-unselect-gallery-1-202409?wid=940&hei=1112&fmt=png-alpha',
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-model-unselect-gallery-2-202409?wid=940&hei=1112&fmt=png-alpha',
     ],
   },
   {
@@ -612,12 +622,12 @@ export default function Page() {
               return (
                 <article key={product.id} className="group flex flex-col justify-between">
                   <div>
-                    <div className="relative mb-3 aspect-[0.82] overflow-hidden rounded-[4px] bg-[#1c1c1e] shadow-md border border-white/5">
+                    <div className="relative mb-3 aspect-[0.82] overflow-hidden rounded-[4px] bg-gradient-to-b from-[#242426] to-[#141416] shadow-md border border-white/5 flex items-center justify-center p-4">
                       <img
                         src={displayImage}
                         alt={product.name}
                         onClick={() => openQuickView(product)}
-                        className="size-full object-cover transition duration-700 group-hover:scale-105 cursor-pointer"
+                        className="size-full object-contain transition duration-500 group-hover:scale-105 cursor-pointer drop-shadow-2xl"
                       />
 
                       {/* Tag */}
@@ -1064,14 +1074,14 @@ export default function Page() {
             <div className="overflow-y-auto p-6 grid gap-8 lg:grid-cols-2">
               {/* Left: Gallery & Zoom */}
               <div className="flex flex-col gap-4">
-                <div className="relative aspect-[0.95] overflow-hidden rounded-lg bg-neutral-900 border border-neutral-200 shadow-inner group">
+                <div className="relative aspect-[0.95] overflow-hidden rounded-lg bg-gradient-to-b from-neutral-50 to-neutral-150 border border-neutral-200 shadow-inner group flex items-center justify-center p-6">
                   <img
                     src={quickViewSelectedImage}
                     alt={quickViewProduct.name}
-                    className="size-full object-cover transition duration-500 group-hover:scale-105"
+                    className="size-full object-contain transition duration-500 group-hover:scale-105 drop-shadow-xl"
                   />
                   {quickViewSelectedColor && (
-                    <span className="absolute bottom-3 left-3 rounded-full bg-black/75 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-white">
+                    <span className="absolute bottom-3 left-3 rounded-full bg-black/80 backdrop-blur-md px-3 py-1 text-[11px] font-bold text-white shadow">
                       Finition : {quickViewSelectedColor.name}
                     </span>
                   )}
@@ -1084,22 +1094,22 @@ export default function Page() {
                 {quickViewProduct.gallery && quickViewProduct.gallery.length > 0 && (
                   <div>
                     <p className="text-[11px] font-bold uppercase tracking-wider text-neutral-500 mb-2">
-                      Galerie d&apos;images haute résolution ({quickViewProduct.gallery.length} vues) :
+                      Galerie officielle ({quickViewProduct.gallery.length} vues haute résolution) :
                     </p>
-                    <div className="grid grid-cols-5 gap-2">
+                    <div className="grid grid-cols-6 gap-2">
                       {quickViewProduct.gallery.map((imgUrl, idx) => {
                         const isActive = quickViewSelectedImage === imgUrl
                         return (
                           <button
                             key={idx}
                             onClick={() => setQuickViewSelectedImage(imgUrl)}
-                            className={`relative aspect-square overflow-hidden rounded border-2 transition ${
+                            className={`relative aspect-square overflow-hidden rounded-md border-2 transition p-1 bg-neutral-50 flex items-center justify-center ${
                               isActive
-                                ? 'border-[#DA291C] ring-2 ring-[#DA291C]/30 scale-105 shadow-md'
+                                ? 'border-[#DA291C] ring-2 ring-[#DA291C]/30 scale-105 shadow-md bg-white'
                                 : 'border-neutral-200 hover:border-neutral-400 opacity-80 hover:opacity-100'
                             }`}
                           >
-                            <img src={imgUrl} alt={`Vue ${idx + 1}`} className="size-full object-cover" />
+                            <img src={imgUrl} alt={`Vue ${idx + 1}`} className="size-full object-contain drop-shadow" />
                           </button>
                         )
                       })}
