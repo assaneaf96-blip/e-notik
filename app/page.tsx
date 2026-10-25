@@ -59,12 +59,12 @@ const products: Product[] = [
     name: 'iPhone 18 Pro Max',
     reference: 'ENOTIK-IPH18PM-MJXQ4QL',
     category: 'Smartphones',
-    oldPrice: 'CHF 1’449.–',
-    price: 'CHF 1’299.–',
-    priceNum: 1299,
+    oldPrice: 'CHF 1’499.–',
+    price: 'CHF 899.–',
+    priceNum: 899,
     image: 'https://www.interdiscount.ch/static-shops/products/720/acb18868aacdda1a4f3e857aba88579420b6.jpg',
-    tag: 'Nouveauté Interdiscount Suisse',
-    description: 'Le fleuron absolu d’Apple disponible en Suisse. Écran ProMotion 6.9" Super Retina XDR, nouveau module photo Fusion 48 MP à ouverture variable avec zoom 8x, puce A20 Pro thermiquement refroidie par chambre à vapeur et double Neural Engine pour Apple Intelligence.',
+    tag: '−40% Offre Suisse',
+    description: 'Le fleuron absolu d’Apple au meilleur prix de Suisse (comparé à Digitec, MediaMarkt, Interdiscount, Fnac, Swisscom). Écran ProMotion 6.9" Super Retina XDR, nouveau module photo Fusion 48 MP à ouverture variable avec zoom 8x, puce A20 Pro thermiquement refroidie par chambre à vapeur et double Neural Engine pour Apple Intelligence.',
     specs: 'Écran 6.9" ProMotion 120Hz · Puce A20 Pro IA · Caméra 48 MP à ouverture variable · Zoom 8x · Ceramic Shield 2 · Autonomie 43h · 5G',
     storages: ['256 Go', '512 Go', '1 To', '2 To'],
     colors: [
@@ -89,10 +89,10 @@ const products: Product[] = [
     reference: 'ENOTIK-IPH18P-002',
     category: 'Smartphones',
     oldPrice: 'CHF 1’349.–',
-    price: 'CHF 1’199.–',
-    priceNum: 1199,
+    price: 'CHF 809.–',
+    priceNum: 809,
     image: 'https://www.interdiscount.ch/static-shops/products/720/155b9cc772f200a44771bc0931a3bbd4dd99.jpg',
-    tag: 'Bestseller Suisse',
+    tag: '−40% Offre Suisse',
     description: 'Une puissance technologique monumentale dans un format équilibré de 6.3 pouces. Capteur 48 MP Fusion à ouverture variable, puce A20 Pro et autonomie record.',
     specs: 'Écran 6.3" ProMotion 120Hz · Puce A20 Pro · Caméra Fusion 48 MP · Ceramic Shield 2 · Autonomie 36h',
     storages: ['128 Go', '256 Go', '512 Go', '1 To'],
@@ -117,11 +117,11 @@ const products: Product[] = [
     name: 'iPhone 18',
     reference: 'ENOTIK-IPH18-003',
     category: 'Smartphones',
-    oldPrice: 'CHF 1’099.–',
-    price: 'CHF 999.–',
-    priceNum: 999,
+    oldPrice: 'CHF 1’049.–',
+    price: 'CHF 629.–',
+    priceNum: 629,
     image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha',
-    tag: 'Nouveau',
+    tag: '−40% Offre Suisse',
     description: 'Une palette de couleurs raffinée avec un dos en verre teinté et un contour en aluminium aérospatial brossé. Puce A20 ultra-rapide avec bouton Action.',
     specs: 'Écran 6.1" OLED Super Retina XDR · Puce A20 Bionic · Double capteur Fusion 48 MP · Dynamic Island',
     storages: ['128 Go', '256 Go', '512 Go'],
@@ -145,11 +145,11 @@ const products: Product[] = [
     name: 'iPhone 18 Plus',
     reference: 'ENOTIK-IPH18PLS-004',
     category: 'Smartphones',
-    oldPrice: 'CHF 1’229.–',
-    price: 'CHF 1’099.–',
-    priceNum: 1099,
+    oldPrice: 'CHF 1’199.–',
+    price: 'CHF 719.–',
+    priceNum: 719,
     image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-teal-select-202409?wid=940&hei=1112&fmt=png-alpha',
-    tag: 'Autonomie 32h',
+    tag: '−40% Offre Suisse',
     description: 'Immense dalle 6.7" Super Retina et autonomie record de 32 heures. Conçu pour les utilisateurs nomades exigeants avec Apple Intelligence.',
     specs: 'Écran 6.7" Super Retina XDR · Puce A20 Bionic · Autonomie jusqu’à 32h · Étanchéité IP68 · Poids plume aluminium',
     storages: ['128 Go', '256 Go', '512 Go'],
@@ -173,11 +173,11 @@ const products: Product[] = [
     name: 'iPhone 17 Pro Max',
     reference: 'ENOTIK-IPH17PM-005',
     category: 'Smartphones',
-    oldPrice: 'CHF 1’449.–',
-    price: 'CHF 1’299.–',
-    priceNum: 1299,
+    oldPrice: 'CHF 1’399.–',
+    price: 'CHF 839.–',
+    priceNum: 839,
     image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-naturaltitanium-select?wid=940&hei=1112&fmt=png-alpha',
-    tag: 'Édition Pro',
+    tag: '−40% Offre Suisse',
     description: 'Châssis en titane aérospatial brossé, puce A19 Pro 3 nm, téléobjectif 5x et écran 6.7" Super Retina XDR ProMotion 120Hz.',
     specs: 'Écran 6.7" ProMotion 120Hz · Puce A19 Pro · 48 Mpx Triple Capteur 5x · Châssis Titane · USB-C 3.0',
     storages: ['256 Go', '512 Go', '1 To'],
@@ -203,11 +203,11 @@ const products: Product[] = [
     name: 'iPhone 17 Pro',
     reference: 'ENOTIK-IPH17P-006',
     category: 'Smartphones',
-    oldPrice: 'CHF 1’299.–',
-    price: 'CHF 1’179.–',
-    priceNum: 1179,
+    oldPrice: 'CHF 1’249.–',
+    price: 'CHF 749.–',
+    priceNum: 749,
     image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch-blacktitanium?wid=940&hei=1112&fmt=png-alpha',
-    tag: 'Choix Suisse',
+    tag: '−40% Offre Suisse',
     description: 'Format compact 6.1" avec châssis titane ultraléger. Puce A19 Pro, bouton Action personnalisable et triple capteur photo 48 Mpx.',
     specs: 'Écran 6.1" ProMotion 120Hz · Puce A19 Pro · Châssis Titane · Enregistrement Log ProRes · USB-C 3.0',
     storages: ['128 Go', '256 Go', '512 Go', '1 To'],
@@ -233,11 +233,11 @@ const products: Product[] = [
     name: 'iPhone 17 Air',
     reference: 'ENOTIK-IPH17AIR-007',
     category: 'Smartphones',
-    oldPrice: 'CHF 1’049.–',
-    price: 'CHF 949.–',
-    priceNum: 949,
+    oldPrice: 'CHF 999.–',
+    price: 'CHF 599.–',
+    priceNum: 599,
     image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-blue?wid=940&hei=1112&fmt=png-alpha',
-    tag: 'Ultra-Fin',
+    tag: '−40% Offre Suisse',
     description: 'Nouveau profil ultra-fin et léger. Écran 6.5" OLED lumineux, puce A19 et verre dépoli aux teintes pastel.',
     specs: 'Écran 6.5" Super Retina XDR · Châssis ultra-fin 5.6 mm · Puce A19 · Finitions satinées',
     storages: ['128 Go', '256 Go', '512 Go'],
@@ -261,11 +261,11 @@ const products: Product[] = [
     name: 'iPhone 17',
     reference: 'ENOTIK-IPH17-008',
     category: 'Smartphones',
-    oldPrice: 'CHF 949.–',
-    price: 'CHF 849.–',
-    priceNum: 849,
+    oldPrice: 'CHF 899.–',
+    price: 'CHF 539.–',
+    priceNum: 539,
     image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-blue?wid=940&hei=1112&fmt=png-alpha',
-    tag: 'Populaire',
+    tag: '−40% Offre Suisse',
     description: 'Dynamic Island, appareil photo Fusion 48 Mpx et connecteur universel USB-C dans un boîtier résistant et élégant.',
     specs: 'Écran 6.1" OLED Super Retina XDR · Puce A19 · Double capteur 48 MP · Dynamic Island',
     storages: ['128 Go', '256 Go', '512 Go'],
@@ -486,14 +486,14 @@ export default function Page() {
       )}
 
       {/* Top Banner - Swiss Red */}
-      <div className="bg-[#DA291C] px-5 py-2.5 text-center text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-sm flex items-center justify-center gap-2 sm:gap-4 flex-wrap">
-        <span className="flex items-center gap-1.5"><span className="text-base">🇨🇭</span> 100% SUISSE</span>
+      <div className="bg-[#DA291C] px-5 py-2.5 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-white shadow-sm flex items-center justify-center gap-2 sm:gap-4 flex-wrap">
+        <span className="flex items-center gap-1.5"><span className="text-base">🇨🇭</span> OFFRE EXCLUSIVE SUISSE : −40% SUR TOUS LES IPHONE</span>
+        <span>·</span>
+        <span>MEILLEUR PRIX VS DIGITEC, MEDIAMARKT, INTERDISCOUNT, FNAC</span>
         <span>·</span>
         <span>LIVRAISON OFFERTE DÈS CHF 80</span>
-        <span>·</span>
-        <span>EXPÉDITION 24H DEPUIS LAUSANNE</span>
         <span className="hidden md:inline">·</span>
-        <span className="hidden md:inline">GARANTIE SUISSE 2 ANS</span>
+        <span className="hidden md:inline">EXPÉDITION 24H LAUSANNE · GARANTIE 2 ANS</span>
       </div>
 
       {/* Header */}
@@ -818,9 +818,12 @@ export default function Page() {
                     <p className="mt-1 text-[10px] text-white/45">Réf. {product.reference}</p>
                   </div>
 
-                  <div className="mt-3 flex items-baseline gap-2">
+                  <div className="mt-3 flex items-baseline gap-2 flex-wrap">
                     <span className="text-xs text-white/45 line-through">{product.oldPrice}</span>
                     <span className="text-sm font-bold text-white">{product.price}</span>
+                    <span className="rounded bg-[#DA291C] px-1.5 py-0.5 text-[9px] font-black text-white shadow-sm">
+                      −40%
+                    </span>
                   </div>
                 </article>
               )
@@ -1245,17 +1248,23 @@ export default function Page() {
                   </h3>
 
                   {/* Price section */}
-                  <div className="mt-3 flex items-baseline gap-3">
+                  <div className="mt-3 flex items-baseline gap-3 flex-wrap">
                     <span className="text-2xl font-black text-[#DA291C]">
                       {quickViewProduct.price}
                     </span>
                     <span className="text-sm text-neutral-400 line-through">
                       {quickViewProduct.oldPrice}
                     </span>
+                    <span className="rounded bg-[#DA291C] px-2 py-0.5 text-xs font-bold text-white shadow-sm">
+                      −40% Promo E-NOTIK
+                    </span>
                     <span className="rounded bg-emerald-100 px-2 py-0.5 text-[11px] font-bold text-emerald-800">
-                      TVA Suisse 8.1% incluse
+                      TVA 8.1% incluse
                     </span>
                   </div>
+                  <p className="mt-1 text-[11px] text-emerald-700 font-semibold">
+                    ✓ Meilleur tarif de Suisse garanti (vs Digitec, MediaMarkt, Interdiscount, Fnac, Swisscom)
+                  </p>
 
                   <p className="mt-4 text-xs leading-relaxed text-neutral-600 border-t border-neutral-100 pt-4">
                     {quickViewProduct.description}
