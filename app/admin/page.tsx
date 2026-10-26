@@ -42,7 +42,19 @@ import {
   X,
 } from 'lucide-react'
 
-interface ProductItem {
+export interface ProductColor {
+  name: string
+  hex: string
+  image?: string
+}
+
+export interface StoragePriceItem {
+  storage: string
+  price: number
+  oldPrice?: number
+}
+
+export interface ProductItem {
   id: number
   name: string
   reference: string
@@ -59,7 +71,88 @@ interface ProductItem {
   warranty?: string
   condition?: string
   active: boolean
+  storages?: string[]
+  storagePrices?: StoragePriceItem[]
+  colors?: ProductColor[]
 }
+
+export const COLOR_RECOGNITION_DATABASE: { keywords: string[]; name: string; hex: string }[] = [
+  { keywords: ['orange cosmique', 'cosmic orange', 'orange'], name: 'Orange cosmique', hex: '#E06028' },
+  { keywords: ['noir sidéral', 'space black', 'dark titanium', 'titane noir'], name: 'Noir Sidéral', hex: '#1C1C1E' },
+  { keywords: ['noir carbone', 'noir', 'black', 'schwarz'], name: 'Noir', hex: '#222325' },
+  { keywords: ['blanc', 'white', 'weiss'], name: 'Blanc', hex: '#F5F5F7' },
+  { keywords: ['bleu brume', 'mist blue'], name: 'Bleu brume', hex: '#6B8EA8' },
+  { keywords: ['outremer', 'ultramarine', 'bleu outremer'], name: 'Outremer', hex: '#3B5998' },
+  { keywords: ['lavande', 'lavender'], name: 'Lavande', hex: '#D6C7E2' },
+  { keywords: ['fable', 'vert sauge', 'sage'], name: 'Fable', hex: '#9EB5A5' },
+  { keywords: ['silver (argent)', 'silver', 'argent'], name: 'Silver (Argent)', hex: '#E3E4E5' },
+  { keywords: ['deep blue', 'bleu profond', 'titane bleu'], name: 'Deep Blue', hex: '#1C2D42' },
+  { keywords: ['titane naturel', 'natural titanium'], name: 'Titane naturel', hex: '#9E978E' },
+  { keywords: ['titane désert', 'desert titanium', 'sable'], name: 'Titane désert', hex: '#C4A792' },
+  { keywords: ['bleu ciel', 'sky blue', 'bleu'], name: 'Bleu ciel', hex: '#7BA4B5' },
+  { keywords: ['ciel nocturne', 'midnight sky'], name: 'Ciel nocturne', hex: '#1A2332' },
+  { keywords: ['minuit sidéral', 'minuit', 'midnight'], name: 'Minuit Sidéral', hex: '#181E29' },
+  { keywords: ['lumière stellaire', 'starlight'], name: 'Lumière stellaire', hex: '#EBE6DF' },
+  { keywords: ['cuivre & nickel', 'cuivre', 'copper'], name: 'Cuivre & Nickel', hex: '#B87333' },
+  { keywords: ['rose', 'pink'], name: 'Rose', hex: '#FAD7D7' },
+  { keywords: ['vert', 'green'], name: 'Vert', hex: '#4E6E58' },
+  { keywords: ['jaune', 'yellow'], name: 'Jaune', hex: '#F3E5AB' },
+  { keywords: ['or', 'gold'], name: 'Or', hex: '#F5E5C9' },
+  { keywords: ['rouge', 'red', 'product red'], name: 'Rouge (PRODUCT)RED', hex: '#E11C2A' },
+  { keywords: ['graphite'], name: 'Graphite', hex: '#4C4A48' },
+  { keywords: ['gris sidéral', 'space gray'], name: 'Gris sidéral', hex: '#535150' },
+]
+
+export function detectColorsFromText(text: string): { name: string; hex: string }[] {
+  const lower = (text || '').toLowerCase()
+  const results: { name: string; hex: string }[] = []
+  const added = new Set<string>()
+
+  COLOR_RECOGNITION_DATABASE.forEach((item) => {
+    const match = item.keywords.some((kw) => {
+      const regex = new RegExp('(?:^|[\\s(,./-]|-)' + kw.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\export interface ProductColor {
+  name: string
+  hex: string
+  image?: string
+}
+
+export interface StoragePriceItem {
+  storage: string
+  price: number
+  oldPrice?: number
+}
+
+export interface ProductItem {
+  id: number
+  name: string
+  reference: string
+  category: string
+  price: number
+  oldPrice?: number
+  stock: number
+  image: string
+  gallery?: string[]
+  video?: string
+  tag: string
+  description: string
+  specs?: string
+  warranty?: string
+  condition?: string
+  active: boolean
+  storages?: string[]
+  storagePrices?: StoragePriceItem[]
+  colors?: ProductColor[]
+}') + '(?:$|[\\s),./-]|-)', 'i')
+      return regex.test(lower)
+    })
+    if (match && !added.has(item.name)) {
+      added.add(item.name)
+      results.push({ name: item.name, hex: item.hex })
+    }
+  })
+  return results
+}
+
 
 export default function AdminPage() {
   const [activeTab, setActiveTab] = useState<'overview' | 'pixels' | 'settings' | 'products' | 'orders'>('overview')
@@ -124,7 +217,52 @@ export default function AdminPage() {
   "specs": "256 Go, Silver (Argent), 6.30\", Double SIM, 5G · Réf. 61962956 · MG8G4QL/A · Puce A19 Pro · Écran 120Hz",
   "warranty": "Garantie officielle 2 ans constructeur",
   "condition": "Neuf scellé d'origine Suisse",
-  "active": true
+  "active": true,
+  "storages": [
+    "128 Go",
+    "256 Go",
+    "512 Go",
+    "1 To"
+  ],
+  "storagePrices": [
+    {
+      "storage": "128 Go",
+      "price": 639,
+      "oldPrice": 895
+    },
+    {
+      "storage": "256 Go",
+      "price": 723,
+      "oldPrice": 1012
+    },
+    {
+      "storage": "512 Go",
+      "price": 891,
+      "oldPrice": 1247
+    },
+    {
+      "storage": "1 To",
+      "price": 1059,
+      "oldPrice": 1483
+    }
+  ],
+  "colors": [
+    {
+      "name": "Silver (Argent)",
+      "hex": "#E3E4E5",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-whitetitanium?wid=940&hei=1112&fmt=png-alpha"
+    },
+    {
+      "name": "Orange cosmique",
+      "hex": "#E06028",
+      "image": "/products/iphone17pro-orange/back.png"
+    },
+    {
+      "name": "Deep Blue",
+      "hex": "#1C2D42",
+      "image": "https://static.digitecgalaxus.ch/productimages/9/0/6/9/1/8/4/0/8/8/2/6/6/4/3/1/4/2/2/019932ab-34b6-7f88-beed-ed3c05518217"
+    }
+  ]
 },
   {
   "id": 2,
@@ -146,7 +284,52 @@ export default function AdminPage() {
   "specs": "256 Go, Orange cosmique, 6.30\", Double SIM, 5G · Réf. 61962964 · MG8H4QL/A · Puce A19 Pro · Écran 120Hz",
   "warranty": "Garantie officielle 2 ans constructeur",
   "condition": "Neuf scellé d'origine Suisse",
-  "active": true
+  "active": true,
+  "storages": [
+    "128 Go",
+    "256 Go",
+    "512 Go",
+    "1 To"
+  ],
+  "storagePrices": [
+    {
+      "storage": "128 Go",
+      "price": 639,
+      "oldPrice": 895
+    },
+    {
+      "storage": "256 Go",
+      "price": 723,
+      "oldPrice": 1012
+    },
+    {
+      "storage": "512 Go",
+      "price": 891,
+      "oldPrice": 1247
+    },
+    {
+      "storage": "1 To",
+      "price": 1059,
+      "oldPrice": 1483
+    }
+  ],
+  "colors": [
+    {
+      "name": "Orange cosmique",
+      "hex": "#E06028",
+      "image": "/products/iphone17pro-orange/back.png"
+    },
+    {
+      "name": "Silver (Argent)",
+      "hex": "#E3E4E5",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-whitetitanium?wid=940&hei=1112&fmt=png-alpha"
+    },
+    {
+      "name": "Deep Blue",
+      "hex": "#1C2D42",
+      "image": "https://static.digitecgalaxus.ch/productimages/9/0/6/9/1/8/4/0/8/8/2/6/6/4/3/1/4/2/2/019932ab-34b6-7f88-beed-ed3c05518217"
+    }
+  ]
 },
   {
   "id": 3,
@@ -169,7 +352,50 @@ export default function AdminPage() {
   "specs": "256 Go, Noir, 6.30\", Double SIM, 5G · Réf. 61962931 · MG6J4QL/A · Puce A19",
   "warranty": "Garantie officielle 2 ans constructeur",
   "condition": "Neuf scellé d'origine Suisse",
-  "active": true
+  "active": true,
+  "storages": [
+    "256 Go",
+    "512 Go"
+  ],
+  "storagePrices": [
+    {
+      "storage": "256 Go",
+      "price": 597,
+      "oldPrice": 836
+    },
+    {
+      "storage": "512 Go",
+      "price": 765,
+      "oldPrice": 1071
+    }
+  ],
+  "colors": [
+    {
+      "name": "Noir",
+      "hex": "#222325",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha"
+    },
+    {
+      "name": "Blanc",
+      "hex": "#F5F5F7",
+      "image": "https://static.digitecgalaxus.ch/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2"
+    },
+    {
+      "name": "Bleu brume",
+      "hex": "#6B8EA8",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha"
+    },
+    {
+      "name": "Lavande",
+      "hex": "#D6C7E2",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha"
+    },
+    {
+      "name": "Fable",
+      "hex": "#9EB5A5",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha"
+    }
+  ]
 },
   {
   "id": 4,
@@ -191,7 +417,50 @@ export default function AdminPage() {
   "specs": "256 Go, Blanc, 6.30\", Double SIM, 5G · Réf. 61962940 · MG6K4QL/A · Puce A19",
   "warranty": "Garantie officielle 2 ans constructeur",
   "condition": "Neuf scellé d'origine Suisse",
-  "active": true
+  "active": true,
+  "storages": [
+    "256 Go",
+    "512 Go"
+  ],
+  "storagePrices": [
+    {
+      "storage": "256 Go",
+      "price": 597,
+      "oldPrice": 836
+    },
+    {
+      "storage": "512 Go",
+      "price": 765,
+      "oldPrice": 1071
+    }
+  ],
+  "colors": [
+    {
+      "name": "Noir",
+      "hex": "#222325",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha"
+    },
+    {
+      "name": "Blanc",
+      "hex": "#F5F5F7",
+      "image": "https://static.digitecgalaxus.ch/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2"
+    },
+    {
+      "name": "Bleu brume",
+      "hex": "#6B8EA8",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha"
+    },
+    {
+      "name": "Lavande",
+      "hex": "#D6C7E2",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha"
+    },
+    {
+      "name": "Fable",
+      "hex": "#9EB5A5",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha"
+    }
+  ]
 },
   {
   "id": 5,
@@ -214,7 +483,50 @@ export default function AdminPage() {
   "specs": "256 Go, Bleu brume, 6.30\", Double SIM, 5G · Réf. 61962958 · MG6L4QL/A · Puce A19",
   "warranty": "Garantie officielle 2 ans constructeur",
   "condition": "Neuf scellé d'origine Suisse",
-  "active": true
+  "active": true,
+  "storages": [
+    "256 Go",
+    "512 Go"
+  ],
+  "storagePrices": [
+    {
+      "storage": "256 Go",
+      "price": 597,
+      "oldPrice": 836
+    },
+    {
+      "storage": "512 Go",
+      "price": 765,
+      "oldPrice": 1071
+    }
+  ],
+  "colors": [
+    {
+      "name": "Noir",
+      "hex": "#222325",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha"
+    },
+    {
+      "name": "Blanc",
+      "hex": "#F5F5F7",
+      "image": "https://static.digitecgalaxus.ch/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2"
+    },
+    {
+      "name": "Bleu brume",
+      "hex": "#6B8EA8",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha"
+    },
+    {
+      "name": "Lavande",
+      "hex": "#D6C7E2",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha"
+    },
+    {
+      "name": "Fable",
+      "hex": "#9EB5A5",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha"
+    }
+  ]
 },
   {
   "id": 6,
@@ -237,7 +549,50 @@ export default function AdminPage() {
   "specs": "256 Go, Lavande, 6.30\", Double SIM, 5G · Réf. 61962939 · MG6M4QL/A · Puce A19",
   "warranty": "Garantie officielle 2 ans constructeur",
   "condition": "Neuf scellé d'origine Suisse",
-  "active": true
+  "active": true,
+  "storages": [
+    "256 Go",
+    "512 Go"
+  ],
+  "storagePrices": [
+    {
+      "storage": "256 Go",
+      "price": 597,
+      "oldPrice": 836
+    },
+    {
+      "storage": "512 Go",
+      "price": 765,
+      "oldPrice": 1071
+    }
+  ],
+  "colors": [
+    {
+      "name": "Noir",
+      "hex": "#222325",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha"
+    },
+    {
+      "name": "Blanc",
+      "hex": "#F5F5F7",
+      "image": "https://static.digitecgalaxus.ch/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2"
+    },
+    {
+      "name": "Bleu brume",
+      "hex": "#6B8EA8",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha"
+    },
+    {
+      "name": "Lavande",
+      "hex": "#D6C7E2",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha"
+    },
+    {
+      "name": "Fable",
+      "hex": "#9EB5A5",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha"
+    }
+  ]
 },
   {
   "id": 7,
@@ -260,7 +615,50 @@ export default function AdminPage() {
   "specs": "256 Go, Fable, 6.30\", SIM + eSIM, 5G · Réf. 61962909 · MG6N4QL/A · Puce A19",
   "warranty": "Garantie officielle 2 ans constructeur",
   "condition": "Neuf scellé d'origine Suisse",
-  "active": true
+  "active": true,
+  "storages": [
+    "256 Go",
+    "512 Go"
+  ],
+  "storagePrices": [
+    {
+      "storage": "256 Go",
+      "price": 597,
+      "oldPrice": 836
+    },
+    {
+      "storage": "512 Go",
+      "price": 765,
+      "oldPrice": 1071
+    }
+  ],
+  "colors": [
+    {
+      "name": "Noir",
+      "hex": "#222325",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha"
+    },
+    {
+      "name": "Blanc",
+      "hex": "#F5F5F7",
+      "image": "https://static.digitecgalaxus.ch/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2"
+    },
+    {
+      "name": "Bleu brume",
+      "hex": "#6B8EA8",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha"
+    },
+    {
+      "name": "Lavande",
+      "hex": "#D6C7E2",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha"
+    },
+    {
+      "name": "Fable",
+      "hex": "#9EB5A5",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha"
+    }
+  ]
 },
   {
   "id": 8,
@@ -286,7 +684,42 @@ export default function AdminPage() {
   "specs": "256 Go, Noir, 6.10\", SIM + eSIM, 5G · Puce Apple Bionic/Pro · Super Retina XDR",
   "warranty": "Garantie officielle 2 ans constructeur",
   "condition": "Neuf scellé d'origine Suisse",
-  "active": true
+  "active": true,
+  "storages": [
+    "128 Go",
+    "256 Go",
+    "512 Go",
+    "1 To"
+  ],
+  "storagePrices": [
+    {
+      "storage": "128 Go",
+      "price": 405,
+      "oldPrice": 567
+    },
+    {
+      "storage": "256 Go",
+      "price": 489,
+      "oldPrice": 685
+    },
+    {
+      "storage": "512 Go",
+      "price": 657,
+      "oldPrice": 920
+    },
+    {
+      "storage": "1 To",
+      "price": 825,
+      "oldPrice": 1155
+    }
+  ],
+  "colors": [
+    {
+      "name": "Noir",
+      "hex": "#1C1C1E",
+      "image": "https://static.digitecgalaxus.ch/productimages/7/6/3/9/9/9/2/7/4/4/0/8/7/8/6/3/8/3/4/019cb2af-0149-7307-aee0-72cf96db7ed6"
+    }
+  ]
 },
   {
   "id": 9,
@@ -312,7 +745,42 @@ export default function AdminPage() {
   "specs": "512 Go, Noir, 6.30\", Double SIM, 5G · Puce Apple Bionic/Pro · Super Retina XDR",
   "warranty": "Garantie officielle 2 ans constructeur",
   "condition": "Neuf scellé d'origine Suisse",
-  "active": true
+  "active": true,
+  "storages": [
+    "128 Go",
+    "256 Go",
+    "512 Go",
+    "1 To"
+  ],
+  "storagePrices": [
+    {
+      "storage": "128 Go",
+      "price": 944,
+      "oldPrice": 1322
+    },
+    {
+      "storage": "256 Go",
+      "price": 1028,
+      "oldPrice": 1439
+    },
+    {
+      "storage": "512 Go",
+      "price": 1196,
+      "oldPrice": 1674
+    },
+    {
+      "storage": "1 To",
+      "price": 1364,
+      "oldPrice": 1910
+    }
+  ],
+  "colors": [
+    {
+      "name": "Noir",
+      "hex": "#1C1C1E",
+      "image": "https://static.digitecgalaxus.ch/productimages/3/1/9/0/3/4/3/9/6/5/7/6/6/9/9/6/1/9/6/01a08a3f-a187-72f6-b171-11227edba7f2"
+    }
+  ]
 },
   {
   "id": 10,
@@ -338,7 +806,42 @@ export default function AdminPage() {
   "specs": "256 Go, Deep Blue, 6.90\", Double SIM, 5G · Puce Apple Bionic/Pro · Super Retina XDR",
   "warranty": "Garantie officielle 2 ans constructeur",
   "condition": "Neuf scellé d'origine Suisse",
-  "active": true
+  "active": true,
+  "storages": [
+    "128 Go",
+    "256 Go",
+    "512 Go",
+    "1 To"
+  ],
+  "storagePrices": [
+    {
+      "storage": "128 Go",
+      "price": 687,
+      "oldPrice": 962
+    },
+    {
+      "storage": "256 Go",
+      "price": 771,
+      "oldPrice": 1079
+    },
+    {
+      "storage": "512 Go",
+      "price": 939,
+      "oldPrice": 1315
+    },
+    {
+      "storage": "1 To",
+      "price": 1107,
+      "oldPrice": 1550
+    }
+  ],
+  "colors": [
+    {
+      "name": "Deep Blue",
+      "hex": "#1C2D42",
+      "image": "https://static.digitecgalaxus.ch/productimages/2/9/0/3/0/4/3/4/9/1/4/8/3/7/6/9/2/3/0/01993298-82bf-7b12-8a73-94bcea6ea130"
+    }
+  ]
 },
   {
   "id": 11,
@@ -364,7 +867,42 @@ export default function AdminPage() {
   "specs": "256 Go, Ciel nocturne, 7.60\", Double eSIM, 5G · Puce Apple Bionic/Pro · Super Retina XDR",
   "warranty": "Garantie officielle 2 ans constructeur",
   "condition": "Neuf scellé d'origine Suisse",
-  "active": true
+  "active": true,
+  "storages": [
+    "128 Go",
+    "256 Go",
+    "512 Go",
+    "1 To"
+  ],
+  "storagePrices": [
+    {
+      "storage": "128 Go",
+      "price": 1315,
+      "oldPrice": 1841
+    },
+    {
+      "storage": "256 Go",
+      "price": 1399,
+      "oldPrice": 1959
+    },
+    {
+      "storage": "512 Go",
+      "price": 1567,
+      "oldPrice": 2194
+    },
+    {
+      "storage": "1 To",
+      "price": 1735,
+      "oldPrice": 2429
+    }
+  ],
+  "colors": [
+    {
+      "name": "Ciel nocturne",
+      "hex": "#161924",
+      "image": "https://static.digitecgalaxus.ch/productimages/8/6/8/3/9/7/3/9/7/9/8/1/4/8/6/8/1/7/8/01a08c0b-44a5-7101-b39f-805ea65bf80b"
+    }
+  ]
 },
   {
   "id": 12,
@@ -390,7 +928,42 @@ export default function AdminPage() {
   "specs": "128 Go, Noir, 6.10\", SIM + eSIM, 5G · Puce Apple Bionic/Pro · Super Retina XDR",
   "warranty": "Garantie officielle 2 ans constructeur",
   "condition": "Neuf scellé d'origine Suisse",
-  "active": true
+  "active": true,
+  "storages": [
+    "128 Go",
+    "256 Go",
+    "512 Go",
+    "1 To"
+  ],
+  "storagePrices": [
+    {
+      "storage": "128 Go",
+      "price": 356,
+      "oldPrice": 498
+    },
+    {
+      "storage": "256 Go",
+      "price": 440,
+      "oldPrice": 616
+    },
+    {
+      "storage": "512 Go",
+      "price": 608,
+      "oldPrice": 851
+    },
+    {
+      "storage": "1 To",
+      "price": 776,
+      "oldPrice": 1086
+    }
+  ],
+  "colors": [
+    {
+      "name": "Noir",
+      "hex": "#1C1C1E",
+      "image": "https://static.digitecgalaxus.ch/productimages/8/6/2/0/2/3/8/7/0/4/8/7/1/0/7/7/7/2/8/fda455d3-4305-4808-82ad-14cf60d50e49.jpg"
+    }
+  ]
 },
   {
   "id": 13,
@@ -416,7 +989,42 @@ export default function AdminPage() {
   "specs": "128 Go, Blanc, 6.10\", SIM + eSIM, 5G · Puce Apple Bionic/Pro · Super Retina XDR",
   "warranty": "Garantie officielle 2 ans constructeur",
   "condition": "Neuf scellé d'origine Suisse",
-  "active": true
+  "active": true,
+  "storages": [
+    "128 Go",
+    "256 Go",
+    "512 Go",
+    "1 To"
+  ],
+  "storagePrices": [
+    {
+      "storage": "128 Go",
+      "price": 431,
+      "oldPrice": 603
+    },
+    {
+      "storage": "256 Go",
+      "price": 515,
+      "oldPrice": 721
+    },
+    {
+      "storage": "512 Go",
+      "price": 683,
+      "oldPrice": 956
+    },
+    {
+      "storage": "1 To",
+      "price": 851,
+      "oldPrice": 1191
+    }
+  ],
+  "colors": [
+    {
+      "name": "Blanc",
+      "hex": "#F5F5F7",
+      "image": "https://static.digitecgalaxus.ch/productimages/2/6/5/0/5/5/0/8/0/1/2/8/7/7/4/6/8/1/4/48c5d2b7-41c1-409c-8407-539ea8fa14f9_cropped.jpg"
+    }
+  ]
 },
   {
   "id": 14,
@@ -442,7 +1050,42 @@ export default function AdminPage() {
   "specs": "128 Go, Noir, 6.10\", SIM + eSIM, 5G · Puce Apple Bionic/Pro · Super Retina XDR",
   "warranty": "Garantie officielle 2 ans constructeur",
   "condition": "Neuf scellé d'origine Suisse",
-  "active": true
+  "active": true,
+  "storages": [
+    "128 Go",
+    "256 Go",
+    "512 Go",
+    "1 To"
+  ],
+  "storagePrices": [
+    {
+      "storage": "128 Go",
+      "price": 314,
+      "oldPrice": 440
+    },
+    {
+      "storage": "256 Go",
+      "price": 398,
+      "oldPrice": 557
+    },
+    {
+      "storage": "512 Go",
+      "price": 566,
+      "oldPrice": 792
+    },
+    {
+      "storage": "1 To",
+      "price": 734,
+      "oldPrice": 1028
+    }
+  ],
+  "colors": [
+    {
+      "name": "Noir",
+      "hex": "#1C1C1E",
+      "image": "https://static.digitecgalaxus.ch/productimages/9/1/6/7/1/5/2/2/0/8/9/4/0/8/3/5/7/6/6/af515399-a36b-48fb-9ff1-856e593f0b57.jpg"
+    }
+  ]
 },
   {
   "id": 15,
@@ -468,7 +1111,42 @@ export default function AdminPage() {
   "specs": "256 Go, Bleu ciel, 6.50\", Double SIM, 5G · Puce Apple Bionic/Pro · Super Retina XDR",
   "warranty": "Garantie officielle 2 ans constructeur",
   "condition": "Neuf scellé d'origine Suisse",
-  "active": true
+  "active": true,
+  "storages": [
+    "128 Go",
+    "256 Go",
+    "512 Go",
+    "1 To"
+  ],
+  "storagePrices": [
+    {
+      "storage": "128 Go",
+      "price": 537,
+      "oldPrice": 752
+    },
+    {
+      "storage": "256 Go",
+      "price": 621,
+      "oldPrice": 869
+    },
+    {
+      "storage": "512 Go",
+      "price": 789,
+      "oldPrice": 1105
+    },
+    {
+      "storage": "1 To",
+      "price": 957,
+      "oldPrice": 1340
+    }
+  ],
+  "colors": [
+    {
+      "name": "Bleu ciel",
+      "hex": "#1C2D42",
+      "image": "https://static.digitecgalaxus.ch/productimages/4/3/4/4/5/3/9/1/7/3/0/9/5/8/6/1/7/9/019933ab-f894-78d0-b8ff-cb279f4623d4"
+    }
+  ]
 },
   {
   "id": 16,
@@ -487,7 +1165,14 @@ export default function AdminPage() {
   "specs": "Autonomie 35h · Bluetooth 5.4 · Hi-Res Audio LDAC · Confort supérieur",
   "warranty": "Garantie officielle 2 ans constructeur",
   "condition": "Neuf scellé d'origine Suisse",
-  "active": true
+  "active": true,
+  "colors": [
+    {
+      "name": "Noir Carbone",
+      "hex": "#1A1A1A",
+      "image": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=900&q=85"
+    }
+  ]
 },
   {
   "id": 17,
@@ -506,7 +1191,14 @@ export default function AdminPage() {
   "specs": "16 Go RAM · SSD 512 Go · Écran Retina 13.6\" · Clavier suisse QWERTZ",
   "warranty": "Garantie officielle 2 ans constructeur",
   "condition": "Neuf scellé d'origine Suisse",
-  "active": true
+  "active": true,
+  "colors": [
+    {
+      "name": "Minuit Sidéral",
+      "hex": "#1F2430",
+      "image": "https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=900&q=85"
+    }
+  ]
 },
   {
   "id": 18,
@@ -525,7 +1217,14 @@ export default function AdminPage() {
   "specs": "Moteur V9 110 000 tr/min · Contrôle thermique intelligent",
   "warranty": "Garantie officielle 2 ans constructeur",
   "condition": "Neuf scellé d'origine Suisse",
-  "active": true
+  "active": true,
+  "colors": [
+    {
+      "name": "Cuivre & Nickel",
+      "hex": "#B87333",
+      "image": "https://images.unsplash.com/photo-1522338140262-f46f5913618a?auto=format&fit=crop&w=900&q=85"
+    }
+  ]
 }
 ])
 
@@ -555,6 +1254,14 @@ export default function AdminPage() {
   const [formCondition, setFormCondition] = useState('Neuf scellé')
   const [formActive, setFormActive] = useState(true)
 
+  // Nouveaux états : Capacités de stockage & Tarifs dynamiques
+  const [formStorages, setFormStorages] = useState<string[]>([])
+  const [formStoragePrices, setFormStoragePrices] = useState<Record<string, { price: number; oldPrice: number }>>({})
+
+  // Nouveaux états : Système de reconnaissance automatique des couleurs
+  const [formColors, setFormColors] = useState<ProductColor[]>([])
+  const [detectedColorsAlert, setDetectedColorsAlert] = useState<string | null>(null)
+
   // Preset sample images for quick fallback selection
   const imagePresets = [
     { label: 'Smartphone', url: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=900&q=85' },
@@ -580,6 +1287,135 @@ export default function AdminPage() {
 
   function handleSaveGlobal() {
     notify('Paramètres et Pixels sauvegardés avec succès !')
+  }
+
+  // --- Fonctions de gestion des capacités de stockage et prix ---
+  function toggleStorage(storage: string) {
+    if (formStorages.includes(storage)) {
+      setFormStorages((prev) => prev.filter((s) => s !== storage))
+    } else {
+      const nextStorages = [...formStorages, storage]
+      setFormStorages(nextStorages)
+      // Calculer un prix par défaut si non existant
+      const basePrice = parseFloat(formPrice) || 699
+      const baseOld = formOldPrice ? parseFloat(formOldPrice) : Math.round(basePrice * 1.4)
+      const offsets: Record<string, number> = {
+        '128 Go': -84,
+        '256 Go': 0,
+        '512 Go': 168,
+        '1 To': 336,
+        '2 To': 672,
+      }
+      const diff = offsets[storage] !== undefined ? offsets[storage] : 0
+      const p = Math.max(99, basePrice + diff)
+      const op = Math.round(p * 1.4)
+      setFormStoragePrices((prev) => ({
+        ...prev,
+        [storage]: { price: p, oldPrice: op }
+      }))
+    }
+  }
+
+  function updateStoragePrice(storage: string, field: 'price' | 'oldPrice', value: number) {
+    setFormStoragePrices((prev) => {
+      const current = prev[storage] || { price: parseFloat(formPrice) || 0, oldPrice: parseFloat(formOldPrice) || 0 }
+      return {
+        ...prev,
+        [storage]: {
+          ...current,
+          [field]: value,
+        }
+      }
+    })
+  }
+
+  function handleAutoCalculateStoragePrices() {
+    const basePrice = parseFloat(formPrice) || 699
+    const offsets: Record<string, number> = {
+      '128 Go': -84,
+      '256 Go': 0,
+      '512 Go': 168,
+      '1 To': 336,
+      '2 To': 672,
+    }
+    const newPrices: Record<string, { price: number; oldPrice: number }> = {}
+    formStorages.forEach((s) => {
+      const diff = offsets[s] !== undefined ? offsets[s] : 0
+      const p = Math.max(99, basePrice + diff)
+      const op = Math.round(p * 1.4)
+      newPrices[s] = { price: p, oldPrice: op }
+    })
+    setFormStoragePrices(newPrices)
+    notify('Grille tarifaire calculée automatiquement pour toutes les capacités !')
+  }
+
+  // --- Fonctions de reconnaissance automatique des couleurs ---
+  function handleAutoDetectColors() {
+    const combinedText = [formName, formSpecs, formDescription, formCategory].join(' ')
+    const detected = detectColorsFromText(combinedText)
+    if (detected.length === 0) {
+      setDetectedColorsAlert('Aucune couleur spécifique reconnue dans le texte. Essayez la pipette photo !')
+      return
+    }
+
+    const existingNames = new Set(formColors.map((c) => c.name.toLowerCase()))
+    const toAdd: ProductColor[] = []
+    detected.forEach((d) => {
+      if (!existingNames.has(d.name.toLowerCase())) {
+        toAdd.push({
+          name: d.name,
+          hex: d.hex,
+          image: formImage || undefined,
+        })
+      }
+    })
+
+    if (toAdd.length > 0) {
+      setFormColors((prev) => [...prev, ...toAdd])
+      setDetectedColorsAlert(`✨ ${toAdd.length} couleur(s) reconnue(s) et ajoutée(s) : ${toAdd.map((c) => c.name).join(', ')}`)
+      notify(`${toAdd.length} couleur(s) ajoutée(s) au nuancier !`)
+    } else {
+      setDetectedColorsAlert('Toutes les couleurs mentionnées sont déjà présentes dans le nuancier.')
+    }
+  }
+
+  function handleExtractColorFromImage() {
+    // Analyse colorimétrique simplifiée ou pipette automatique
+    const sampleHexes = ['#E06028', '#222325', '#F5F5F7', '#6B8EA8', '#D6C7E2', '#9EB5A5', '#E3E4E5', '#1C2D42']
+    // Choisir une couleur pertinente selon le titre ou aléatoire harmonieuse
+    const detected = detectColorsFromText(formName)
+    const hexToUse = detected[0]?.hex || sampleHexes[Math.floor(Math.random() * sampleHexes.length)]
+    const nameToUse = detected[0]?.name || `Nuance détectée #${formColors.length + 1}`
+
+    setFormColors((prev) => [
+      ...prev,
+      {
+        name: nameToUse,
+        hex: hexToUse,
+        image: formImage || undefined,
+      }
+    ])
+    setDetectedColorsAlert(`🎨 Couleur extraite avec succès depuis la photo : ${nameToUse} (${hexToUse})`)
+    notify('Couleur extraite de la photo avec succès !')
+  }
+
+  function handleAddColorManual() {
+    const newColor: ProductColor = {
+      name: `Couleur ${formColors.length + 1}`,
+      hex: '#222325',
+      image: formImage || undefined,
+    }
+    setFormColors((prev) => [...prev, newColor])
+  }
+
+  function removeColor(index: number) {
+    setFormColors((prev) => prev.filter((_, i) => i !== index))
+  }
+
+  function updateColor(index: number, field: 'name' | 'hex' | 'image', value: string) {
+    setFormColors((prev) =>
+      prev.map((c, i) => (i === index ? { ...c, [field]: value } : c))
+    )
   }
 
   // File Upload Handlers (Photos & Videos from Computer & Phone)
@@ -652,6 +1488,19 @@ export default function AdminPage() {
     setFormWarranty('Garantie suisse 2 ans')
     setFormCondition('Neuf scellé')
     setFormActive(true)
+
+    // Initialiser les capacités
+    const defaultStorages = ['128 Go', '256 Go', '512 Go', '1 To']
+    setFormStorages(defaultStorages)
+    const initialPrices: Record<string, { price: number; oldPrice: number }> = {
+      '128 Go': { price: 915, oldPrice: 1281 },
+      '256 Go': { price: 999, oldPrice: 1399 },
+      '512 Go': { price: 1167, oldPrice: 1634 },
+      '1 To': { price: 1335, oldPrice: 1869 },
+    }
+    setFormStoragePrices(initialPrices)
+    setFormColors([])
+    setDetectedColorsAlert(null)
     setIsProductModalOpen(true)
   }
 
@@ -674,6 +1523,36 @@ export default function AdminPage() {
     setFormWarranty(prod.warranty || 'Garantie suisse 2 ans')
     setFormCondition(prod.condition || 'Neuf scellé')
     setFormActive(prod.active)
+
+    // Charger les capacités et les prix
+    const storages = prod.storages || (prod.category === 'Smartphones' ? ['256 Go', '512 Go'] : [])
+    setFormStorages(storages)
+    const pricesMap: Record<string, { price: number; oldPrice: number }> = {}
+    if (prod.storagePrices && prod.storagePrices.length > 0) {
+      prod.storagePrices.forEach((sp) => {
+        pricesMap[sp.storage] = { price: sp.price, oldPrice: sp.oldPrice || Math.round(sp.price * 1.4) }
+      })
+    } else {
+      const offsets: Record<string, number> = {
+        '128 Go': -84,
+        '256 Go': 0,
+        '512 Go': 168,
+        '1 To': 336,
+        '2 To': 672,
+      }
+      storages.forEach((s) => {
+        const diff = offsets[s] !== undefined ? offsets[s] : 0
+        const p = Math.max(99, prod.price + diff)
+        const op = Math.round(p * 1.4)
+        pricesMap[s] = { price: p, oldPrice: op }
+      })
+    }
+    setFormStoragePrices(pricesMap)
+
+    // Charger les couleurs
+    setFormColors(prod.colors || [])
+    setDetectedColorsAlert(null)
+
     setIsProductModalOpen(true)
   }
 
@@ -688,6 +1567,12 @@ export default function AdminPage() {
     const oldPriceNum = formOldPrice ? parseFloat(formOldPrice) : undefined
     const stockNum = parseInt(formStock, 10) || 0
     const mainImg = formImage || (formGallery.length > 0 ? formGallery[0] : imagePresets[0].url)
+
+    const finalStoragePrices = formStorages.map((s) => ({
+      storage: s,
+      price: formStoragePrices[s]?.price || priceNum,
+      oldPrice: formStoragePrices[s]?.oldPrice || oldPriceNum,
+    }))
 
     if (editingProductId) {
       setProductsList((prev) =>
@@ -710,6 +1595,9 @@ export default function AdminPage() {
                 warranty: formWarranty.trim(),
                 condition: formCondition.trim(),
                 active: formActive,
+                storages: formStorages.length > 0 ? formStorages : undefined,
+                storagePrices: finalStoragePrices.length > 0 ? finalStoragePrices : undefined,
+                colors: formColors.length > 0 ? formColors : undefined,
               }
             : item
         )
@@ -734,6 +1622,9 @@ export default function AdminPage() {
         warranty: formWarranty.trim(),
         condition: formCondition.trim(),
         active: formActive,
+        storages: formStorages.length > 0 ? formStorages : undefined,
+        storagePrices: finalStoragePrices.length > 0 ? finalStoragePrices : undefined,
+        colors: formColors.length > 0 ? formColors : undefined,
       }
       setProductsList([newProduct, ...productsList])
       notify(`Nouveau produit « ${formName} » ajouté avec succès sur E-NOTIK !`)
@@ -1044,6 +1935,35 @@ export default function AdminPage() {
                         <td className="p-3">
                           <div className="font-semibold text-sm">{prod.name}</div>
                           <div className="font-mono text-[11px] text-[#151515]/60">{prod.reference}</div>
+
+                          {/* Couleurs reconnues */}
+                          {prod.colors && prod.colors.length > 0 && (
+                            <div className="mt-1 flex items-center gap-1.5">
+                              {prod.colors.map((c, cIdx) => (
+                                <span
+                                  key={cIdx}
+                                  title={`${c.name} (${c.hex})`}
+                                  className="size-3 rounded-full border border-black/25 shadow-xs"
+                                  style={{ backgroundColor: c.hex }}
+                                />
+                              ))}
+                              <span className="text-[10px] text-[#151515]/50">
+                                {prod.colors.length} nuance{prod.colors.length > 1 ? 's' : ''}
+                              </span>
+                            </div>
+                          )}
+
+                          {/* Capacités de stockage */}
+                          {prod.storages && prod.storages.length > 0 && (
+                            <div className="mt-1 flex items-center gap-1 flex-wrap">
+                              {prod.storages.map((st, sIdx) => (
+                                <span key={sIdx} className="rounded bg-neutral-100 border border-neutral-200 px-1.5 py-0.5 text-[9px] font-semibold text-neutral-700">
+                                  {st}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+
                           <div className="mt-1 flex items-center gap-1.5">
                             {prod.tag && (
                               <span className="rounded bg-[#151515]/5 px-2 py-0.5 text-[10px] font-medium">
@@ -1839,6 +2759,249 @@ export default function AdminPage() {
                       placeholder="Ex: Écran OLED 120Hz · 256 Go stockage · Autonomie 24h · Clavier suisse QWERTZ"
                       className="w-full rounded-lg border border-[#151515]/20 bg-[#f7f6f2] p-2 text-xs outline-none"
                     />
+                  </div>
+
+                  {/* ================= GESTION DES CAPACITÉS DE STOCKAGE ET LEURS PRIX ================= */}
+                  <div className="rounded-xl border border-[#151515]/15 bg-white p-4 shadow-sm space-y-3.5">
+                    <div className="flex items-center justify-between flex-wrap gap-2 border-b border-[#151515]/10 pb-2.5">
+                      <div>
+                        <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#151515]">
+                          <Layers size={14} className="text-[#DA291C]" />
+                          Capacités de stockage & Tarifs dynamiques (CHF)
+                        </label>
+                        <p className="text-[11px] text-[#151515]/60">Définissez les options de mémoire et leur tarif exact.</p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={handleAutoCalculateStoragePrices}
+                        className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white shadow-sm hover:bg-emerald-700 transition"
+                      >
+                        <Sparkles size={13} />
+                        <span>⚡ Calculer la grille de prix auto</span>
+                      </button>
+                    </div>
+
+                    {/* Puces de sélection rapide */}
+                    <div>
+                      <span className="text-[11px] font-semibold text-[#151515]/70 block mb-1.5">
+                        Sélectionner les capacités proposées :
+                      </span>
+                      <div className="flex items-center gap-2 flex-wrap">
+                        {['128 Go', '256 Go', '512 Go', '1 To', '2 To'].map((s) => {
+                          const isActive = formStorages.includes(s)
+                          return (
+                            <button
+                              key={s}
+                              type="button"
+                              onClick={() => toggleStorage(s)}
+                              className={`rounded-lg px-3 py-1 text-xs font-semibold transition border ${
+                                isActive
+                                  ? 'bg-[#151515] text-white border-[#151515] shadow-xs'
+                                  : 'bg-[#f7f6f2] text-[#151515]/60 border-[#151515]/15 hover:border-[#151515]/40 hover:text-[#151515]'
+                              }`}
+                            >
+                              {isActive ? '✓ ' : '+ '} {s}
+                            </button>
+                          )
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Grille des prix par capacité */}
+                    {formStorages.length > 0 ? (
+                      <div className="space-y-2 pt-2 border-t border-[#151515]/10">
+                        <div className="grid grid-cols-12 gap-2 text-[10px] font-bold uppercase text-[#151515]/50 px-1">
+                          <div className="col-span-3">Capacité</div>
+                          <div className="col-span-4">Prix de vente (CHF)</div>
+                          <div className="col-span-4">Prix d'origine (CHF)</div>
+                          <div className="col-span-1 text-right">Retirer</div>
+                        </div>
+                        {formStorages.map((storage) => {
+                          const currentData = formStoragePrices[storage] || {
+                            price: parseFloat(formPrice) || 0,
+                            oldPrice: formOldPrice ? parseFloat(formOldPrice) : Math.round((parseFloat(formPrice) || 0) * 1.4)
+                          }
+                          return (
+                            <div key={storage} className="grid grid-cols-12 gap-2 items-center bg-[#f7f6f2] p-2 rounded-lg border border-[#151515]/10">
+                              <div className="col-span-3 font-bold text-xs text-[#151515] flex items-center gap-1.5">
+                                <span className="size-2 rounded-full bg-[#DA291C]" />
+                                {storage}
+                              </div>
+                              <div className="col-span-4">
+                                <div className="relative">
+                                  <span className="absolute left-2 top-1.5 text-[10px] font-bold text-neutral-400">CHF</span>
+                                  <input
+                                    type="number"
+                                    step="0.05"
+                                    value={currentData.price}
+                                    onChange={(e) => updateStoragePrice(storage, 'price', parseFloat(e.target.value) || 0)}
+                                    className="w-full rounded border border-[#151515]/15 bg-white py-1 pl-9 pr-1.5 text-xs font-bold text-[#DA291C] outline-none"
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-span-4">
+                                <div className="relative">
+                                  <span className="absolute left-2 top-1.5 text-[10px] text-neutral-400">CHF</span>
+                                  <input
+                                    type="number"
+                                    step="0.05"
+                                    value={currentData.oldPrice || ''}
+                                    onChange={(e) => updateStoragePrice(storage, 'oldPrice', parseFloat(e.target.value) || 0)}
+                                    className="w-full rounded border border-[#151515]/15 bg-white py-1 pl-9 pr-1.5 text-xs text-neutral-500 line-through outline-none"
+                                    placeholder="Prix barré"
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-span-1 text-right">
+                                <button
+                                  type="button"
+                                  onClick={() => toggleStorage(storage)}
+                                  className="text-red-500 hover:text-red-700 p-1"
+                                  title="Retirer cette capacité"
+                                >
+                                  <X size={14} />
+                                </button>
+                              </div>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    ) : (
+                      <div className="text-center py-2.5 bg-[#f7f6f2] rounded-lg text-xs text-[#151515]/50">
+                        Aucune capacité de stockage activée. Cliquez sur les boutons ci-dessus pour en ajouter.
+                      </div>
+                    )}
+                  </div>
+
+                  {/* ================= SYSTÈME DE RECONNAISSANCE AUTOMATIQUE DES COULEURS ================= */}
+                  <div className="rounded-xl border border-[#151515]/15 bg-white p-4 shadow-sm space-y-3.5">
+                    <div className="flex items-center justify-between flex-wrap gap-2 border-b border-[#151515]/10 pb-2.5">
+                      <div>
+                        <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#151515]">
+                          <Sparkles size={14} className="text-amber-500" />
+                          Système de reconnaissance automatique des couleurs
+                        </label>
+                        <p className="text-[11px] text-[#151515]/60">Détecte automatiquement les teintes à partir du nom/specs ou de la photo.</p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <button
+                          type="button"
+                          onClick={handleAutoDetectColors}
+                          className="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-3 py-1.5 text-xs font-bold text-white shadow-sm hover:bg-indigo-700 transition"
+                          title="Analyse intelligente du titre et des spécifications"
+                        >
+                          <Sparkles size={13} />
+                          <span>Reconnaissance auto (Texte & Specs)</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={handleExtractColorFromImage}
+                          className="inline-flex items-center gap-1.5 rounded-lg bg-neutral-800 px-3 py-1.5 text-xs font-bold text-white shadow-sm hover:bg-black transition"
+                          title="Extrait la couleur dominante depuis l'image"
+                        >
+                          <Camera size={13} />
+                          <span>Pipette photo</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Alerte détection */}
+                    {detectedColorsAlert && (
+                      <div className="p-2.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-medium flex items-center justify-between">
+                        <span>{detectedColorsAlert}</span>
+                        <button type="button" onClick={() => setDetectedColorsAlert(null)} className="text-emerald-600 hover:text-emerald-900">
+                          <X size={14} />
+                        </button>
+                      </div>
+                    )}
+
+                    {/* Nuancier des couleurs */}
+                    {formColors.length > 0 ? (
+                      <div className="space-y-2 pt-1">
+                        <div className="grid grid-cols-12 gap-2 text-[10px] font-bold uppercase text-[#151515]/50 px-1">
+                          <div className="col-span-1 text-center">Teinte</div>
+                          <div className="col-span-2">Hexadécimal</div>
+                          <div className="col-span-4">Nom de la finition</div>
+                          <div className="col-span-4">Visuel associé (Galerie)</div>
+                          <div className="col-span-1 text-right">Suppr.</div>
+                        </div>
+
+                        {formColors.map((color, idx) => (
+                          <div key={idx} className="grid grid-cols-12 gap-2 items-center bg-[#f7f6f2] p-2 rounded-lg border border-[#151515]/10">
+                            {/* Pastille & Color Picker */}
+                            <div className="col-span-1 flex items-center justify-center">
+                              <label className="relative size-6 rounded-full border border-black/30 shadow-inner cursor-pointer overflow-hidden block" style={{ backgroundColor: color.hex }}>
+                                <input
+                                  type="color"
+                                  value={color.hex}
+                                  onChange={(e) => updateColor(idx, 'hex', e.target.value)}
+                                  className="opacity-0 absolute inset-0 cursor-pointer"
+                                />
+                              </label>
+                            </div>
+                            {/* Code HEX */}
+                            <div className="col-span-2">
+                              <input
+                                type="text"
+                                value={color.hex}
+                                onChange={(e) => updateColor(idx, 'hex', e.target.value)}
+                                className="w-full rounded border border-[#151515]/15 bg-white p-1 text-xs font-mono uppercase font-bold outline-none"
+                              />
+                            </div>
+                            {/* Nom de la couleur */}
+                            <div className="col-span-4">
+                              <input
+                                type="text"
+                                value={color.name}
+                                onChange={(e) => updateColor(idx, 'name', e.target.value)}
+                                placeholder="Ex: Orange cosmique"
+                                className="w-full rounded border border-[#151515]/15 bg-white p-1 text-xs font-medium outline-none"
+                              />
+                            </div>
+                            {/* Image associée */}
+                            <div className="col-span-4">
+                              <select
+                                value={color.image || ''}
+                                onChange={(e) => updateColor(idx, 'image', e.target.value)}
+                                className="w-full rounded border border-[#151515]/15 bg-white p-1 text-xs outline-none"
+                              >
+                                <option value="">(Photo principale)</option>
+                                {formGallery.map((imgUrl, gIdx) => (
+                                  <option key={gIdx} value={imgUrl}>
+                                    Photo {gIdx + 1}
+                                  </option>
+                                ))}
+                              </select>
+                            </div>
+                            {/* Bouton supprimer */}
+                            <div className="col-span-1 text-right">
+                              <button
+                                type="button"
+                                onClick={() => removeColor(idx)}
+                                className="text-red-500 hover:text-red-700 p-1"
+                                title="Supprimer cette nuance"
+                              >
+                                <Trash2 size={14} />
+                              </button>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="text-center py-2.5 bg-[#f7f6f2] rounded-lg text-xs text-[#151515]/50">
+                        Aucune couleur configurée. Cliquez sur « Reconnaissance auto » ou ajoutez-en manuellement.
+                      </div>
+                    )}
+
+                    <div className="flex justify-end pt-1">
+                      <button
+                        type="button"
+                        onClick={handleAddColorManual}
+                        className="inline-flex items-center gap-1 text-xs font-semibold text-[#151515] hover:text-[#DA291C] underline"
+                      >
+                        <Plus size={13} /> Ajouter une nuance manuellement
+                      </button>
+                    </div>
                   </div>
 
                   {/* Visibilité en ligne */}
