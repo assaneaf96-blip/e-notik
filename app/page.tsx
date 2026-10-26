@@ -718,6 +718,26 @@ const categories = [
   { label: 'Électroménager', sub: 'Le beau, au quotidien.', image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1100&q=85' },
 ]
 
+export const digitecColorRefMap: Record<string, string> = {
+  'Noir': 'ENOTIK-IPH17-BLK-61962931',
+  'Blanc': 'ENOTIK-IPH17-WHT-61962940',
+  'Bleu brume': 'ENOTIK-IPH17-BLU-61962958',
+  'Lavande': 'ENOTIK-IPH17-LAV-61962939',
+  'Fable': 'ENOTIK-IPH17-FBL-61962909',
+}
+
+export function getDefaultProductColor(p: Product): ProductColor | null {
+  if (!p || !p.colors || p.colors.length === 0) return null
+  const name = (p.name || '').toLowerCase()
+  const specs = (p.specs || '').toLowerCase()
+  const matched = p.colors.find((c) => {
+    if (!c || !c.name) return false
+    const cName = c.name.toLowerCase()
+    return name.includes(cName) || specs.includes(cName)
+  })
+  return matched || p.colors[0] || null
+}
+
 export function getProductBaseStorage(p: Product): string {
   if (p.specs && (p.specs.includes('512 Go') || p.specs.includes('512\u00a0Go'))) return '512 Go'
   if (p.specs && (p.specs.includes('128 Go') || p.specs.includes('128\u00a0Go'))) return '128 Go'
@@ -865,7 +885,7 @@ export default function Page() {
   }
 
   function openQuickView(product: Product) {
-    const activeColor = selectedProductColors[product.id] || getDefaultProductColor(product)
+    const activeColor = selectedProductColors?.[product.id] || getDefaultProductColor(product)
     const initialStorage = product.storages?.[0] || getProductBaseStorage(product)
     setQuickViewProduct(product)
     setQuickViewSelectedColor(activeColor)
@@ -874,7 +894,7 @@ export default function Page() {
   }
 
   function addToCart(product: Product, overrideColor?: ProductColor, overrideStorage?: string) {
-    const colorToUse = overrideColor || selectedProductColors[product.id] || getDefaultProductColor(product)
+    const colorToUse = overrideColor || selectedProductColors?.[product.id] || getDefaultProductColor(product)
     const storageToUse = overrideStorage || product.storages?.[0] || getProductBaseStorage(product)
     const pricing = getStoragePricing(product, storageToUse)
     const key = `${product.id}-${colorToUse?.name || 'default'}-${storageToUse}`
@@ -1200,7 +1220,7 @@ export default function Page() {
           <div className="grid grid-cols-2 gap-x-4 gap-y-12 lg:grid-cols-4">
             {filtered.map((product) => {
               const isLiked = liked.includes(product.id)
-              const activeColor = selectedProductColors[product.id] || getDefaultProductColor(product)
+              const activeColor = selectedProductColors?.[product.id] || getDefaultProductColor(product)
               const displayImage = activeColor?.image || product.image
 
               return (
