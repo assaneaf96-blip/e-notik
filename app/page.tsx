@@ -65,9 +65,9 @@ const products: Product[] = [
     "price": "CHF 723.–",
     "priceNum": 723,
     "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-whitetitanium?wid=940&hei=1112&fmt=png-alpha",
-    "tag": "−30% Digitec",
-    "description": "Apple iPhone 17 Pro (256 Go, Silver / Argent, 6.30\", Double SIM, 5G). Modèle officiel répertorié sur Digitec Suisse (Réf. 61962956 / N° fabricant MG8G4QL/A). L'iPhone le plus puissant : écran brillant 6.3\" ProMotion 120Hz, design unibody en aluminium forgé, puce A19 Pro refroidie par chambre à vapeur, triple capteur photo Fusion 48 MP à zoom optique 8x et autonomie record.",
-    "specs": "256 Go, Silver (Argent), 6.30\", Double SIM, 5G · Réf Digitec 61962956 · MG8G4QL/A · Puce A19 Pro · Écran 120Hz",
+    "tag": "−30%",
+    "description": "Apple iPhone 17 Pro (256 Go, Silver / Argent, 6.30\", Double SIM, 5G). Modèle officiel Suisse (Réf. 61962956 / N° fabricant MG8G4QL/A). L'iPhone le plus puissant : écran brillant 6.3\" ProMotion 120Hz, design unibody en aluminium forgé, puce A19 Pro refroidie par chambre à vapeur, triple capteur photo Fusion 48 MP à zoom optique 8x et autonomie record.",
+    "specs": "256 Go, Silver (Argent), 6.30\", Double SIM, 5G · Réf. 61962956 · MG8G4QL/A · Puce A19 Pro · Écran 120Hz",
     "storages": [
       "128 Go",
       "256 Go",
@@ -111,9 +111,9 @@ const products: Product[] = [
     "price": "CHF 723.–",
     "priceNum": 723,
     "image": "/products/iphone17pro-orange/back.png",
-    "tag": "−30% Digitec",
-    "description": "Apple iPhone 17 Pro 256 Go Orange cosmique (Cosmic Orange). Référence Digitec 61962964 / N° fabricant MG8H4QL/A. Écran 6.30\" ProMotion 120Hz, finition titane Orange cosmique, puce A19 Pro refroidie par chambre à vapeur, triple capteur photo Fusion 48 MP à zoom optique 8x et autonomie record.",
-    "specs": "256 Go, Orange cosmique, 6.30\", Double SIM, 5G · Réf Digitec 61962964 · MG8H4QL/A · Puce A19 Pro · Écran 120Hz",
+    "tag": "−30%",
+    "description": "Apple iPhone 17 Pro 256 Go Orange cosmique (Cosmic Orange). Référence 61962964 / N° fabricant MG8H4QL/A. Écran 6.30\" ProMotion 120Hz, finition titane Orange cosmique, puce A19 Pro refroidie par chambre à vapeur, triple capteur photo Fusion 48 MP à zoom optique 8x et autonomie record.",
+    "specs": "256 Go, Orange cosmique, 6.30\", Double SIM, 5G · Réf. 61962964 · MG8H4QL/A · Puce A19 Pro · Écran 120Hz",
     "storages": [
       "128 Go",
       "256 Go",
@@ -153,9 +153,9 @@ const products: Product[] = [
     "price": "CHF 597.–",
     "priceNum": 597,
     "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha",
-    "tag": "−30% Digitec",
-    "description": "Apple iPhone 17 256 Go Noir (Black / Schwarz). Référence Digitec 61962931 / N° fabricant MG6J4QL/A. Écran 6.30\" ProMotion 120Hz, Ceramic Shield 2, puce A19 et double caméra Fusion 48 MP.",
-    "specs": "256 Go, Noir, 6.30\", Double SIM, 5G · Réf Digitec 61962931 · MG6J4QL/A · Puce A19",
+    "tag": "−30%",
+    "description": "Apple iPhone 17 256 Go Noir (Black / Schwarz). Référence 61962931 / N° fabricant MG6J4QL/A. Écran 6.30\" ProMotion 120Hz, Ceramic Shield 2, puce A19 et double caméra Fusion 48 MP.",
+    "specs": "256 Go, Noir, 6.30\", Double SIM, 5G · Réf. 61962931 · MG6J4QL/A · Puce A19",
     "storages": [
       "256 Go",
       "512 Go"
@@ -204,9 +204,9 @@ const products: Product[] = [
     "price": "CHF 597.–",
     "priceNum": 597,
     "image": "https://static.digitecgalaxus.ch/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2",
-    "tag": "−30% Digitec",
-    "description": "Apple iPhone 17 256 Go Blanc (White). Référence Digitec 61962940 / N° fabricant MG6K4QL/A. Écran 6.30\" ProMotion 120Hz, Ceramic Shield 2, puce A19 et double caméra Fusion 48 MP.",
-    "specs": "256 Go, Blanc, 6.30\", Double SIM, 5G · Réf Digitec 61962940 · MG6K4QL/A · Puce A19",
+    "tag": "−30%",
+    "description": "Apple iPhone 17 256 Go Blanc (White). Référence 61962940 / N° fabricant MG6K4QL/A. Écran 6.30\" ProMotion 120Hz, Ceramic Shield 2, puce A19 et double caméra Fusion 48 MP.",
+    "specs": "256 Go, Blanc, 6.30\", Double SIM, 5G · Réf. 61962940 · MG6K4QL/A · Puce A19",
     "storages": [
       "256 Go",
       "512 Go"
@@ -255,9 +255,9 @@ const products: Product[] = [
     "price": "CHF 597.–",
     "priceNum": 597,
     "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha",
-    "tag": "−30% Digitec",
-    "description": "Apple iPhone 17 256 Go Bleu brume (Mist Blue). Référence Digitec 61962958 / N° fabricant MG6L4QL/A. Écran 6.30\" ProMotion 120Hz, Ceramic Shield 2, puce A19 et double caméra Fusion 48 MP.",
-    "specs": "256 Go, Bleu brume, 6.30\", Double SIM, 5G · Réf Digitec 61962958 · MG6L4QL/A · Puce A19",
+    "tag": "−30%",
+    "description": "Apple iPhone 17 256 Go Bleu brume (Mist Blue). Référence 61962958 / N° fabricant MG6L4QL/A. Écran 6.30\" ProMotion 120Hz, Ceramic Shield 2, puce A19 et double caméra Fusion 48 MP.",
+    "specs": "256 Go, Bleu brume, 6.30\", Double SIM, 5G · Réf. 61962958 · MG6L4QL/A · Puce A19",
     "storages": [
       "256 Go",
       "512 Go"
@@ -306,9 +306,9 @@ const products: Product[] = [
     "price": "CHF 597.–",
     "priceNum": 597,
     "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha",
-    "tag": "−30% Digitec",
-    "description": "Apple iPhone 17 256 Go Lavande (Lavender / Pink). Référence Digitec 61962939 / N° fabricant MG6M4QL/A. Écran 6.30\" ProMotion 120Hz, Ceramic Shield 2, puce A19 et double caméra Fusion 48 MP.",
-    "specs": "256 Go, Lavande, 6.30\", Double SIM, 5G · Réf Digitec 61962939 · MG6M4QL/A · Puce A19",
+    "tag": "−30%",
+    "description": "Apple iPhone 17 256 Go Lavande (Lavender / Pink). Référence 61962939 / N° fabricant MG6M4QL/A. Écran 6.30\" ProMotion 120Hz, Ceramic Shield 2, puce A19 et double caméra Fusion 48 MP.",
+    "specs": "256 Go, Lavande, 6.30\", Double SIM, 5G · Réf. 61962939 · MG6M4QL/A · Puce A19",
     "storages": [
       "256 Go",
       "512 Go"
@@ -357,9 +357,9 @@ const products: Product[] = [
     "price": "CHF 597.–",
     "priceNum": 597,
     "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha",
-    "tag": "−30% Digitec",
-    "description": "Apple iPhone 17 256 Go Fable (Vert Sauge / Sage). Référence Digitec 61962909 / N° fabricant MG6N4QL/A. Écran 6.30\" ProMotion 120Hz, Ceramic Shield 2, puce A19 et double caméra Fusion 48 MP.",
-    "specs": "256 Go, Fable, 6.30\", SIM + eSIM, 5G · Réf Digitec 61962909 · MG6N4QL/A · Puce A19",
+    "tag": "−30%",
+    "description": "Apple iPhone 17 256 Go Fable (Vert Sauge / Sage). Référence 61962909 / N° fabricant MG6N4QL/A. Écran 6.30\" ProMotion 120Hz, Ceramic Shield 2, puce A19 et double caméra Fusion 48 MP.",
+    "specs": "256 Go, Fable, 6.30\", SIM + eSIM, 5G · Réf. 61962909 · MG6N4QL/A · Puce A19",
     "storages": [
       "256 Go",
       "512 Go"
@@ -408,8 +408,8 @@ const products: Product[] = [
     "price": "CHF 489.–",
     "priceNum": 489,
     "image": "https://static.digitecgalaxus.ch/productimages/7/6/3/9/9/9/2/7/4/4/0/8/7/8/6/3/8/3/4/019cb2af-0149-7307-aee0-72cf96db7ed6",
-    "tag": "−30% Digitec",
-    "description": "L'iPhone 17e est doté d'un impressionnant écran Super Retina XDR de 6,1 pouces, de la puce A19 rapide et puissante, d'une autonomie de batterie de toute une journée et de 256 Go de stockage dans la configuration de départ. - PLAISIR AU POURVOIR - L'iPhone 17e est doté de toutes les fonctionnalités de l'iPhone 17. Et à un prix vraiment intéressant. - Bouton d'action - Pour un accès rapide et personnalisable à vos applications et fonctionnalités les plus utilisées. Ou à l'intelligence visuelle pour en savoir plus sur l'environnement. - FAIT POUR RÉSISTER - La face avant de l'iPhone 17e est protégée par le Ceramic Shield 2, avec une résistance aux rayures 3x supérieure à celle de la génération précédente. - AFFICHAGE BRILLANT - L'écran Super Retina XDR de 6,1\" donne vie aux images et rend le texte facile à lire. Et le revêtement antireflet à sept couches réduit les reflets, même en plein soleil. - BATTERIE POUR TOUTE LA JOURNÉE - Écrivez des messages, surfez et regardez des heures de films et de séries. Chargez rapidement avec USB C et maintenant avec MagSafe. - CHARGE RAPIDE SANS FIL. TOUT EN UN CLIC AVEC MAGSAFE. - L'iPhone 17e permet une charge sans fil jusqu'à 15 W, contre 7,5 W pour l'iPhone 16e. Vous pouvez donc le charger facilement, confortablement et rapidement à tout moment. - A19 CHIP. DE LA PUISSANCE À REVENDRE. SANS FIN. - Avec la puce A19, tout ce que vous faites vous semble rapide et fluide, même les jeux AAA les plus exigeants, le streaming 4K et bien plus encore. - DEUX CAMÉRAS AVANCÉS EN UN - L'appareil photo Fusion 48 MP offre un zoom téléobjectif 2x de qualité optique. Et avec Portraits nouvelle génération, vous pouvez capturer un moment spécial en une seule photo et le transformer plus tard en un portrait impressionnant en floutant l'arrière-plan après la prise de vue. Prix de référence Digitec Suisse (CHF 699.–) remisé à −30%.",
+    "tag": "−30%",
+    "description": "L'iPhone 17e est doté d'un impressionnant écran Super Retina XDR de 6,1 pouces, de la puce A19 rapide et puissante, d'une autonomie de batterie de toute une journée et de 256 Go de stockage dans la configuration de départ. - PLAISIR AU POURVOIR - L'iPhone 17e est doté de toutes les fonctionnalités de l'iPhone 17. Et à un prix vraiment intéressant. - Bouton d'action - Pour un accès rapide et personnalisable à vos applications et fonctionnalités les plus utilisées. Ou à l'intelligence visuelle pour en savoir plus sur l'environnement. - FAIT POUR RÉSISTER - La face avant de l'iPhone 17e est protégée par le Ceramic Shield 2, avec une résistance aux rayures 3x supérieure à celle de la génération précédente. - AFFICHAGE BRILLANT - L'écran Super Retina XDR de 6,1\" donne vie aux images et rend le texte facile à lire. Et le revêtement antireflet à sept couches réduit les reflets, même en plein soleil. - BATTERIE POUR TOUTE LA JOURNÉE - Écrivez des messages, surfez et regardez des heures de films et de séries. Chargez rapidement avec USB C et maintenant avec MagSafe. - CHARGE RAPIDE SANS FIL. TOUT EN UN CLIC AVEC MAGSAFE. - L'iPhone 17e permet une charge sans fil jusqu'à 15 W, contre 7,5 W pour l'iPhone 16e. Vous pouvez donc le charger facilement, confortablement et rapidement à tout moment. - A19 CHIP. DE LA PUISSANCE À REVENDRE. SANS FIN. - Avec la puce A19, tout ce que vous faites vous semble rapide et fluide, même les jeux AAA les plus exigeants, le streaming 4K et bien plus encore. - DEUX CAMÉRAS AVANCÉS EN UN - L'appareil photo Fusion 48 MP offre un zoom téléobjectif 2x de qualité optique. Et avec Portraits nouvelle génération, vous pouvez capturer un moment spécial en une seule photo et le transformer plus tard en un portrait impressionnant en floutant l'arrière-plan après la prise de vue. Prix officiel de référence Suisse (CHF 699.–) remisé à −30%.",
     "specs": "256 Go, Noir, 6.10\", SIM + eSIM, 5G · Puce Apple Bionic/Pro · Super Retina XDR",
     "storages": [
       "128 Go",
@@ -444,8 +444,8 @@ const products: Product[] = [
     "price": "CHF 1 028.–",
     "priceNum": 1028,
     "image": "https://static.digitecgalaxus.ch/productimages/3/1/9/0/3/4/3/9/6/5/7/6/6/9/9/6/1/9/6/01a08a3f-a187-72f6-b171-11227edba7f2",
-    "tag": "−30% Digitec",
-    "description": "À la pointe de la technologie. L’iPhone Pro par excellence. Votre mise à niveau la plus performante à ce jour. iPhone 18 Pro. Écran de 6,3 pouces avec ProMotion¹, appareil photo principal Fusion de 48 Mpx à ouverture variable, autonomie de la batterie nettement améliorée et puce A20 Pro. •   Quatre couleurs éclatantes. Un design robuste – Conçu pour durer, avec une structure monocoque en aluminium et une face arrière en verre de la même couleur pour un look plus harmonieux. •   Écran Pro immersif – Un écran Super Retina XDR de 6,3 pouces. Plus lumineux. Moins d’éblouissements. Et avec ProMotion jusqu’à 120 Hz. •   Ceramic Shield robuste. À l’avant et à l’arrière – Conçu pour durer. Avec Ceramic Shield à l’arrière et Ceramic Shield 2 à l’avant, offrant une résistance aux rayures trois fois supérieure à celle de l’iPhone 16 Pro. •   Le système d’appareil photo Pro ultime – Appareil photo principal Fusion de 48 MP avec ouverture variable pour des photos et des vidéos encore meilleures en basse lumière et une profondeur de champ impressionnante. Commandes Pro personnalisables. Et zoom optique 8x. •   Caméra avant Center Stage de 18 MP − Pour des cadrages flexibles. Faites entrer davantage de personnes dans le cadre. Vidéos en double enregistrement avec les caméras avant et arrière. Et bien plus encore. •   Puce A20 Pro. Un véritable concentré de puissance en matière d’IA – Avec une chambre à vapeur de nouvelle génération et un Neural Engine double de 16 cœurs. Des performances GPU jusqu’à 40 % supérieures à celles de l’iPhone 17 Pro.2 Spécialement conçue pour l’IA. •    GRAND BOND EN AVANT en matière d’autonomie de la batterie – Jusqu’à 3 heures de lecture vidéo en plus par rapport à l’iPhone 17 Pro.² Jusqu’à 24 heures d’utilisation avec une seule charge. Recharge filaire plus rapide : jusqu’à 50 % en environ 15 minutes avec un chargeur compatible. •   APPLE INTELLIGENCE − Confidentiel. Sécurisé. Et très puissant. Écrivez, exprimez votre personnalité et accomplissez vos tâches sans effort. •   FONCTIONNALITÉS DE SÉCURITÉ ESSENTIELLES – Grâce à la détection d’accident, l’iPhone peut détecter un accident de voiture grave et appeler les secours si vous n’êtes pas en mesure de le faire. Prix de référence Digitec Suisse (CHF 1 469.–) remisé à −30%.",
+    "tag": "−30%",
+    "description": "À la pointe de la technologie. L’iPhone Pro par excellence. Votre mise à niveau la plus performante à ce jour. iPhone 18 Pro. Écran de 6,3 pouces avec ProMotion¹, appareil photo principal Fusion de 48 Mpx à ouverture variable, autonomie de la batterie nettement améliorée et puce A20 Pro. •   Quatre couleurs éclatantes. Un design robuste – Conçu pour durer, avec une structure monocoque en aluminium et une face arrière en verre de la même couleur pour un look plus harmonieux. •   Écran Pro immersif – Un écran Super Retina XDR de 6,3 pouces. Plus lumineux. Moins d’éblouissements. Et avec ProMotion jusqu’à 120 Hz. •   Ceramic Shield robuste. À l’avant et à l’arrière – Conçu pour durer. Avec Ceramic Shield à l’arrière et Ceramic Shield 2 à l’avant, offrant une résistance aux rayures trois fois supérieure à celle de l’iPhone 16 Pro. •   Le système d’appareil photo Pro ultime – Appareil photo principal Fusion de 48 MP avec ouverture variable pour des photos et des vidéos encore meilleures en basse lumière et une profondeur de champ impressionnante. Commandes Pro personnalisables. Et zoom optique 8x. •   Caméra avant Center Stage de 18 MP − Pour des cadrages flexibles. Faites entrer davantage de personnes dans le cadre. Vidéos en double enregistrement avec les caméras avant et arrière. Et bien plus encore. •   Puce A20 Pro. Un véritable concentré de puissance en matière d’IA – Avec une chambre à vapeur de nouvelle génération et un Neural Engine double de 16 cœurs. Des performances GPU jusqu’à 40 % supérieures à celles de l’iPhone 17 Pro.2 Spécialement conçue pour l’IA. •    GRAND BOND EN AVANT en matière d’autonomie de la batterie – Jusqu’à 3 heures de lecture vidéo en plus par rapport à l’iPhone 17 Pro.² Jusqu’à 24 heures d’utilisation avec une seule charge. Recharge filaire plus rapide : jusqu’à 50 % en environ 15 minutes avec un chargeur compatible. •   APPLE INTELLIGENCE − Confidentiel. Sécurisé. Et très puissant. Écrivez, exprimez votre personnalité et accomplissez vos tâches sans effort. •   FONCTIONNALITÉS DE SÉCURITÉ ESSENTIELLES – Grâce à la détection d’accident, l’iPhone peut détecter un accident de voiture grave et appeler les secours si vous n’êtes pas en mesure de le faire. Prix officiel de référence Suisse (CHF 1 469.–) remisé à −30%.",
     "specs": "512 Go, Noir, 6.30\", Double SIM, 5G · Puce Apple Bionic/Pro · Super Retina XDR",
     "storages": [
       "128 Go",
@@ -480,8 +480,8 @@ const products: Product[] = [
     "price": "CHF 771.–",
     "priceNum": 771,
     "image": "https://static.digitecgalaxus.ch/productimages/2/9/0/3/0/4/3/4/9/1/4/8/3/7/6/9/2/3/0/01993298-82bf-7b12-8a73-94bcea6ea130",
-    "tag": "−30% Digitec",
-    "description": "iPhone 17 Pro Max. L'iPhone le plus puissant jamais conçu. Un écran brillant de 6,9 pouces, un design unibody en aluminium, une puce A19 Pro, des caméras arrière de 48 MP et la meilleure autonomie de batterie à ce jour.  DESIGN UNIBODY. POUR DES PERFORMANCES UNIQUES. - Design unibody en aluminium forgé à chaud. Pour l'iPhone le plus puissant jamais conçu.  BOUCLIER EN CÉRAMIQUE ROBUSTE. À L'AVANT ET À L'ARRIÈRE. - Le Ceramic Shield protège l'arrière de l'iPhone 17 Pro Max pour une résistance à la casse 4x supérieure. Et le nouveau Ceramic Shield 2 à l'avant offre une résistance aux rayures 3x supérieure.  LE SYSTÈME DE CAMÉRAS PRO ULTIME - Avec des caméras arrière de 48 MP et un zoom 8x de qualité optique - la plus grande plage de zoom jamais vue sur un iPhone. C'est comme si vous aviez 8 objectifs Pro dans votre poche.  CAMÉRA FRONTALE CENTRALE DE 18MP - Cadrage flexible. Des selfies de groupe intelligents, des vidéos avec double enregistrement des caméras avant et arrière, et plus encore.  A19 PRO CHIP. REFROIDISSEMENT À LA VAPEUR. VIF COMME L'ÉCLAIR. - La puce A19 Pro est la plus puissante de l'iPhone, avec des performances constantes jusqu'à 40 pour cent supérieures.  LA MEILLEURE DUREE D'UTILISATION DE LA BATTERIE DANS UN IPHONE - La conception unibody améliore considérablement l'autonomie de la batterie, avec jusqu'à 37 heures de lecture vidéo. Chargez jusqu'à 50 % en 20 minutes.  iOS 26. NOUVEAU LOOK. TOUT À FAIT MAGIQUE. - Le nouveau design Liquid Glass. Magnifique. Clair. Et si familier. Avec un écran de verrouillage plus vivant, des arrière-plans personnalisables, des sondages dans les messages, un filtre d'appel et plus encore.  CONÇU POUR APPLE INTELLIGENCE - Privé. En toute sécurité. Et avec beaucoup de puissance. Écrivez quelque chose, montrez votre personnalité et faites les choses beaucoup plus facilement.  FÉATURES SATELLITAIRES - Si vous devez contacter un service d'urgence mais que vous n'avez pas de réseau ni de Wi-Fi, vous pouvez utiliser SOS par satellite. En cas d'accident de voiture grave, l'iPhone peut contacter les secours si vous ne pouvez pas le faire. Prix de référence Digitec Suisse (CHF 1 102.–) remisé à −30%.",
+    "tag": "−30%",
+    "description": "iPhone 17 Pro Max. L'iPhone le plus puissant jamais conçu. Un écran brillant de 6,9 pouces, un design unibody en aluminium, une puce A19 Pro, des caméras arrière de 48 MP et la meilleure autonomie de batterie à ce jour.  DESIGN UNIBODY. POUR DES PERFORMANCES UNIQUES. - Design unibody en aluminium forgé à chaud. Pour l'iPhone le plus puissant jamais conçu.  BOUCLIER EN CÉRAMIQUE ROBUSTE. À L'AVANT ET À L'ARRIÈRE. - Le Ceramic Shield protège l'arrière de l'iPhone 17 Pro Max pour une résistance à la casse 4x supérieure. Et le nouveau Ceramic Shield 2 à l'avant offre une résistance aux rayures 3x supérieure.  LE SYSTÈME DE CAMÉRAS PRO ULTIME - Avec des caméras arrière de 48 MP et un zoom 8x de qualité optique - la plus grande plage de zoom jamais vue sur un iPhone. C'est comme si vous aviez 8 objectifs Pro dans votre poche.  CAMÉRA FRONTALE CENTRALE DE 18MP - Cadrage flexible. Des selfies de groupe intelligents, des vidéos avec double enregistrement des caméras avant et arrière, et plus encore.  A19 PRO CHIP. REFROIDISSEMENT À LA VAPEUR. VIF COMME L'ÉCLAIR. - La puce A19 Pro est la plus puissante de l'iPhone, avec des performances constantes jusqu'à 40 pour cent supérieures.  LA MEILLEURE DUREE D'UTILISATION DE LA BATTERIE DANS UN IPHONE - La conception unibody améliore considérablement l'autonomie de la batterie, avec jusqu'à 37 heures de lecture vidéo. Chargez jusqu'à 50 % en 20 minutes.  iOS 26. NOUVEAU LOOK. TOUT À FAIT MAGIQUE. - Le nouveau design Liquid Glass. Magnifique. Clair. Et si familier. Avec un écran de verrouillage plus vivant, des arrière-plans personnalisables, des sondages dans les messages, un filtre d'appel et plus encore.  CONÇU POUR APPLE INTELLIGENCE - Privé. En toute sécurité. Et avec beaucoup de puissance. Écrivez quelque chose, montrez votre personnalité et faites les choses beaucoup plus facilement.  FÉATURES SATELLITAIRES - Si vous devez contacter un service d'urgence mais que vous n'avez pas de réseau ni de Wi-Fi, vous pouvez utiliser SOS par satellite. En cas d'accident de voiture grave, l'iPhone peut contacter les secours si vous ne pouvez pas le faire. Prix officiel de référence Suisse (CHF 1 102.–) remisé à −30%.",
     "specs": "256 Go, Deep Blue, 6.90\", Double SIM, 5G · Puce Apple Bionic/Pro · Super Retina XDR",
     "storages": [
       "128 Go",
@@ -516,8 +516,8 @@ const products: Product[] = [
     "price": "CHF 1 399.–",
     "priceNum": 1399,
     "image": "https://static.digitecgalaxus.ch/productimages/8/6/8/3/9/7/3/9/7/9/8/1/4/8/6/8/1/7/8/01a08c0b-44a5-7101-b39f-805ea65bf80b",
-    "tag": "−30% Digitec",
-    "description": "Une nouvelle façon de découvrir l’iPhone. Pliable. Orientable. Transformable. iPhone Duo. Le plus grand écran d’iPhone jamais conçu. Dans un design fin et pliable. Cadre robuste en titane. Des expériences iOS uniques. Système de caméra Dual Fusion de 48 MP. Puce A20 Pro. •   LE PLUS GRAND ÉCRAN. DANS UN DESIGN FIN ET PLIABLE – Le plus grand écran d’iPhone de tous les temps, doté d’un écran interne à nanostructure pour réduire les reflets. Un écran 50 % plus grand que celui de l’iPhone 18 Pro Max. •   PLIABLE. TRANSFORMABLE. ORIENTABLE – Des positions polyvalentes permettent de vivre des expériences iOS repensées pour plus de productivité, de multitâche et une expérience visuelle immersive. •   MAGNIFIQUE ET ROBUSTE – La gamme iPhone Duo est dotée d’un cadre et d’un cache de charnière en titane de classe 5, ainsi que d’un revêtement Ceramic Shield 2 à l’avant et Ceramic Shield à l’arrière. •   SYSTÈME DE CAMÉRA DUAL FUSION 48 MP – Caméra principale Fusion 48 MP et caméra ultra grand angle, offrant des possibilités de prise de vue totalement inédites, comme la fonction « Photo intelligente » qui prend automatiquement des photos. •   NOUVELLES FONCTIONNALITÉS DE L'APPAREIL PHOTO – Désormais équipé de la première caméra FaceTime intégrée sous l'écran et d'une caméra frontale Center Stage de 12 MP. •   REFROIDISSEMENT PAR VAPEUR. PERFORMANCES PRO – La puce A20 Pro est conçue pour les charges de travail IA : un processeur à 6 cœurs jusqu’à 50 % plus rapide et un processeur graphique à 7 cœurs jusqu’à 2,1 fois plus rapide que ceux de l’iPhone 15 Pro.  •  SYSTÈME À DOUBLE BATTERIE. DE L’AUTONOMIE POUR TOUTE LA JOURNÉE – Jusqu’à 8 heures de lecture vidéo en plus (à partir de 23 heures par rapport à l’iPhone 15 Pro) lors de l’utilisation de l’écran interne. Jusqu’à 21 heures de lecture en plus (soit 23 heures au total par rapport à l’iPhone 15 Pro) lorsque vous utilisez l’écran extérieur. •   APPLE INTELLIGENCE − Confidentiel, sécurisé et très performant. Écrivez ce que vous voulez, exprimez votre personnalité et accomplissez vos tâches beaucoup plus facilement. •   FONCTIONNALITÉS DE SÉCURITÉ ESSENTIELLES – Grâce à la détection des accidents, l’iPhone peut détecter un accident de voiture grave et appeler les secours si vous n’en êtes pas en mesure. Prix de référence Digitec Suisse (CHF 1 999.–) remisé à −30%.",
+    "tag": "−30%",
+    "description": "Une nouvelle façon de découvrir l’iPhone. Pliable. Orientable. Transformable. iPhone Duo. Le plus grand écran d’iPhone jamais conçu. Dans un design fin et pliable. Cadre robuste en titane. Des expériences iOS uniques. Système de caméra Dual Fusion de 48 MP. Puce A20 Pro. •   LE PLUS GRAND ÉCRAN. DANS UN DESIGN FIN ET PLIABLE – Le plus grand écran d’iPhone de tous les temps, doté d’un écran interne à nanostructure pour réduire les reflets. Un écran 50 % plus grand que celui de l’iPhone 18 Pro Max. •   PLIABLE. TRANSFORMABLE. ORIENTABLE – Des positions polyvalentes permettent de vivre des expériences iOS repensées pour plus de productivité, de multitâche et une expérience visuelle immersive. •   MAGNIFIQUE ET ROBUSTE – La gamme iPhone Duo est dotée d’un cadre et d’un cache de charnière en titane de classe 5, ainsi que d’un revêtement Ceramic Shield 2 à l’avant et Ceramic Shield à l’arrière. •   SYSTÈME DE CAMÉRA DUAL FUSION 48 MP – Caméra principale Fusion 48 MP et caméra ultra grand angle, offrant des possibilités de prise de vue totalement inédites, comme la fonction « Photo intelligente » qui prend automatiquement des photos. •   NOUVELLES FONCTIONNALITÉS DE L'APPAREIL PHOTO – Désormais équipé de la première caméra FaceTime intégrée sous l'écran et d'une caméra frontale Center Stage de 12 MP. •   REFROIDISSEMENT PAR VAPEUR. PERFORMANCES PRO – La puce A20 Pro est conçue pour les charges de travail IA : un processeur à 6 cœurs jusqu’à 50 % plus rapide et un processeur graphique à 7 cœurs jusqu’à 2,1 fois plus rapide que ceux de l’iPhone 15 Pro.  •  SYSTÈME À DOUBLE BATTERIE. DE L’AUTONOMIE POUR TOUTE LA JOURNÉE – Jusqu’à 8 heures de lecture vidéo en plus (à partir de 23 heures par rapport à l’iPhone 15 Pro) lors de l’utilisation de l’écran interne. Jusqu’à 21 heures de lecture en plus (soit 23 heures au total par rapport à l’iPhone 15 Pro) lorsque vous utilisez l’écran extérieur. •   APPLE INTELLIGENCE − Confidentiel, sécurisé et très performant. Écrivez ce que vous voulez, exprimez votre personnalité et accomplissez vos tâches beaucoup plus facilement. •   FONCTIONNALITÉS DE SÉCURITÉ ESSENTIELLES – Grâce à la détection des accidents, l’iPhone peut détecter un accident de voiture grave et appeler les secours si vous n’en êtes pas en mesure. Prix officiel de référence Suisse (CHF 1 999.–) remisé à −30%.",
     "specs": "256 Go, Ciel nocturne, 7.60\", Double eSIM, 5G · Puce Apple Bionic/Pro · Super Retina XDR",
     "storages": [
       "128 Go",
@@ -552,8 +552,8 @@ const products: Product[] = [
     "price": "CHF 440.–",
     "priceNum": 440,
     "image": "https://static.digitecgalaxus.ch/productimages/8/6/2/0/2/3/8/7/0/4/8/7/1/0/7/7/7/2/8/fda455d3-4305-4808-82ad-14cf60d50e49.jpg",
-    "tag": "−30% Digitec",
-    "description": "Chaque année, Apple présente les nouveaux modèles d'iPhone lors de la keynote de septembre, et avec l'iPhone 15, vous pouvez vous attendre à encore plus de puissance ainsi qu'une mise à jour esthétique. Le système de caméra avancé est amélioré avec une meilleure caméra, comprenant un capteur principal de 48 mégapixels, un capteur ultra grand-angle de 12 mégapixels, une caméra frontale de 12 mégapixels et un zoom optique 2x. Le processeur bénéficie également d'une mise à niveau par rapport au modèle précédent : l'iPhone 15 garantit des performances fluides pour vos tâches quotidiennes grâce à un matériel puissant, incluant le processeur A16 Bionic ultra-rapide et 6 Go de RAM, que ce soit pour naviguer, multitâcher ou diffuser du contenu. Le cadre de l'écran Super Retina XDR de 6,1 pouces (15,49 cm) est devenu plus fin avec l'iPhone 15, donnant à l'écran du smartphone Apple une apparence presque infinie. De plus, la série iPhone 15 introduit Dynamic Island pour tous les modèles – pas seulement pour les modèles Pro. Sous l'écran, l'iPhone 15 dispose d'une batterie plus grande. Grâce à la batterie intelligente de 3 877 mAh, qui s'adapte à vos habitudes d'utilisation, l'iPhone d'Apple devient votre compagnon fiable tout au long de la journée et peut même être chargé sans fil. Avec l'iPhone 15 arrive également le port USB-C, qui sera uniformément introduit pour tous les petits et moyens appareils électroniques dans l'UE à partir de 2024. Commandez maintenant l'iPhone 15 et choisissez entre les options de stockage de 128 Go, 256 Go et 512 Go, ainsi que les couleurs Rose, Jaune, Vert, Bleu et Noir. Contenu de la livraison : Apple iPhone 15, câble de chargement USB-C vers USB-C (1 m), documentation. Prix de référence Digitec Suisse (CHF 629.–) remisé à −30%.",
+    "tag": "−30%",
+    "description": "Chaque année, Apple présente les nouveaux modèles d'iPhone lors de la keynote de septembre, et avec l'iPhone 15, vous pouvez vous attendre à encore plus de puissance ainsi qu'une mise à jour esthétique. Le système de caméra avancé est amélioré avec une meilleure caméra, comprenant un capteur principal de 48 mégapixels, un capteur ultra grand-angle de 12 mégapixels, une caméra frontale de 12 mégapixels et un zoom optique 2x. Le processeur bénéficie également d'une mise à niveau par rapport au modèle précédent : l'iPhone 15 garantit des performances fluides pour vos tâches quotidiennes grâce à un matériel puissant, incluant le processeur A16 Bionic ultra-rapide et 6 Go de RAM, que ce soit pour naviguer, multitâcher ou diffuser du contenu. Le cadre de l'écran Super Retina XDR de 6,1 pouces (15,49 cm) est devenu plus fin avec l'iPhone 15, donnant à l'écran du smartphone Apple une apparence presque infinie. De plus, la série iPhone 15 introduit Dynamic Island pour tous les modèles – pas seulement pour les modèles Pro. Sous l'écran, l'iPhone 15 dispose d'une batterie plus grande. Grâce à la batterie intelligente de 3 877 mAh, qui s'adapte à vos habitudes d'utilisation, l'iPhone d'Apple devient votre compagnon fiable tout au long de la journée et peut même être chargé sans fil. Avec l'iPhone 15 arrive également le port USB-C, qui sera uniformément introduit pour tous les petits et moyens appareils électroniques dans l'UE à partir de 2024. Commandez maintenant l'iPhone 15 et choisissez entre les options de stockage de 128 Go, 256 Go et 512 Go, ainsi que les couleurs Rose, Jaune, Vert, Bleu et Noir. Contenu de la livraison : Apple iPhone 15, câble de chargement USB-C vers USB-C (1 m), documentation. Prix officiel de référence Suisse (CHF 629.–) remisé à −30%.",
     "specs": "128 Go, Noir, 6.10\", SIM + eSIM, 5G · Puce Apple Bionic/Pro · Super Retina XDR",
     "storages": [
       "128 Go",
@@ -588,8 +588,8 @@ const products: Product[] = [
     "price": "CHF 515.–",
     "priceNum": 515,
     "image": "https://static.digitecgalaxus.ch/productimages/2/6/5/0/5/5/0/8/0/1/2/8/7/7/4/6/8/1/4/48c5d2b7-41c1-409c-8407-539ea8fa14f9_cropped.jpg",
-    "tag": "−30% Digitec",
-    "description": "Avec le contrôle de la caméra, vous pouvez accéder plus facilement et rapidement aux outils de caméra tels que le zoom ou la profondeur de champ, et prendre la photo parfaite en un temps record. Avec l'améliorée caméra ultra grand-angle à mise au point automatique, vous pouvez capturer des photos et vidéos macro incroyablement détaillées. Réalisez des images haute résolution impressionnantes avec la caméra Fusion de 48 MP ou effectuez un zoom optique 2x. Les styles photographiques de nouvelle génération vous offrent plus de flexibilité créative, vous permettant de personnaliser encore plus chaque photo. Et vous pouvez annuler tous les styles à tout moment. Le A18 représente un bond de deux générations par rapport à la puce A16 Bionic de l'iPhone 15. Il permet des fonctionnalités avancées de photo et de vidéo ainsi que des jeux de niveau console avec une efficacité énergétique exceptionnelle. L'iPhone 16 fonctionne avec la puce A18, offrant un véritable coup de pouce pour la batterie avec jusqu'à 22 heures de lecture vidéo. Chargez via USB-C ou connectez un chargeur MagSafe pour une charge sans fil plus rapide. L'iPhone 16 possède un design robuste en aluminium de qualité aérospatiale avec un écran Super Retina XDR de 6,1\". Il est extrêmement résistant grâce à la Ceramic Shield de dernière génération à l'avant, qui est deux fois plus dur que tout autre verre de smartphone. Le moyen le plus rapide d'accéder à votre fonctionnalité préférée : maintenez-la simplement enfoncée pour lancer la fonction souhaitée - comme la lampe de poche, un mémo vocal ou le mode silencieux. Avec iOS 18, vous pouvez colorer les icônes de votre écran d'accueil dans n'importe quelle teinte. Trouvez plus rapidement vos photos préférées dans l'application Photos révisée et ajoutez des effets animés ludiques à des mots, phrases ou emojis dans iMessage. Grâce à la détection d'accidents, l'iPhone peut détecter un grave accident de voiture et appeler de l'aide si vous ne pouvez pas le faire. Prix de référence Digitec Suisse (CHF 736.–) remisé à −30%.",
+    "tag": "−30%",
+    "description": "Avec le contrôle de la caméra, vous pouvez accéder plus facilement et rapidement aux outils de caméra tels que le zoom ou la profondeur de champ, et prendre la photo parfaite en un temps record. Avec l'améliorée caméra ultra grand-angle à mise au point automatique, vous pouvez capturer des photos et vidéos macro incroyablement détaillées. Réalisez des images haute résolution impressionnantes avec la caméra Fusion de 48 MP ou effectuez un zoom optique 2x. Les styles photographiques de nouvelle génération vous offrent plus de flexibilité créative, vous permettant de personnaliser encore plus chaque photo. Et vous pouvez annuler tous les styles à tout moment. Le A18 représente un bond de deux générations par rapport à la puce A16 Bionic de l'iPhone 15. Il permet des fonctionnalités avancées de photo et de vidéo ainsi que des jeux de niveau console avec une efficacité énergétique exceptionnelle. L'iPhone 16 fonctionne avec la puce A18, offrant un véritable coup de pouce pour la batterie avec jusqu'à 22 heures de lecture vidéo. Chargez via USB-C ou connectez un chargeur MagSafe pour une charge sans fil plus rapide. L'iPhone 16 possède un design robuste en aluminium de qualité aérospatiale avec un écran Super Retina XDR de 6,1\". Il est extrêmement résistant grâce à la Ceramic Shield de dernière génération à l'avant, qui est deux fois plus dur que tout autre verre de smartphone. Le moyen le plus rapide d'accéder à votre fonctionnalité préférée : maintenez-la simplement enfoncée pour lancer la fonction souhaitée - comme la lampe de poche, un mémo vocal ou le mode silencieux. Avec iOS 18, vous pouvez colorer les icônes de votre écran d'accueil dans n'importe quelle teinte. Trouvez plus rapidement vos photos préférées dans l'application Photos révisée et ajoutez des effets animés ludiques à des mots, phrases ou emojis dans iMessage. Grâce à la détection d'accidents, l'iPhone peut détecter un grave accident de voiture et appeler de l'aide si vous ne pouvez pas le faire. Prix officiel de référence Suisse (CHF 736.–) remisé à −30%.",
     "specs": "128 Go, Blanc, 6.10\", SIM + eSIM, 5G · Puce Apple Bionic/Pro · Super Retina XDR",
     "storages": [
       "128 Go",
@@ -624,8 +624,8 @@ const products: Product[] = [
     "price": "CHF 398.–",
     "priceNum": 398,
     "image": "https://static.digitecgalaxus.ch/productimages/9/1/6/7/1/5/2/2/0/8/9/4/0/8/3/5/7/6/6/af515399-a36b-48fb-9ff1-856e593f0b57.jpg",
-    "tag": "−30% Digitec",
-    "description": "L'iPhone 16e a été conçu pour l'intelligence d'Apple. Il est équipé de la puissance de la puce A181, d'un appareil photo Fusion 48 MP qui prend des photos en super-haute résolution et d'une autonomie de batterie gigantesque - pour avoir plus de temps pour écrire des messages, surfer sur le web et plus encore. Prix de référence Digitec Suisse (CHF 569.–) remisé à −30%.",
+    "tag": "−30%",
+    "description": "L'iPhone 16e a été conçu pour l'intelligence d'Apple. Il est équipé de la puissance de la puce A181, d'un appareil photo Fusion 48 MP qui prend des photos en super-haute résolution et d'une autonomie de batterie gigantesque - pour avoir plus de temps pour écrire des messages, surfer sur le web et plus encore. Prix officiel de référence Suisse (CHF 569.–) remisé à −30%.",
     "specs": "128 Go, Noir, 6.10\", SIM + eSIM, 5G · Puce Apple Bionic/Pro · Super Retina XDR",
     "storages": [
       "128 Go",
@@ -660,8 +660,8 @@ const products: Product[] = [
     "price": "CHF 621.–",
     "priceNum": 621,
     "image": "https://static.digitecgalaxus.ch/productimages/4/3/4/4/5/3/9/1/7/3/0/9/5/8/6/1/7/9/019933ab-f894-78d0-b8ff-cb279f4623d4",
-    "tag": "−30% Digitec",
-    "description": "iPhone Air. L'iPhone le plus fin jamais conçu. Écran de 6,5 pouces, bouclier en céramique robuste à l'avant et à l'arrière, puce A19 Pro, système de caméra Fusion 48 MP et caméra frontale Center Stage. - SUPER FIN. SUPER LÉGÈRE. SUPER FORTE. - L'iPhone le plus fin jamais conçu avec la puissance d'une puce Pro. Avec ses 5,6 mm d'épaisseur, le nouvel iPhone Air est si fin et léger qu'il en devient insaisissable.  - PLUS ROBUSTE QUE N'IMPORTE QUEL APPAREIL AVANT - Cadre ultraléger en titane. Le Ceramic Shield protège l'arrière de l'iPhone Air, pour une résistance à la casse 4x supérieure. Et le nouveau Ceramic Shield 2 à l'avant offre une résistance aux rayures 3x supérieure. - DEUX CAMÉRAS AVANCÉS EN UN - Système de caméra Fusion 48 MP avec zoom 2x de qualité optique. Prenez simplement des photos parfaites - directement de là où vous êtes.  - CAMÉRA FRONTALE DE 18MP CENTER STAGE - Cadrage flexible. Des selfies de groupe intelligents, des vidéos avec double enregistrement des caméras avant et arrière et plus encore.  - PUCE A19 PRO. EXTRÊMEMENT RAPIDE. EXTRÊMEMENT EFFICACE. - L'A19 Pro est la puce iPhone la plus efficace jamais conçue. Elle offre des performances pro, le tout dans un design révolutionnaire fin et léger.  - BATTERIE POUR TOUTE LA JOURNÉE - Autonomie de la batterie pour toute la journée avec jusqu'à 27 heures de lecture vidéo. - iOS 26. NOUVEAU LOOK. TOUT À FAIT MAGIQUE. - Le nouveau design Liquid Glass. Magnifique. Et si familier. Avec un écran de verrouillage plus vivant, des arrière-plans personnalisables, des sondages dans les messages, un filtre d'appel et plus encore.  - CONÇU POUR APPLE INTELLIGENCE - Privé. En toute sécurité. Et avec beaucoup de puissance. Écrivez quelque chose, montrez votre personnalité et faites les choses beaucoup plus facilement.6  - FÉATURES SATELLITAIRES - Si vous devez contacter un service d'urgence mais que vous n'avez ni réseau ni Wi-Fi, vous pouvez utiliser SOS par satellite.7 Et en cas d'accident de voiture grave, l'iPhone peut contacter les secours si vous ne pouvez pas le faire. Prix de référence Digitec Suisse (CHF 887.–) remisé à −30%.",
+    "tag": "−30%",
+    "description": "iPhone Air. L'iPhone le plus fin jamais conçu. Écran de 6,5 pouces, bouclier en céramique robuste à l'avant et à l'arrière, puce A19 Pro, système de caméra Fusion 48 MP et caméra frontale Center Stage. - SUPER FIN. SUPER LÉGÈRE. SUPER FORTE. - L'iPhone le plus fin jamais conçu avec la puissance d'une puce Pro. Avec ses 5,6 mm d'épaisseur, le nouvel iPhone Air est si fin et léger qu'il en devient insaisissable.  - PLUS ROBUSTE QUE N'IMPORTE QUEL APPAREIL AVANT - Cadre ultraléger en titane. Le Ceramic Shield protège l'arrière de l'iPhone Air, pour une résistance à la casse 4x supérieure. Et le nouveau Ceramic Shield 2 à l'avant offre une résistance aux rayures 3x supérieure. - DEUX CAMÉRAS AVANCÉS EN UN - Système de caméra Fusion 48 MP avec zoom 2x de qualité optique. Prenez simplement des photos parfaites - directement de là où vous êtes.  - CAMÉRA FRONTALE DE 18MP CENTER STAGE - Cadrage flexible. Des selfies de groupe intelligents, des vidéos avec double enregistrement des caméras avant et arrière et plus encore.  - PUCE A19 PRO. EXTRÊMEMENT RAPIDE. EXTRÊMEMENT EFFICACE. - L'A19 Pro est la puce iPhone la plus efficace jamais conçue. Elle offre des performances pro, le tout dans un design révolutionnaire fin et léger.  - BATTERIE POUR TOUTE LA JOURNÉE - Autonomie de la batterie pour toute la journée avec jusqu'à 27 heures de lecture vidéo. - iOS 26. NOUVEAU LOOK. TOUT À FAIT MAGIQUE. - Le nouveau design Liquid Glass. Magnifique. Et si familier. Avec un écran de verrouillage plus vivant, des arrière-plans personnalisables, des sondages dans les messages, un filtre d'appel et plus encore.  - CONÇU POUR APPLE INTELLIGENCE - Privé. En toute sécurité. Et avec beaucoup de puissance. Écrivez quelque chose, montrez votre personnalité et faites les choses beaucoup plus facilement.6  - FÉATURES SATELLITAIRES - Si vous devez contacter un service d'urgence mais que vous n'avez ni réseau ni Wi-Fi, vous pouvez utiliser SOS par satellite.7 Et en cas d'accident de voiture grave, l'iPhone peut contacter les secours si vous ne pouvez pas le faire. Prix officiel de référence Suisse (CHF 887.–) remisé à −30%.",
     "specs": "256 Go, Bleu ciel, 6.50\", Double SIM, 5G · Puce Apple Bionic/Pro · Super Retina XDR",
     "storages": [
       "128 Go",
@@ -759,13 +759,13 @@ const products: Product[] = [
 ];
 
 const categories = [
-  { label: 'Smartphones', sub: 'iPhone 17 & 18 Pro, Air, Max (−30% Digitec)', image: 'https://static.digitecgalaxus.ch/productimages/9/0/6/9/1/8/4/0/8/8/2/6/6/4/3/1/4/2/2/019932ab-34b6-7f88-beed-ed3c05518217' },
+  { label: 'Smartphones', sub: 'iPhone 17 & 18 Pro, Air, Max (−30%)', image: 'https://static.digitecgalaxus.ch/productimages/9/0/6/9/1/8/4/0/8/8/2/6/6/4/3/1/4/2/2/019932ab-34b6-7f88-beed-ed3c05518217' },
   { label: 'Audio & TV', sub: 'Écouter. Regarder. Vibrer.', image: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=1100&q=85' },
   { label: 'Informatique', sub: 'Le travail, en mieux.', image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1100&q=85' },
   { label: 'Électroménager', sub: 'Le beau, au quotidien.', image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1100&q=85' },
 ]
 
-export const digitecColorRefMap: Record<string, string> = {
+export const colorRefMap: Record<string, string> = {
   'Orange cosmique': 'ENOTIK-IPH17P-ORG-61962964',
   'Silver (Argent)': 'ENOTIK-IPH17P-SLV-61962956',
   'Noir': 'ENOTIK-IPH17-BLK-61962931',
@@ -845,7 +845,7 @@ export function getStorageUsageInfo(storage: string) {
       }
     case '256 Go':
       return {
-        badge: 'Recommandé Digitec',
+        badge: 'Recommandé',
         usage: 'Le choix idéal : ~65’000 photos, jeux AAA & fonctionnalités Apple Intelligence.',
       }
     case '512 Go':
@@ -1028,9 +1028,9 @@ export default function Page() {
 
       {/* Top Banner - Swiss Red */}
       <div className="bg-[#DA291C] px-5 py-2.5 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-white shadow-sm flex items-center justify-center gap-2 sm:gap-4 flex-wrap">
-        <span className="flex items-center gap-1.5"><span className="text-base">🇨🇭</span> SÉLECTION DIGITEC SUISSE : −30% SUR TOUS LES IPHONE APPLE</span>
+        <span className="flex items-center gap-1.5"><span className="text-base">🇨🇭</span> SÉLECTION SUISSE OFFICIELLE : −30% SUR TOUS LES IPHONE APPLE</span>
         <span>·</span>
-        <span>GALERIE OFFICIELLE DIGITEC</span>
+        <span>PRODUITS NEUFS SCELLÉS ORIGINE SUISSE</span>
         <span>·</span>
         <span>LIVRAISON OFFERTE DÈS CHF 80</span>
         <span className="hidden md:inline">·</span>
@@ -1356,7 +1356,7 @@ export default function Page() {
                       </div>
                     )}
 
-                    <p className="mt-1 text-[10px] text-white/45">Réf. {activeColor?.name && digitecColorRefMap[activeColor.name] ? digitecColorRefMap[activeColor.name] : product.reference}</p>
+                    <p className="mt-1 text-[10px] text-white/45">Réf. {activeColor?.name && colorRefMap[activeColor.name] ? colorRefMap[activeColor.name] : product.reference}</p>
                   </div>
 
                   <div className="mt-3 flex items-baseline gap-2 flex-wrap">
@@ -1789,7 +1789,7 @@ export default function Page() {
                       {quickViewProduct.category}
                     </span>
                     <span className="text-[11px] text-neutral-400">
-                      Réf. {quickViewSelectedColor?.name && digitecColorRefMap[quickViewSelectedColor.name] ? digitecColorRefMap[quickViewSelectedColor.name] : quickViewProduct.reference}
+                      Réf. {quickViewSelectedColor?.name && colorRefMap[quickViewSelectedColor.name] ? colorRefMap[quickViewSelectedColor.name] : quickViewProduct.reference}
                     </span>
                   </div>
 
@@ -1832,7 +1832,7 @@ export default function Page() {
                             </span>
                           )}
                           <span className="rounded bg-[#DA291C] px-2 py-0.5 text-xs font-bold text-white shadow-sm">
-                            {quickViewProduct.tag || '−30% Digitec'}
+                            {quickViewProduct.tag || '−30%'}
                           </span>
                           <span className="rounded bg-emerald-100 px-2 py-0.5 text-[11px] font-bold text-emerald-800">
                             TVA 8.1% incluse
