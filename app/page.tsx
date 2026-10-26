@@ -59,15 +59,15 @@ const products: Product[] = [
   {
     "id": 1,
     "name": "Apple iPhone 17 Pro",
-    "reference": "ENOTIK-IPHONE17PRO-DIG",
+    "reference": "ENOTIK-IPH17P-SLV-61962956",
     "category": "Smartphones",
     "oldPrice": "CHF 1 033.–",
     "price": "CHF 723.–",
     "priceNum": 723,
-    "image": "https://static.digitecgalaxus.ch/productimages/9/0/6/9/1/8/4/0/8/8/2/6/6/4/3/1/4/2/2/019932ab-34b6-7f88-beed-ed3c05518217",
+    "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-whitetitanium?wid=940&hei=1112&fmt=png-alpha",
     "tag": "−30% Digitec",
-    "description": "iPhone 17 Pro. L'iPhone le plus puissant jamais conçu. Écran brillant de 6,3 pouces, design unibody en aluminium, puce A19 Pro, caméra arrière de 48 MP et autonomie révolutionnaire de la batterie.    DESIGN UNIBODY. POUR DES PERFORMANCES UNIQUES. - Design unibody en aluminium forgé à chaud pour l'iPhone le plus puissant jamais conçu.  BOUCLIER EN CÉRAMIQUE ROBUSTE. À L'AVANT ET À L'ARRIÈRE. - Le Ceramic Shield protège l'arrière de l'iPhone 17 Pro pour une résistance à la casse 4x supérieure.2 Et le nouveau Ceramic Shield à l'avant offre une résistance aux rayures 3x supérieure.  LE SYSTÈME DE CAMÉRAS PRO ULTIMATIQUE - Avec des caméras arrière de 48 MP et un zoom 8x de qualité optique - la plus grande plage de zoom jamais vue sur un iPhone. C'est comme si vous aviez 8 objectifs Pro dans votre poche.  CAMÉRA FRONTALE CENTRALE DE 18MP - Cadrage flexible. Des selfies de groupe intelligents, des vidéos avec double enregistrement des caméras avant et arrière, et plus encore.  A19 PRO CHIP. REFROIDISSEMENT À LA VAPEUR. VIF COMME L'ÉCLAIR. - La puce A19 Pro est la plus puissante de l'iPhone, avec des performances constantes jusqu'à 40 pour cent supérieures.  ENTRETIEN DE LA BATTERIE - La conception unibody permet d'améliorer considérablement l'autonomie de la batterie, avec jusqu'à 31 heures de lecture vidéo. Recharge jusqu'à 50 % en 20 minutes.  iOS 26. NOUVEAU LOOK. TOUT À FAIT MAGIQUE. - Le nouveau design Liquid Glass. Magnifique. Clair. Et si familier. Avec un écran de verrouillage plus vivant, des arrière-plans personnalisables, des sondages dans les messages, un filtre d'appel et plus encore.  CONÇU POUR APPLE INTELLIGENCE - Privé. En toute sécurité. Et avec beaucoup de puissance. Écrivez quelque chose, montrez votre personnalité et faites les choses beaucoup plus facilement.  FÉATURES SATELLITAIRES - Si vous devez contacter un service d'urgence mais que vous n'avez ni réseau ni Wi-Fi, vous pouvez utiliser SOS par satellite. Et en cas d'accident de voiture grave, l'iPhone peut contacter les secours si vous ne pouvez pas le faire. Prix de référence Digitec Suisse (CHF 1 033.–) remisé à −30%.",
-    "specs": "256 Go, Deep Blue, 6.30\", Double SIM, 5G · Puce Apple Bionic/Pro · Super Retina XDR",
+    "description": "Apple iPhone 17 Pro (256 Go, Silver / Argent, 6.30\", Double SIM, 5G). Modèle officiel répertorié sur Digitec Suisse (Réf. 61962956 / N° fabricant MG8G4QL/A). L'iPhone le plus puissant : écran brillant 6.3\" ProMotion 120Hz, design unibody en aluminium forgé, puce A19 Pro refroidie par chambre à vapeur, triple capteur photo Fusion 48 MP à zoom optique 8x et autonomie record.",
+    "specs": "256 Go, Silver (Argent), 6.30\", Double SIM, 5G · Réf Digitec 61962956 · MG8G4QL/A · Puce A19 Pro · Écran 120Hz",
     "storages": [
       "128 Go",
       "256 Go",
@@ -76,20 +76,25 @@ const products: Product[] = [
     ],
     "colors": [
       {
+        "name": "Silver (Argent)",
+        "hex": "#E3E4E5",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-whitetitanium?wid=940&hei=1112&fmt=png-alpha"
+      },
+      {
         "name": "Deep Blue",
         "hex": "#1C2D42",
         "image": "https://static.digitecgalaxus.ch/productimages/9/0/6/9/1/8/4/0/8/8/2/6/6/4/3/1/4/2/2/019932ab-34b6-7f88-beed-ed3c05518217"
       }
     ],
     "gallery": [
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-whitetitanium?wid=940&hei=1112&fmt=png-alpha",
       "https://static.digitecgalaxus.ch/im/productimages/9/0/6/9/1/8/4/0/8/8/2/6/6/4/3/1/4/2/2/019932ab-34b6-7f88-beed-ed3c05518217",
       "https://static.digitecgalaxus.ch/im/productimages/1/1/4/4/6/0/6/9/8/0/3/0/3/1/5/4/6/0/0/019932ab-3513-7750-9b9a-6249756f59a2",
       "https://static.digitecgalaxus.ch/im/productimages/7/4/8/1/2/9/5/2/4/7/7/4/7/4/2/1/2/7/0/019932ab-356f-7d3d-9310-6fb3d5e8860d",
       "https://static.digitecgalaxus.ch/im/productimages/2/8/1/0/8/0/1/7/4/5/8/9/0/0/0/5/0/0/0/019932ab-35b7-78bb-b53c-a8e6b7b69a64",
       "https://static.digitecgalaxus.ch/im/productimages/3/8/1/0/4/3/8/6/4/9/4/2/5/7/2/6/2/2/6/01993298-776f-7554-8e50-fe5dbe12feec",
       "https://static.digitecgalaxus.ch/im/productimages/4/4/4/9/2/2/4/3/6/7/9/1/0/7/8/0/6/7/3/01993298-77ce-748e-b973-88fafbad2a84",
-      "https://static.digitecgalaxus.ch/im/productimages/2/5/1/0/8/2/2/5/3/2/6/1/5/8/0/4/4/6/3/019932ab-420e-7615-9b85-ad8500574508",
-      "https://static.digitecgalaxus.ch/im/productimages/7/6/2/5/8/3/9/5/9/9/2/5/0/1/2/1/3/4/3/019932ab-4249-7973-92d0-d6786f66d184"
+      "https://static.digitecgalaxus.ch/im/productimages/2/5/1/0/8/2/2/5/3/2/6/1/5/8/0/4/4/6/3/019932ab-420e-7615-9b85-ad8500574508"
     ]
   },
   {
