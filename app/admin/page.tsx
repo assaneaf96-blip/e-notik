@@ -110,39 +110,8 @@ export function detectColorsFromText(text: string): { name: string; hex: string 
 
   COLOR_RECOGNITION_DATABASE.forEach((item) => {
     const match = item.keywords.some((kw) => {
-      const regex = new RegExp('(?:^|[\\s(,./-]|-)' + kw.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\export interface ProductColor {
-  name: string
-  hex: string
-  image?: string
-}
-
-export interface StoragePriceItem {
-  storage: string
-  price: number
-  oldPrice?: number
-}
-
-export interface ProductItem {
-  id: number
-  name: string
-  reference: string
-  category: string
-  price: number
-  oldPrice?: number
-  stock: number
-  image: string
-  gallery?: string[]
-  video?: string
-  tag: string
-  description: string
-  specs?: string
-  warranty?: string
-  condition?: string
-  active: boolean
-  storages?: string[]
-  storagePrices?: StoragePriceItem[]
-  colors?: ProductColor[]
-}') + '(?:$|[\\s),./-]|-)', 'i')
+      const escaped = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+      const regex = new RegExp('(?:^|[\\s(,./-]|-)' + escaped + '(?:$|[\\s),./-]|-)', 'i')
       return regex.test(lower)
     })
     if (match && !added.has(item.name)) {
