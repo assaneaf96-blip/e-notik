@@ -134,15 +134,12 @@ export default function AdminPage() {
   "price": 723,
   "oldPrice": 1033,
   "stock": 20,
-  "image": "https://static01.galaxus.com/productimages/7/9/3/4/8/6/3/3/5/0/4/3/8/8/8/8/6/4/8/019932ab-5d9e-75f4-a9d2-0c31157c4830_720.jpeg",
+  "image": "/products/iphone17pro-orange/back.png",
   "gallery": [
-    "https://static01.galaxus.com/productimages/7/9/3/4/8/6/3/3/5/0/4/3/8/8/8/8/6/4/8/019932ab-5d9e-75f4-a9d2-0c31157c4830_720.jpeg",
-    "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-deserttitanium?wid=940&hei=1112&fmt=png-alpha",
-    "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-whitetitanium?wid=940&hei=1112&fmt=png-alpha",
-    "https://static.digitecgalaxus.ch/im/productimages/9/0/6/9/1/8/4/0/8/8/2/6/6/4/3/1/4/2/2/019932ab-34b6-7f88-beed-ed3c05518217",
-    "https://static.digitecgalaxus.ch/im/productimages/1/1/4/4/6/0/6/9/8/0/3/0/3/1/5/4/6/0/0/019932ab-3513-7750-9b9a-6249756f59a2",
-    "https://static.digitecgalaxus.ch/im/productimages/7/4/8/1/2/9/5/2/4/7/7/4/7/4/2/1/2/7/0/019932ab-356f-7d3d-9310-6fb3d5e8860d",
-    "https://static.digitecgalaxus.ch/im/productimages/2/8/1/0/8/0/1/7/4/5/8/9/0/0/0/5/0/0/0/019932ab-35b7-78bb-b53c-a8e6b7b69a64"
+    "/products/iphone17pro-orange/back.png",
+    "/products/iphone17pro-orange/front.png",
+    "/products/iphone17pro-orange/side-right.png",
+    "/products/iphone17pro-orange/side-left.png"
   ],
   "tag": "−30% Digitec",
   "description": "Apple iPhone 17 Pro 256 Go Orange cosmique (Cosmic Orange). Référence Digitec 61962964 / N° fabricant MG8H4QL/A. Écran 6.30\" ProMotion 120Hz, finition titane Orange cosmique, puce A19 Pro refroidie par chambre à vapeur, triple capteur photo Fusion 48 MP à zoom optique 8x et autonomie record.",
