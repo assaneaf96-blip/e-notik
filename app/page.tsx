@@ -110,10 +110,8 @@ const products: Product[] = [
     "description": "iPhone 17. Plus beau. Encore plus robuste. Écran 6,3\" avec ProMotion, Ceramic Shield , caméras arrière 48 MP, caméra frontale Center Stage, puce A19 et plus encore.  - CONÇU POUR INSPIRER. FAIT POUR DURER. - L'iPhone 17 est disponible en cinq couleurs fantastiques, avec un écran 6,3\" plus lumineux et une face avant dotée de Ceramic Shield pour une résistance aux rayures 3x supérieure.  - ÉCRAN 6,3\" AVEC PROMOTION. PLUS LUMINEUX. BRILLANT. - Défilement fluide avec ProMotion jusqu'à 120 Hz, meilleur contraste en extérieur avec un pic de luminosité de 3 000 nits et 33% de reflets en moins. - DES PHOTOS INCROYABLES - Prenez des photos super haute résolution automatiquement grâce au système de caméra double fusion de haute qualité 48 MP, au zoom 2x de qualité optique et à l'appareil photo ultra grand angle Fusion 48 MP.  - CAMÉRA FRONTALE CENTRALE DE 18MP - Cadrage flexible. Des selfies de groupe intelligents, des vidéos avec double enregistrement des caméras avant et arrière et bien plus encore.  - A19 CHIP. BEAUCOUP DE PUISSANCE. BEAUCOUP PLUS LONG. - Avec un GPU 5Core, le Neural Engine amélioré prend en charge tout ce que vous faites sur votre iPhone, d'Apple Intelligence3 aux jeux AAA.  - CHARGE RAPIDEMENT. TEMPORISE LONGEMENT. - Batterie pour une journée entière avec jusqu'à 30 heures de lecture vidéo.4 Recharge jusqu'à 50 % en 20 minutes. - iOS 26. NOUVEAU LOOK. TOUT À FAIT MAGIQUE. - Le nouveau design Liquid Glass. Magnifique. Et si familier. Avec un écran de verrouillage plus vivant, des arrière-plans personnalisables, des sondages dans les messages, un filtre d'appel et plus encore. - CONÇU POUR APPLE INTELLIGENCE - Privé. En toute sécurité. Et avec beaucoup de puissance. Écrivez quelque chose, montrez votre personnalité et faites les choses beaucoup plus facilement. - FÉATURES SATELLITAIRES - Si vous devez contacter un service d'urgence mais que vous n'avez ni réseau ni Wi-Fi, vous pouvez utiliser SOS par satellite. Et en cas d'accident de voiture grave, l'iPhone peut contacter les secours si vous ne pouvez pas le faire. - DE MEILLEURES CONNEXIONS. DES VITESSES SUPER ÉLEVÉES. - Restez connecté plus rapidement grâce à une connectivité sécurisée via le WLAN 7, les réseaux 5G10, le Bluetooth 6 et l'eSIM. Prix de référence Digitec Suisse (CHF 853.–) remisé à −30%.",
     "specs": "256 Go, Blanc, 6.30\", Double SIM, 5G · Puce Apple Bionic/Pro · Super Retina XDR",
     "storages": [
-      "128 Go",
       "256 Go",
-      "512 Go",
-      "1 To"
+      "512 Go"
     ],
     "colors": [
       {
@@ -1604,7 +1602,9 @@ export default function Page() {
                           {getStoragePricing(quickViewProduct, quickViewSelectedStorage).price}
                         </span>
                       </div>
-                      <div className="grid grid-cols-4 gap-2">
+                      <div className={`grid gap-2 ${
+                        quickViewProduct.storages.length === 2 ? 'grid-cols-2' : quickViewProduct.storages.length === 3 ? 'grid-cols-3' : 'grid-cols-4'
+                      }`}>
                         {quickViewProduct.storages.map((storage) => {
                           const isSelected = quickViewSelectedStorage === storage
                           const optPricing = getStoragePricing(quickViewProduct, storage)
