@@ -548,6 +548,53 @@ export function getStoragePricing(p: Product, storage?: string) {
   }
 }
 
+export function getStorageUsageInfo(storage: string) {
+  switch (storage) {
+    case '128 Go':
+      return {
+        badge: 'Essentiel & Quotidien',
+        usage: 'Idéal pour le streaming, ~30’000 photos standard ou 25h de vidéo HD.',
+      }
+    case '256 Go':
+      return {
+        badge: 'Recommandé Digitec',
+        usage: 'Le choix idéal : ~65’000 photos, jeux AAA & fonctionnalités Apple Intelligence.',
+      }
+    case '512 Go':
+      return {
+        badge: 'Créateurs & Multimédia',
+        usage: 'Spacieux pour ~130’000 photos, enregistrement 4K 60fps & projets vidéo lourds.',
+      }
+    case '1 To':
+      return {
+        badge: 'Pro & Tournage Studio',
+        usage: 'Conçu pour la vidéo 4K ProRes sans compression & bibliothèques photos RAW.',
+      }
+    case '2 To':
+      return {
+        badge: 'Ultra Stockage Titan',
+        usage: 'Capacité maximale absolue pour stocker l’intégralité de vos archives sans compromis.',
+      }
+    default:
+      return {
+        badge: 'Capacité optimisée',
+        usage: `Capacité de ${storage} avec mémoire flash NVMe haute vitesse.`,
+      }
+  }
+}
+
+export function getDynamicSpecs(specs: string, storage?: string, colorName?: string) {
+  if (!specs) return ''
+  let result = specs
+  if (storage) {
+    result = result.replace(/\b(128|256|512)\s*(Go|GB)\b|\b(1|2)\s*(To|TB)\b/gi, storage)
+  }
+  if (colorName) {
+    result = result.replace(/\b(Deep Blue|Silver \(Argent\)|Silver|Argent|Blanc|Noir Sidéral|Noir|Bleu ciel|Ciel nocturne)\b/gi, colorName)
+  }
+  return result
+}
+
 export default function Page() {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
   const [cartOpen, setCartOpen] = useState(false)
@@ -1448,12 +1495,31 @@ export default function Page() {
                     <span className="rounded-full bg-neutral-100 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-neutral-600">
                       {quickViewProduct.category}
                     </span>
-                    <span className="text-[11px] text-neutral-400">Réf. {quickViewProduct.reference}</span>
+                    <span className="text-[11px] text-neutral-400">
+                      Réf. {quickViewProduct.reference.replace(/-\w+$/, '')}-{quickViewSelectedStorage?.replace(/\s+/g, '') || '256GB'}
+                    </span>
                   </div>
 
                   <h3 className="font-serif text-3xl font-bold text-[#151515] leading-tight">
                     {quickViewProduct.name}
+                    {quickViewSelectedStorage && (
+                      <span className="ml-2 text-2xl font-sans font-black text-[#DA291C]">
+                        {quickViewSelectedStorage}
+                      </span>
+                    )}
                   </h3>
+                  {quickViewSelectedColor && (
+                    <p className="text-xs text-neutral-500 mt-1 flex items-center gap-1.5">
+                      Finition active :{' '}
+                      <span className="font-bold text-[#151515] flex items-center gap-1">
+                        <span
+                          className="inline-block size-2.5 rounded-full border border-black/20"
+                          style={{ backgroundColor: quickViewSelectedColor.hex }}
+                        />
+                        {quickViewSelectedColor.name}
+                      </span>
+                    </p>
+                  )}
 
                   {/* Price section with reactive storage pricing */}
                   {(() => {
@@ -1563,13 +1629,43 @@ export default function Page() {
                     </div>
                   )}
 
-                  {/* Technical Specs Summary */}
-                  {quickViewProduct.specs && (
-                    <div className="mt-5 rounded border border-neutral-200 p-3 bg-neutral-50/50">
-                      <p className="text-[10px] font-bold uppercase tracking-wider text-neutral-500 mb-1">Fiche technique</p>
-                      <p className="text-xs text-neutral-700 font-medium">{quickViewProduct.specs}</p>
+                  {/* Dynamic Technical Specs & Storage Usage Box */}
+                  <div className="mt-5 rounded-lg border border-neutral-200 bg-neutral-50/80 p-4 shadow-sm">
+                    <div className="flex items-center justify-between border-b border-neutral-200 pb-2.5 mb-3 flex-wrap gap-2">
+                      <div className="flex items-center gap-2">
+                        <span className="size-2 rounded-full bg-[#DA291C] animate-pulse" />
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-800">
+                          Configuration {quickViewSelectedStorage} · {quickViewSelectedColor?.name || 'Standard'}
+                        </span>
+                      </div>
+                      <span className="rounded bg-[#DA291C]/10 px-2 py-0.5 text-[10px] font-bold text-[#DA291C]">
+                        {getStorageUsageInfo(quickViewSelectedStorage).badge}
+                      </span>
                     </div>
-                  )}
+
+                    <div className="space-y-2.5 text-xs text-neutral-700">
+                      <div className="flex items-start justify-between gap-3">
+                        <span className="text-neutral-500 font-medium shrink-0">Usage & capacité :</span>
+                        <span className="font-semibold text-neutral-900 text-right">
+                          {getStorageUsageInfo(quickViewSelectedStorage).usage}
+                        </span>
+                      </div>
+                      {quickViewProduct.specs && (
+                        <div className="flex items-start justify-between gap-3 pt-2 border-t border-neutral-200/60">
+                          <span className="text-neutral-500 font-medium shrink-0">Fiche technique :</span>
+                          <span className="font-medium text-neutral-800 text-right">
+                            {getDynamicSpecs(quickViewProduct.specs, quickViewSelectedStorage, quickViewSelectedColor?.name)}
+                          </span>
+                        </div>
+                      )}
+                      <div className="flex items-center justify-between pt-2 border-t border-neutral-200/60 text-[11px]">
+                        <span className="text-neutral-500 font-medium">Référence modèle :</span>
+                        <span className="font-mono font-bold text-neutral-700">
+                          {quickViewProduct.reference.replace(/-\w+$/, '')}-{quickViewSelectedStorage.replace(/\s+/g, '')}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
 
                   {/* Swiss Quality Checklist */}
                   <div className="mt-5 rounded-md bg-neutral-50 p-3.5 border border-neutral-200 space-y-2 text-[11px] text-neutral-600">
