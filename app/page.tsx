@@ -99,7 +99,7 @@ const products: Product[] = [
   },
   {
     "id": 2,
-    "name": "Apple iPhone 17",
+    "name": "Apple iPhone 17 (Blanc)",
     "reference": "ENOTIK-IPHONE17-DIG",
     "category": "Smartphones",
     "oldPrice": "CHF 853.–",
@@ -118,6 +118,26 @@ const products: Product[] = [
         "name": "Blanc",
         "hex": "#F5F5F7",
         "image": "https://static.digitecgalaxus.ch/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2"
+      },
+      {
+        "name": "Bleu brume",
+        "hex": "#6B8EA8",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha"
+      },
+      {
+        "name": "Lavande",
+        "hex": "#D6C7E2",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha"
+      },
+      {
+        "name": "Fable",
+        "hex": "#9EB5A5",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha"
+      },
+      {
+        "name": "Noir",
+        "hex": "#222325",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha"
       }
     ],
     "gallery": [
@@ -132,7 +152,223 @@ const products: Product[] = [
     ]
   },
   {
-    "id": 3,
+    "name": "Apple iPhone 17 (Bleu brume)",
+    "reference": "ENOTIK-IPH17-BLU-61962958",
+    "category": "Smartphones",
+    "oldPrice": "CHF 853.–",
+    "price": "CHF 597.–",
+    "priceNum": 597,
+    "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha",
+    "tag": "−30% Digitec",
+    "description": "Apple iPhone 17 256 Go Bleu brume (Mist Blue). Référence Digitec 61962958 / N° fabricant MG6L4QL/A. Écran 6.30\" ProMotion 120Hz, Ceramic Shield 2, puce A19 et double caméra Fusion 48 MP.",
+    "specs": "256 Go, Bleu brume, 6.30\", Double SIM, 5G · Réf Digitec 61962958 · MG6L4QL/A · Puce A19",
+    "storages": [
+      "256 Go",
+      "512 Go"
+    ],
+    "colors": [
+      {
+        "name": "Blanc",
+        "hex": "#F5F5F7",
+        "image": "https://static.digitecgalaxus.ch/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2"
+      },
+      {
+        "name": "Bleu brume",
+        "hex": "#6B8EA8",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha"
+      },
+      {
+        "name": "Lavande",
+        "hex": "#D6C7E2",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha"
+      },
+      {
+        "name": "Fable",
+        "hex": "#9EB5A5",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha"
+      },
+      {
+        "name": "Noir",
+        "hex": "#222325",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha"
+      }
+    ],
+    "gallery": [
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha",
+      "https://static.digitecgalaxus.ch/im/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha",
+      "https://static.digitecgalaxus.ch/im/productimages/8/5/8/1/2/0/5/1/1/7/8/1/8/6/8/3/0/5/3/01993298-93c8-79e0-a4f5-ce6ca52fdb14",
+      "https://static.digitecgalaxus.ch/im/productimages/6/3/6/2/4/6/0/6/7/7/4/9/9/3/5/7/1/5/4/01993298-942b-75b3-be06-3091676bd8b3",
+      "https://static.digitecgalaxus.ch/im/productimages/8/8/8/3/3/8/0/1/7/0/6/8/8/2/6/3/7/7/6/01993298-94fc-7548-99bc-4932427eb1a3"
+    ],
+    "id": 3
+  },
+  {
+    "name": "Apple iPhone 17 (Lavande)",
+    "reference": "ENOTIK-IPH17-LAV-61962939",
+    "category": "Smartphones",
+    "oldPrice": "CHF 853.–",
+    "price": "CHF 597.–",
+    "priceNum": 597,
+    "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha",
+    "tag": "−30% Digitec",
+    "description": "Apple iPhone 17 256 Go Lavande (Lavender / Violett). Référence Digitec 61962939 / N° fabricant MG6M4QL/A. Écran 6.30\" ProMotion 120Hz, Ceramic Shield 2, puce A19 et double caméra Fusion 48 MP.",
+    "specs": "256 Go, Lavande, 6.30\", Double SIM, 5G · Réf Digitec 61962939 · MG6M4QL/A · Puce A19",
+    "storages": [
+      "256 Go",
+      "512 Go"
+    ],
+    "colors": [
+      {
+        "name": "Blanc",
+        "hex": "#F5F5F7",
+        "image": "https://static.digitecgalaxus.ch/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2"
+      },
+      {
+        "name": "Bleu brume",
+        "hex": "#6B8EA8",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha"
+      },
+      {
+        "name": "Lavande",
+        "hex": "#D6C7E2",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha"
+      },
+      {
+        "name": "Fable",
+        "hex": "#9EB5A5",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha"
+      },
+      {
+        "name": "Noir",
+        "hex": "#222325",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha"
+      }
+    ],
+    "gallery": [
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha",
+      "https://static.digitecgalaxus.ch/im/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha",
+      "https://static.digitecgalaxus.ch/im/productimages/8/5/8/1/2/0/5/1/1/7/8/1/8/6/8/3/0/5/3/01993298-93c8-79e0-a4f5-ce6ca52fdb14",
+      "https://static.digitecgalaxus.ch/im/productimages/6/3/6/2/4/6/0/6/7/7/4/9/9/3/5/7/1/5/4/01993298-942b-75b3-be06-3091676bd8b3",
+      "https://static.digitecgalaxus.ch/im/productimages/8/8/8/3/3/8/0/1/7/0/6/8/8/2/6/3/7/7/6/01993298-94fc-7548-99bc-4932427eb1a3"
+    ],
+    "id": 4
+  },
+  {
+    "name": "Apple iPhone 17 (Fable)",
+    "reference": "ENOTIK-IPH17-FBL-61962909",
+    "category": "Smartphones",
+    "oldPrice": "CHF 853.–",
+    "price": "CHF 597.–",
+    "priceNum": 597,
+    "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha",
+    "tag": "−30% Digitec",
+    "description": "Apple iPhone 17 256 Go Fable (Vert Sauge / Salbei). Référence Digitec 61962909 / N° fabricant MG6N4QL/A. Écran 6.30\" ProMotion 120Hz, Ceramic Shield 2, puce A19 et double caméra Fusion 48 MP.",
+    "specs": "256 Go, Fable, 6.30\", SIM + eSIM, 5G · Réf Digitec 61962909 · MG6N4QL/A · Puce A19",
+    "storages": [
+      "256 Go",
+      "512 Go"
+    ],
+    "colors": [
+      {
+        "name": "Blanc",
+        "hex": "#F5F5F7",
+        "image": "https://static.digitecgalaxus.ch/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2"
+      },
+      {
+        "name": "Bleu brume",
+        "hex": "#6B8EA8",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha"
+      },
+      {
+        "name": "Lavande",
+        "hex": "#D6C7E2",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha"
+      },
+      {
+        "name": "Fable",
+        "hex": "#9EB5A5",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha"
+      },
+      {
+        "name": "Noir",
+        "hex": "#222325",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha"
+      }
+    ],
+    "gallery": [
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha",
+      "https://static.digitecgalaxus.ch/im/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha",
+      "https://static.digitecgalaxus.ch/im/productimages/8/5/8/1/2/0/5/1/1/7/8/1/8/6/8/3/0/5/3/01993298-93c8-79e0-a4f5-ce6ca52fdb14",
+      "https://static.digitecgalaxus.ch/im/productimages/6/3/6/2/4/6/0/6/7/7/4/9/9/3/5/7/1/5/4/01993298-942b-75b3-be06-3091676bd8b3",
+      "https://static.digitecgalaxus.ch/im/productimages/8/8/8/3/3/8/0/1/7/0/6/8/8/2/6/3/7/7/6/01993298-94fc-7548-99bc-4932427eb1a3"
+    ],
+    "id": 5
+  },
+  {
+    "name": "Apple iPhone 17 (Noir)",
+    "reference": "ENOTIK-IPH17-BLK-61962931",
+    "category": "Smartphones",
+    "oldPrice": "CHF 853.–",
+    "price": "CHF 597.–",
+    "priceNum": 597,
+    "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha",
+    "tag": "−30% Digitec",
+    "description": "Apple iPhone 17 256 Go Noir (Black / Schwarz). Référence Digitec 61962931 / N° fabricant MG6J4QL/A. Écran 6.30\" ProMotion 120Hz, Ceramic Shield 2, puce A19 et double caméra Fusion 48 MP.",
+    "specs": "256 Go, Noir, 6.30\", Double SIM, 5G · Réf Digitec 61962931 · MG6J4QL/A · Puce A19",
+    "storages": [
+      "256 Go",
+      "512 Go"
+    ],
+    "colors": [
+      {
+        "name": "Blanc",
+        "hex": "#F5F5F7",
+        "image": "https://static.digitecgalaxus.ch/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2"
+      },
+      {
+        "name": "Bleu brume",
+        "hex": "#6B8EA8",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha"
+      },
+      {
+        "name": "Lavande",
+        "hex": "#D6C7E2",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha"
+      },
+      {
+        "name": "Fable",
+        "hex": "#9EB5A5",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha"
+      },
+      {
+        "name": "Noir",
+        "hex": "#222325",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha"
+      }
+    ],
+    "gallery": [
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha",
+      "https://static.digitecgalaxus.ch/im/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha",
+      "https://static.digitecgalaxus.ch/im/productimages/8/5/8/1/2/0/5/1/1/7/8/1/8/6/8/3/0/5/3/01993298-93c8-79e0-a4f5-ce6ca52fdb14",
+      "https://static.digitecgalaxus.ch/im/productimages/6/3/6/2/4/6/0/6/7/7/4/9/9/3/5/7/1/5/4/01993298-942b-75b3-be06-3091676bd8b3",
+      "https://static.digitecgalaxus.ch/im/productimages/8/8/8/3/3/8/0/1/7/0/6/8/8/2/6/3/7/7/6/01993298-94fc-7548-99bc-4932427eb1a3"
+    ],
+    "id": 6
+  },
+  {
+    "id": 7,
     "name": "Apple iPhone 17e",
     "reference": "ENOTIK-IPHONE17E-DIG",
     "category": "Smartphones",
@@ -168,7 +404,7 @@ const products: Product[] = [
     ]
   },
   {
-    "id": 4,
+    "id": 8,
     "name": "Apple iPhone 18 Pro",
     "reference": "ENOTIK-IPHONE18PRO-DIG",
     "category": "Smartphones",
@@ -204,7 +440,7 @@ const products: Product[] = [
     ]
   },
   {
-    "id": 5,
+    "id": 9,
     "name": "Apple iPhone 17 Pro Max",
     "reference": "ENOTIK-IPHONE17PROMAX-DIG",
     "category": "Smartphones",
@@ -240,7 +476,7 @@ const products: Product[] = [
     ]
   },
   {
-    "id": 6,
+    "id": 10,
     "name": "Apple iPhone Duo",
     "reference": "ENOTIK-IPHONEDUO-DIG",
     "category": "Smartphones",
@@ -276,7 +512,7 @@ const products: Product[] = [
     ]
   },
   {
-    "id": 7,
+    "id": 11,
     "name": "Apple iPhone 15",
     "reference": "ENOTIK-IPHONE15-DIG",
     "category": "Smartphones",
@@ -312,7 +548,7 @@ const products: Product[] = [
     ]
   },
   {
-    "id": 8,
+    "id": 12,
     "name": "Apple iPhone 16",
     "reference": "ENOTIK-IPHONE16-DIG",
     "category": "Smartphones",
@@ -348,7 +584,7 @@ const products: Product[] = [
     ]
   },
   {
-    "id": 9,
+    "id": 13,
     "name": "Apple iPhone 16e",
     "reference": "ENOTIK-IPHONE16E-DIG",
     "category": "Smartphones",
@@ -384,7 +620,7 @@ const products: Product[] = [
     ]
   },
   {
-    "id": 10,
+    "id": 14,
     "name": "Apple iPhone Air",
     "reference": "ENOTIK-IPHONEAIR-DIG",
     "category": "Smartphones",
@@ -420,7 +656,7 @@ const products: Product[] = [
     ]
   },
   {
-    "id": 11,
+    "id": 15,
     "name": "Sony WH-1000XM6",
     "reference": "ENOTIK-SNYXM6-011",
     "category": "Audio & TV",
@@ -443,7 +679,7 @@ const products: Product[] = [
     ]
   },
   {
-    "id": 12,
+    "id": 16,
     "name": "MacBook Air M4",
     "reference": "ENOTIK-MBA-M4-012",
     "category": "Informatique",
@@ -466,7 +702,7 @@ const products: Product[] = [
     ]
   },
   {
-    "id": 13,
+    "id": 17,
     "name": "Dyson Airwrap Multi-Styler",
     "reference": "ENOTIK-DYS-AW-013",
     "category": "Électroménager",

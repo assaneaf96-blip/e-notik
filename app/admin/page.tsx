@@ -102,12 +102,12 @@ export default function AdminPage() {
   const [productsList, setProductsList] = useState<ProductItem[]>([
   {
     "id": 1,
-    "name": "Apple iPhone 17 Pro (Silver)",
+    "name": "Apple iPhone 17 Pro",
     "reference": "ENOTIK-IPH17P-SLV-61962956",
     "category": "Smartphones",
     "price": 723,
     "oldPrice": 1033,
-    "stock": 15,
+    "stock": 20,
     "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-whitetitanium?wid=940&hei=1112&fmt=png-alpha",
     "gallery": [
       "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-whitetitanium?wid=940&hei=1112&fmt=png-alpha",
@@ -120,20 +120,20 @@ export default function AdminPage() {
       "https://static.digitecgalaxus.ch/im/productimages/2/5/1/0/8/2/2/5/3/2/6/1/5/8/0/4/4/6/3/019932ab-420e-7615-9b85-ad8500574508"
     ],
     "tag": "−30% Digitec",
-    "description": "Apple iPhone 17 Pro (256 Go, Silver / Argent, 6.30\", Double SIM, 5G). Modèle officiel répertorié sur Digitec Suisse (Réf. 61962956 / N° fabricant MG8G4QL/A). Écran ProMotion 6.3\" 120Hz, puce A19 Pro refroidie par chambre à vapeur et triple capteur Fusion 48 MP.",
-    "specs": "256 Go · Silver (Argent) · 6.30\" · Double SIM · 5G · Réf Digitec 61962956 · MG8G4QL/A",
+    "description": "Apple iPhone 17 Pro (256 Go, Silver / Argent, 6.30\", Double SIM, 5G). Modèle officiel répertorié sur Digitec Suisse (Réf. 61962956 / N° fabricant MG8G4QL/A). L'iPhone le plus puissant : écran brillant 6.3\" ProMotion 120Hz, design unibody en aluminium forgé, puce A19 Pro refroidie par chambre à vapeur, triple capteur photo Fusion 48 MP à zoom optique 8x et autonomie record.",
+    "specs": "256 Go, Silver (Argent), 6.30\", Double SIM, 5G · Réf Digitec 61962956 · MG8G4QL/A · Puce A19 Pro · Écran 120Hz",
     "warranty": "Garantie suisse 2 ans Apple & Digitec",
     "condition": "Neuf scellé Digitec CH",
     "active": true
   },
   {
     "id": 2,
-    "name": "Apple iPhone 17",
+    "name": "Apple iPhone 17 (Blanc)",
     "reference": "ENOTIK-IPHONE17-DIG",
     "category": "Smartphones",
     "price": 597,
     "oldPrice": 853,
-    "stock": 18,
+    "stock": 20,
     "image": "https://static.digitecgalaxus.ch/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2",
     "gallery": [
       "https://static.digitecgalaxus.ch/im/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2",
@@ -154,12 +154,116 @@ export default function AdminPage() {
   },
   {
     "id": 3,
+    "name": "Apple iPhone 17 (Bleu brume)",
+    "reference": "ENOTIK-IPH17-BLU-61962958",
+    "category": "Smartphones",
+    "price": 597,
+    "oldPrice": 853,
+    "stock": 20,
+    "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha",
+    "gallery": [
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha",
+      "https://static.digitecgalaxus.ch/im/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha",
+      "https://static.digitecgalaxus.ch/im/productimages/8/5/8/1/2/0/5/1/1/7/8/1/8/6/8/3/0/5/3/01993298-93c8-79e0-a4f5-ce6ca52fdb14",
+      "https://static.digitecgalaxus.ch/im/productimages/6/3/6/2/4/6/0/6/7/7/4/9/9/3/5/7/1/5/4/01993298-942b-75b3-be06-3091676bd8b3",
+      "https://static.digitecgalaxus.ch/im/productimages/8/8/8/3/3/8/0/1/7/0/6/8/8/2/6/3/7/7/6/01993298-94fc-7548-99bc-4932427eb1a3"
+    ],
+    "tag": "−30% Digitec",
+    "description": "Apple iPhone 17 256 Go Bleu brume (Mist Blue). Référence Digitec 61962958 / N° fabricant MG6L4QL/A. Écran 6.30\" ProMotion 120Hz, Ceramic Shield 2, puce A19 et double caméra Fusion 48 MP.",
+    "specs": "256 Go, Bleu brume, 6.30\", Double SIM, 5G · Réf Digitec 61962958 · MG6L4QL/A · Puce A19",
+    "warranty": "Garantie suisse 2 ans Apple & Digitec",
+    "condition": "Neuf scellé Digitec CH",
+    "active": true
+  },
+  {
+    "id": 4,
+    "name": "Apple iPhone 17 (Lavande)",
+    "reference": "ENOTIK-IPH17-LAV-61962939",
+    "category": "Smartphones",
+    "price": 597,
+    "oldPrice": 853,
+    "stock": 20,
+    "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha",
+    "gallery": [
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha",
+      "https://static.digitecgalaxus.ch/im/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha",
+      "https://static.digitecgalaxus.ch/im/productimages/8/5/8/1/2/0/5/1/1/7/8/1/8/6/8/3/0/5/3/01993298-93c8-79e0-a4f5-ce6ca52fdb14",
+      "https://static.digitecgalaxus.ch/im/productimages/6/3/6/2/4/6/0/6/7/7/4/9/9/3/5/7/1/5/4/01993298-942b-75b3-be06-3091676bd8b3",
+      "https://static.digitecgalaxus.ch/im/productimages/8/8/8/3/3/8/0/1/7/0/6/8/8/2/6/3/7/7/6/01993298-94fc-7548-99bc-4932427eb1a3"
+    ],
+    "tag": "−30% Digitec",
+    "description": "Apple iPhone 17 256 Go Lavande (Lavender / Violett). Référence Digitec 61962939 / N° fabricant MG6M4QL/A. Écran 6.30\" ProMotion 120Hz, Ceramic Shield 2, puce A19 et double caméra Fusion 48 MP.",
+    "specs": "256 Go, Lavande, 6.30\", Double SIM, 5G · Réf Digitec 61962939 · MG6M4QL/A · Puce A19",
+    "warranty": "Garantie suisse 2 ans Apple & Digitec",
+    "condition": "Neuf scellé Digitec CH",
+    "active": true
+  },
+  {
+    "id": 5,
+    "name": "Apple iPhone 17 (Fable)",
+    "reference": "ENOTIK-IPH17-FBL-61962909",
+    "category": "Smartphones",
+    "price": 597,
+    "oldPrice": 853,
+    "stock": 20,
+    "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha",
+    "gallery": [
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha",
+      "https://static.digitecgalaxus.ch/im/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha",
+      "https://static.digitecgalaxus.ch/im/productimages/8/5/8/1/2/0/5/1/1/7/8/1/8/6/8/3/0/5/3/01993298-93c8-79e0-a4f5-ce6ca52fdb14",
+      "https://static.digitecgalaxus.ch/im/productimages/6/3/6/2/4/6/0/6/7/7/4/9/9/3/5/7/1/5/4/01993298-942b-75b3-be06-3091676bd8b3",
+      "https://static.digitecgalaxus.ch/im/productimages/8/8/8/3/3/8/0/1/7/0/6/8/8/2/6/3/7/7/6/01993298-94fc-7548-99bc-4932427eb1a3"
+    ],
+    "tag": "−30% Digitec",
+    "description": "Apple iPhone 17 256 Go Fable (Vert Sauge / Salbei). Référence Digitec 61962909 / N° fabricant MG6N4QL/A. Écran 6.30\" ProMotion 120Hz, Ceramic Shield 2, puce A19 et double caméra Fusion 48 MP.",
+    "specs": "256 Go, Fable, 6.30\", SIM + eSIM, 5G · Réf Digitec 61962909 · MG6N4QL/A · Puce A19",
+    "warranty": "Garantie suisse 2 ans Apple & Digitec",
+    "condition": "Neuf scellé Digitec CH",
+    "active": true
+  },
+  {
+    "id": 6,
+    "name": "Apple iPhone 17 (Noir)",
+    "reference": "ENOTIK-IPH17-BLK-61962931",
+    "category": "Smartphones",
+    "price": 597,
+    "oldPrice": 853,
+    "stock": 20,
+    "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha",
+    "gallery": [
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=940&hei=1112&fmt=png-alpha",
+      "https://static.digitecgalaxus.ch/im/productimages/7/7/3/5/0/9/4/9/0/2/7/8/8/0/5/7/8/6/2/01993298-9637-7ee0-9b1d-2ed62eab37e2",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=940&hei=1112&fmt=png-alpha",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?wid=940&hei=1112&fmt=png-alpha",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?wid=940&hei=1112&fmt=png-alpha",
+      "https://static.digitecgalaxus.ch/im/productimages/8/5/8/1/2/0/5/1/1/7/8/1/8/6/8/3/0/5/3/01993298-93c8-79e0-a4f5-ce6ca52fdb14",
+      "https://static.digitecgalaxus.ch/im/productimages/6/3/6/2/4/6/0/6/7/7/4/9/9/3/5/7/1/5/4/01993298-942b-75b3-be06-3091676bd8b3",
+      "https://static.digitecgalaxus.ch/im/productimages/8/8/8/3/3/8/0/1/7/0/6/8/8/2/6/3/7/7/6/01993298-94fc-7548-99bc-4932427eb1a3"
+    ],
+    "tag": "−30% Digitec",
+    "description": "Apple iPhone 17 256 Go Noir (Black / Schwarz). Référence Digitec 61962931 / N° fabricant MG6J4QL/A. Écran 6.30\" ProMotion 120Hz, Ceramic Shield 2, puce A19 et double caméra Fusion 48 MP.",
+    "specs": "256 Go, Noir, 6.30\", Double SIM, 5G · Réf Digitec 61962931 · MG6J4QL/A · Puce A19",
+    "warranty": "Garantie suisse 2 ans Apple & Digitec",
+    "condition": "Neuf scellé Digitec CH",
+    "active": true
+  },
+  {
+    "id": 7,
     "name": "Apple iPhone 17e",
     "reference": "ENOTIK-IPHONE17E-DIG",
     "category": "Smartphones",
     "price": 489,
     "oldPrice": 699,
-    "stock": 21,
+    "stock": 20,
     "image": "https://static.digitecgalaxus.ch/productimages/7/6/3/9/9/9/2/7/4/4/0/8/7/8/6/3/8/3/4/019cb2af-0149-7307-aee0-72cf96db7ed6",
     "gallery": [
       "https://static.digitecgalaxus.ch/im/productimages/7/6/3/9/9/9/2/7/4/4/0/8/7/8/6/3/8/3/4/019cb2af-0149-7307-aee0-72cf96db7ed6",
@@ -179,13 +283,13 @@ export default function AdminPage() {
     "active": true
   },
   {
-    "id": 4,
+    "id": 8,
     "name": "Apple iPhone 18 Pro",
     "reference": "ENOTIK-IPHONE18PRO-DIG",
     "category": "Smartphones",
     "price": 1028,
     "oldPrice": 1469,
-    "stock": 24,
+    "stock": 20,
     "image": "https://static.digitecgalaxus.ch/productimages/3/1/9/0/3/4/3/9/6/5/7/6/6/9/9/6/1/9/6/01a08a3f-a187-72f6-b171-11227edba7f2",
     "gallery": [
       "https://static.digitecgalaxus.ch/im/productimages/3/1/9/0/3/4/3/9/6/5/7/6/6/9/9/6/1/9/6/01a08a3f-a187-72f6-b171-11227edba7f2",
@@ -205,13 +309,13 @@ export default function AdminPage() {
     "active": true
   },
   {
-    "id": 5,
+    "id": 9,
     "name": "Apple iPhone 17 Pro Max",
     "reference": "ENOTIK-IPHONE17PROMAX-DIG",
     "category": "Smartphones",
     "price": 771,
     "oldPrice": 1102,
-    "stock": 27,
+    "stock": 20,
     "image": "https://static.digitecgalaxus.ch/productimages/2/9/0/3/0/4/3/4/9/1/4/8/3/7/6/9/2/3/0/01993298-82bf-7b12-8a73-94bcea6ea130",
     "gallery": [
       "https://static.digitecgalaxus.ch/im/productimages/2/9/0/3/0/4/3/4/9/1/4/8/3/7/6/9/2/3/0/01993298-82bf-7b12-8a73-94bcea6ea130",
@@ -231,13 +335,13 @@ export default function AdminPage() {
     "active": true
   },
   {
-    "id": 6,
+    "id": 10,
     "name": "Apple iPhone Duo",
     "reference": "ENOTIK-IPHONEDUO-DIG",
     "category": "Smartphones",
     "price": 1399,
     "oldPrice": 1999,
-    "stock": 30,
+    "stock": 20,
     "image": "https://static.digitecgalaxus.ch/productimages/8/6/8/3/9/7/3/9/7/9/8/1/4/8/6/8/1/7/8/01a08c0b-44a5-7101-b39f-805ea65bf80b",
     "gallery": [
       "https://static.digitecgalaxus.ch/im/productimages/8/6/8/3/9/7/3/9/7/9/8/1/4/8/6/8/1/7/8/01a08c0b-44a5-7101-b39f-805ea65bf80b",
@@ -257,13 +361,13 @@ export default function AdminPage() {
     "active": true
   },
   {
-    "id": 7,
+    "id": 11,
     "name": "Apple iPhone 15",
     "reference": "ENOTIK-IPHONE15-DIG",
     "category": "Smartphones",
     "price": 440,
     "oldPrice": 629,
-    "stock": 33,
+    "stock": 20,
     "image": "https://static.digitecgalaxus.ch/productimages/8/6/2/0/2/3/8/7/0/4/8/7/1/0/7/7/7/2/8/fda455d3-4305-4808-82ad-14cf60d50e49.jpg",
     "gallery": [
       "https://static.digitecgalaxus.ch/im/productimages/8/6/2/0/2/3/8/7/0/4/8/7/1/0/7/7/7/2/8/fda455d3-4305-4808-82ad-14cf60d50e49.jpg",
@@ -283,13 +387,13 @@ export default function AdminPage() {
     "active": true
   },
   {
-    "id": 8,
+    "id": 12,
     "name": "Apple iPhone 16",
     "reference": "ENOTIK-IPHONE16-DIG",
     "category": "Smartphones",
     "price": 515,
     "oldPrice": 736,
-    "stock": 36,
+    "stock": 20,
     "image": "https://static.digitecgalaxus.ch/productimages/2/6/5/0/5/5/0/8/0/1/2/8/7/7/4/6/8/1/4/48c5d2b7-41c1-409c-8407-539ea8fa14f9_cropped.jpg",
     "gallery": [
       "https://static.digitecgalaxus.ch/im/productimages/2/6/5/0/5/5/0/8/0/1/2/8/7/7/4/6/8/1/4/48c5d2b7-41c1-409c-8407-539ea8fa14f9_cropped.jpg",
@@ -309,13 +413,13 @@ export default function AdminPage() {
     "active": true
   },
   {
-    "id": 9,
+    "id": 13,
     "name": "Apple iPhone 16e",
     "reference": "ENOTIK-IPHONE16E-DIG",
     "category": "Smartphones",
     "price": 398,
     "oldPrice": 569,
-    "stock": 39,
+    "stock": 20,
     "image": "https://static.digitecgalaxus.ch/productimages/9/1/6/7/1/5/2/2/0/8/9/4/0/8/3/5/7/6/6/af515399-a36b-48fb-9ff1-856e593f0b57.jpg",
     "gallery": [
       "https://static.digitecgalaxus.ch/im/productimages/9/1/6/7/1/5/2/2/0/8/9/4/0/8/3/5/7/6/6/af515399-a36b-48fb-9ff1-856e593f0b57.jpg",
@@ -335,13 +439,13 @@ export default function AdminPage() {
     "active": true
   },
   {
-    "id": 10,
+    "id": 14,
     "name": "Apple iPhone Air",
     "reference": "ENOTIK-IPHONEAIR-DIG",
     "category": "Smartphones",
     "price": 621,
     "oldPrice": 887,
-    "stock": 42,
+    "stock": 20,
     "image": "https://static.digitecgalaxus.ch/productimages/4/3/4/4/5/3/9/1/7/3/0/9/5/8/6/1/7/9/019933ab-f894-78d0-b8ff-cb279f4623d4",
     "gallery": [
       "https://static.digitecgalaxus.ch/im/productimages/4/3/4/4/5/3/9/1/7/3/0/9/5/8/6/1/7/9/019933ab-f894-78d0-b8ff-cb279f4623d4",
@@ -361,51 +465,60 @@ export default function AdminPage() {
     "active": true
   },
   {
-    "id": 11,
+    "id": 15,
     "name": "Sony WH-1000XM6",
     "reference": "ENOTIK-SNYXM6-011",
     "category": "Audio & TV",
     "price": 399,
     "oldPrice": 449,
-    "stock": 28,
+    "stock": 20,
     "image": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=900&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=900&q=85"
+    ],
     "tag": "Bestseller",
-    "description": "Réduction de bruit active de référence, audio haute résolution LDAC, autonomie 35h.",
-    "specs": "Bluetooth 5.4 · Multipoint · Microphones IA beamforming",
-    "warranty": "Garantie suisse 2 ans Sony",
-    "condition": "Neuf scellé",
+    "description": "Référence mondiale en réduction de bruit active avec processeur IA.",
+    "specs": "Autonomie 35h · Bluetooth 5.4 · Hi-Res Audio LDAC · Confort supérieur",
+    "warranty": "Garantie suisse 2 ans Apple & Digitec",
+    "condition": "Neuf scellé Digitec CH",
     "active": true
   },
   {
-    "id": 12,
+    "id": 16,
     "name": "MacBook Air M4",
     "reference": "ENOTIK-MBA-M4-012",
     "category": "Informatique",
     "price": 1099,
     "oldPrice": 1199,
-    "stock": 9,
+    "stock": 20,
     "image": "https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=900&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=900&q=85"
+    ],
     "tag": "Nouveau",
-    "description": "Ultra-fin, silencieux sans ventilateur, autonomie record jusqu’à 20 heures.",
-    "specs": "16 Go RAM unifiée · SSD 512 Go · Clavier suisse QWERTZ",
-    "warranty": "Garantie suisse 2 ans Apple",
-    "condition": "Neuf scellé",
+    "description": "Puce M4 ultra-performante dans un boîtier tout aluminium de 1.2 kg.",
+    "specs": "16 Go RAM · SSD 512 Go · Écran Retina 13.6\" · Clavier suisse QWERTZ",
+    "warranty": "Garantie suisse 2 ans Apple & Digitec",
+    "condition": "Neuf scellé Digitec CH",
     "active": true
   },
   {
-    "id": 13,
-    "name": "Dyson Airwrap",
+    "id": 17,
+    "name": "Dyson Airwrap Multi-Styler",
     "reference": "ENOTIK-DYS-AW-013",
     "category": "Électroménager",
     "price": 449,
     "oldPrice": 529,
-    "stock": 12,
+    "stock": 20,
     "image": "https://images.unsplash.com/photo-1522338140262-f46f5913618a?auto=format&fit=crop&w=900&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1522338140262-f46f5913618a?auto=format&fit=crop&w=900&q=85"
+    ],
     "tag": "−15%",
-    "description": "Coiffage et bouclage sans chaleur extrême grâce à l’effet Coanda.",
-    "specs": "Moteur numérique Dyson V9 · 6 embouts inclus · Boîte de rangement bleu nuit",
-    "warranty": "Garantie suisse 2 ans Dyson",
-    "condition": "Neuf scellé",
+    "description": "Coiffage professionnel sans chaleur extrême grâce à l’effet Coanda.",
+    "specs": "Moteur V9 110 000 tr/min · Contrôle thermique intelligent",
+    "warranty": "Garantie suisse 2 ans Apple & Digitec",
+    "condition": "Neuf scellé Digitec CH",
     "active": true
   }
 ])
